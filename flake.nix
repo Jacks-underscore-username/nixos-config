@@ -66,13 +66,13 @@
           inherit inputs outputs;
         };
         modules = [
-        inputs.disko.nixosModules.default
-        # (import ./disko.nix { device = "nvme0n1"; })
+          inputs.disko.nixosModules.default
+          # (import ./disko.nix { device = "nvme0n1"; })
 
-        ./nixos/configuration.nix
-              
-        inputs.home-manager.nixosModules.default
-        inputs.impermanence.nixosModules.impermanence
+          ./nixos/configuration.nix
+
+          inputs.home-manager.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
         ];
       };
     };
