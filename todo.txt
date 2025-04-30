@@ -1,0 +1,22 @@
+[X] - Create a reload shortcut that pushes the config to github
+[X] - Fix fonts
+[ ] - Setup secrets so I can store login info on the git repo
+[ ] - Make the *EVERYTHING* delete itself except what I define in this config
+[ ] - Add backgrounds from here https://imgur.com/a/2560x1440-wallpaper-dump-mostly-nature-200-images-B6aB1hS
+[ ] - Create a status bar with ags
+[ ] - Style kitty
+[ ] - Style vscode
+[ ] - Style chrome
+[ ] - Style discord
+[ ] - Style wofi
+[ ] - Style spotify
+[ ] - Configure Thunar
+[ ] - Setup root remote
+[ ] - Setup auto sleep
+[ ] - Setup overview
+[ ] - Create an ags power widget
+[ ] - Create an ags wifi widget
+[ ] - Create an ags bluetooth widget
+[ ] - Create an ags volume widget
+[ ] - Create an ags theme widget
+[ ] - Create an ags brightness widget
