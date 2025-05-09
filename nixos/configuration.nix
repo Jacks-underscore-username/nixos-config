@@ -120,7 +120,7 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-    boot.initrd.postDeviceCommands = lib.mkAfter ''
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/root_vg/root /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
@@ -148,7 +148,19 @@ in {
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     hideMounts = true;
+    directories = [
+      "/etc/NetworkManager/system-connections"
+    ];
   };
+
+  programs.fuse.userAllowOther = true;
+
+  environment.systemPackages = [pkgs.kitty];
+
+  systemd.tmpfiles.rules = [
+    "d /persist/home/ 1777 root root -" # /persist/home created, owned by root
+    "d /persist/home/jackc 0770 jackc users -" # /persist/home/jackc created, owned by that user
+  ];
 
   users.users = {
     jackc = {
@@ -157,6 +169,7 @@ in {
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       extraGroups = ["wheel" "networkmanager"];
+      initialPassword = "0";
     };
   };
 
@@ -176,6 +189,8 @@ in {
     enable = true;
     powerOnBoot = true;
   };
+
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";

@@ -4,6 +4,7 @@
   imports = [
     ./hyprland.nix
     ./java.nix
+    ./git.nix
   ];
 
   hyprland.monitors = [
