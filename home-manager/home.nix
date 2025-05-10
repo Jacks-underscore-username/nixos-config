@@ -160,8 +160,6 @@
     (import ../modules/home-manager/scripts/compareDir.nix {inherit pkgs;})
 
     htop
-
-    ollama
   ];
 
   # Enable spicetify (and spotify in the process)
