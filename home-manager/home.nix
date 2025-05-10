@@ -51,8 +51,9 @@
       ".config/discord"
       ".ssh"
       ".config/gh"
-      ".vscode/extensions"
-      # ".gitconfig"
+      ".vscode"
+      ".cache/google-chrome"
+      ".config/google-chrome"
     ];
     files = [
     ];
