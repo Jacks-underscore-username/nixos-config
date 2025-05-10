@@ -24,17 +24,8 @@ pkgs.writeShellScriptBin "reload" ''
   ${pkgs.alejandra}/bin/alejandra . &>/dev/null \
     || ( ${pkgs.alejandra}/bin/alejandra . ; echo "Formatting failed!" && exit 1)
 
-  # Check if --force is provided as an argument
-  FORCE=false
-  for arg in "$@"; do
-    if [ "$arg" == "--force" ]; then
-      FORCE=true
-      break
-    fi
-  done
-
   # Early return if no changes were detected (thanks @singiamtel!)
-  if ! FORCE sudo git diff HEAD --quiet; then
+  if ! [[ "$*" =~ "--force" ]] && sudo git diff HEAD --quiet; then
       echo "No changes detected, exiting."
       {
           popd
