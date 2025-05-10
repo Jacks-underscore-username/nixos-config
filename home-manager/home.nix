@@ -54,6 +54,7 @@
       ".vscode"
       ".cache/google-chrome"
       ".config/google-chrome"
+      ".config/Code"
     ];
     files = [
     ];
