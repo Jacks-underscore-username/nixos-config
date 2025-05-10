@@ -25,7 +25,7 @@ pkgs.writeShellScriptBin "reload" ''
     || ( ${pkgs.alejandra}/bin/alejandra . ; echo "Formatting failed!" && exit 1)
 
   # Early return if no changes were detected (thanks @singiamtel!)
-  if git diff HEAD --quiet; then
+  if sudo git diff HEAD --quiet; then
       echo "No changes detected, exiting."
       {
           popd

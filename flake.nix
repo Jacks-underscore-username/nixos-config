@@ -67,7 +67,6 @@
         };
         modules = [
           inputs.disko.nixosModules.default
-          # (import ./disko.nix { device = "nvme0n1"; })
 
           ./nixos/configuration.nix
 

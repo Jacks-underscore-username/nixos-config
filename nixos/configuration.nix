@@ -42,7 +42,7 @@ in {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
+    # outputs.nixosModules.default
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -58,6 +58,8 @@ in {
     inputs.home-manager.nixosModules.home-manager
 
     ./disko.nix
+
+    # ../modules/nixos/default.nix
   ];
 
   nixpkgs = {
