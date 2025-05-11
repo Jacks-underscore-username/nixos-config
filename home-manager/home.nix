@@ -133,6 +133,9 @@
     jellyfin-ffmpeg
 
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
+
+    (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
+    # <MACRO INSERT>
   ];
 
   # Let home manager manage itself.

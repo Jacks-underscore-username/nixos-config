@@ -103,6 +103,8 @@
           "SUPER,l,exec,toggleLightMode"
 
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
+
+          # <MACRO INSERT>
         ];
         binde = [
           # ",z,exec,hyprctl dispatch sendshortcut \",q,title:(.*Factorio.*)\" && sleep 0.01 && hyprctl dispatch sendshortcut \",mouse:272,title:(.*Factorio.*)\" && sleep 0.01 && hyprctl dispatch sendshortcut \",q,title:(.*Factorio.*)\""
