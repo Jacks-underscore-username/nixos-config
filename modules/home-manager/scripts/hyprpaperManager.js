@@ -20,7 +20,7 @@ const [lightPapers, darkPapers] = [lightPath, darkPath].map(
 const lastPapers = new Set();
 
 const isLightMode = () =>
-	fs.existsSync(modePath) && fs.readFileSync(modePath) === "light";
+	fs.existsSync(modePath) && fs.readFileSync(modePath, "utf8") === "light";
 
 const randomizePapers = async () => {
 	while (true)
@@ -36,7 +36,10 @@ const randomizePapers = async () => {
 				const paper =
 					Array.from(validPapers)[Math.floor(Math.random() * validPapers.size)];
 				currentPapers.add(paper);
-				const paperPath = path.resolve(papersPath, paper);
+				const paperPath = path.resolve(
+					isLightMode() ? lightPath : darkPath,
+					paper,
+				);
 				execSync(`hyprctl hyprpaper reload "${name},${paperPath}"`);
 			}
 			lastPapers.clear();

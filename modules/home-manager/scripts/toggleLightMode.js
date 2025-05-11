@@ -7,7 +7,7 @@ const statePath = path.resolve(process.argv[1], "../toggleLightMode.state");
 if (fs.existsSync(statePath))
 	fs.writeFileSync(
 		statePath,
-		fs.readFileSync(statePath) === "dark" ? "light" : "dark",
+		fs.readFileSync(statePath, "utf8") === "dark" ? "light" : "dark",
 	);
 else fs.writeFileSync(statePath, "dark");
 

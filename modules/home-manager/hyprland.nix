@@ -100,6 +100,7 @@
           "SUPER,f,togglefloating"
 
           "SUPER,p,exec,hyprpaperManager"
+          "SUPER,l,exec,toggleLightMode"
 
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
         ];
