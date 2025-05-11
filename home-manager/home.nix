@@ -181,7 +181,6 @@
       showQueueDuration
       history
       betterGenres
-      starRatings
     ];
   };
 
