@@ -15,6 +15,6 @@ const randomizePapers = () => {
 
 // randomizePapers();
 
-// console.log(execSync("hyprctl monitors -j"));
+console.log(execSync("hyprctl monitors -j"));
 
-console.log(execSync("hyprctl workspaces"));
+// console.log(execSync("hyprctl workspaces"));
