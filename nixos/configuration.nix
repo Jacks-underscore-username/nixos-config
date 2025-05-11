@@ -40,6 +40,8 @@ in {
     inputs.home-manager.nixosModules.home-manager
 
     ./disko.nix
+
+    ../modules/nixos/default.nix
   ];
 
   nixpkgs = {
