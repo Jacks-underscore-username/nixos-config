@@ -54,4 +54,5 @@ fs.writeFileSync(
 		.join("\n"),
 );
 
-exec(`code ${path.resolve(scriptsPath, `${name}.js`)}`);
+exec(`hyprctl dispatch exec "code ${path.resolve(scriptsPath, `${name}.js`)}"`);
+console.log("Macro created!");
