@@ -43,6 +43,7 @@
           font_family = "FiraCode Nerd Font";
           animate_manual_resizes = true;
           animate_mouse_windowdragging = true;
+          background_color = "0x000000";
         };
         input = {
           touchpad = {
