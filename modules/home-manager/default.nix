@@ -5,6 +5,7 @@
     ./hyprland.nix
     ./java.nix
     ./git.nix
+    ./spicetify.nix
   ];
 
   hyprland.monitors = [
