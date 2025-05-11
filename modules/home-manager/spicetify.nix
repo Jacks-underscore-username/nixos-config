@@ -3,16 +3,14 @@
   inputs,
   ...
 }: {
-  programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in {
+  programs.spicetify = {
     enable = true;
     colorScheme = "Forest";
     alwaysEnableDevTools = true;
-    enabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
       adblockify
       hidePodcasts
-      shuffle
+      # shuffle
       trashbin
       goToSong
       playlistIntersection
