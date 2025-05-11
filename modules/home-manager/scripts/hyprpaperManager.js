@@ -13,6 +13,14 @@ fs.writeFileSync(
 const allPapers = new Set(fs.readdirSync(papersPath));
 const lastPapers = new Set();
 
+while (true) {
+	try {
+		if (execSync("hyprctl hyprpaper").toString() === "invalid command\n") break;
+	} catch (e) {}
+	execSync("hyprctl dispatch exec hyprpaper");
+	await new Promise((r) => setInterval(r, 100));
+}
+
 const randomizePapers = () => {
 	const monitors = JSON.parse(execSync("hyprctl monitors -j").toString()).map(
 		(e) => e.name,
@@ -34,15 +42,20 @@ const randomizePapers = () => {
 
 randomizePapers();
 
-const timeArg = process.argv[2];
-console.log(timeArg);
-const timeUnit = timeArg[timeArg.length - 1];
-const timeNumber = Number.parseInt(timeArg.slice(0, timeArg.length - 1));
-const time =
-	timeUnit === "h"
-		? timeNumber * 1000 * 60 * 60
-		: timeUnit === "m"
-			? timeNumber * 1000 * 60
-			: timeNumber * 1000;
-console.log(time);
-setInterval(randomizePapers, time);
+let lastMonitors;
+if (
+	execSync("ps -ef | grep hyprpaperManager.js").toString().split("\n")
+		.length === 4
+)
+	setInterval(() => {
+		try {
+			const monitors = JSON.parse(execSync("hyprctl monitors -j").toString())
+				.map((e) => e.name)
+				.sort()
+				.join(", ");
+			if (monitors !== lastMonitors) {
+				randomizePapers();
+				lastMonitors = monitors;
+			}
+		} catch (e) {}
+	}, 1000);

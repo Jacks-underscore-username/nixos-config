@@ -30,7 +30,7 @@
         ];
         exec-once = [
           "waybar"
-          "hyprpaper"
+          "hyprpaperManager"
         ];
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
