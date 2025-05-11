@@ -120,15 +120,16 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1745959350,
-        "narHash": "sha256-2R0C7vAIJhLlbB5Qhc9jKzJEOB3Wl0+dH8ZmyqEA9wY=",
+        "lastModified": 1743595372,
+        "narHash": "sha256-e3x1mhpPpYgyyin9j/VbrBpOT5PFpEfx2hkxVZuJZhg=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "5b0b21bd6d38b2ccf4fdcb9f082abcb60ca25f7c",
+        "rev": "543f12dd14c62ddee79ab79fbfd8726f312b89ff",
         "type": "github"
       },
       "original": {
         "owner": "Gerg-L",
+        "ref": "24.11",
         "repo": "spicetify-nix",
         "type": "github"
       }

@@ -169,24 +169,24 @@
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      shuffle
-    ];
+    # enabledExtensions = with spicePkgs.extensions; [
+    #   shuffle
+    # ];
     theme = spicePkgs.themes.starryNight;
     colorScheme = "Forest";
     alwaysEnableDevTools = true;
-    # enabledExtensions = with spicePkgs.extensions; [
-    #   adblockify
-    #   hidePodcasts
-    #   shuffle
-    #   trashbin
-    #   goToSong
-    #   playlistIntersection
-    #   showQueueDuration
-    #   history
-    #   betterGenres
-    #   starRatings
-    # ];
+    enabledExtensions = with spicePkgs.extensions; [
+      adblockify
+      hidePodcasts
+      shuffle
+      trashbin
+      goToSong
+      playlistIntersection
+      showQueueDuration
+      history
+      betterGenres
+      starRatings
+    ];
   };
 
   programs.home-manager.enable = true;
