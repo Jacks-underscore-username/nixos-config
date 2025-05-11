@@ -51,30 +51,14 @@ in {
     config.allowUnfree = true;
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      # flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      # nix-path = config.nix.nixPath;
-
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-    };
-    # Opinionated: disable channels
-    # channel.enable = false;
-
-    # Opinionated: make flake registry and nix path match flake inputs
-    # registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    # nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
   networking.hostName = "Nixos";
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -121,23 +105,16 @@ in {
     "d /persist/home/jackc 0770 jackc users -" # /persist/home/jackc created, owned by that user
   ];
 
-  users.users = {
-    jackc = {
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
-      extraGroups = ["wheel" "networkmanager"];
-      initialPassword = "0";
-    };
+  users.users.jackc = {
+    isNormalUser = true;
+    extraGroups = ["wheel" "networkmanager"];
+    # TODO: Fix this:
+    initialPassword = "0";
   };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
-    users = {
-      # Import your home-manager configuration
-      jackc = import ../home-manager/home.nix;
-    };
+    users.jackc = import ../home-manager/home.nix;
   };
 
   # Enable networking
@@ -169,7 +146,7 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  # TODO
+  # TODO: ?
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
@@ -184,7 +161,7 @@ in {
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Make home manager not complain as much.
-  # FIXME
+  # TODO: ?
   home-manager.backupFileExtension = "backup";
 
   # Configure keymap in X11
@@ -197,7 +174,7 @@ in {
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  # FIXME
+  # TODO: ?
   # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -217,38 +194,30 @@ in {
   services.libinput.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "yes";
-      PasswordAuthentication = true;
-    };
-  };
+  # TODO: ?
+  # services.openssh = {
+  #   enable = true;
+  #   settings = {
+  #     PermitRootLogin = "yes";
+  #     PasswordAuthentication = true;
+  #   };
+  # };
 
   # Make everything firacode
-  fonts.packages = with pkgs; [
-    pkgs.unstable.nerd-fonts.fira-code
-  ];
-
+  fonts.packages = [pkgs.unstable.nerd-fonts.fira-code];
   fonts.enableDefaultPackages = true;
-
   fonts.fontDir.enable = true;
-
-  fonts.fontconfig = {
-    defaultFonts = {
-      serif = ["FiraCode Nerd Font"];
-      sansSerif = ["FiraCode Nerd Font"];
-      monospace = ["FiraCode Nerd Font"];
-    };
+  fonts.fontconfig.defaultFonts = {
+    serif = ["FiraCode Nerd Font"];
+    sansSerif = ["FiraCode Nerd Font"];
+    monospace = ["FiraCode Nerd Font"];
   };
 
-  # FIXME
+  # TODO: ?
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = runtimeLibs;
 
-  environment.variables = {
-    LD_LIBRARY_PATH = lib.makeLibraryPath runtimeLibs;
-  };
+  environment.variables.LD_LIBRARY_PATH = lib.makeLibraryPath runtimeLibs;
 
   programs.steam = {
     enable = true;
