@@ -24,10 +24,6 @@
       enable = true;
       # plugins = [pkgs.hyprlandPlugins.hypr-dynamic-cursors];
       settings = {
-        layerrule = [
-          # "blur, class:waybar"
-          # "blur, waybar"
-        ];
         exec-once = [
           "waybar"
           "hyprpaperManager"
@@ -40,6 +36,9 @@
         monitor = config.hyprland.monitors;
         general = {
           no_focus_fallback = true;
+        };
+        misc = {
+          disable_hyprland_logo = true;
         };
         input = {
           touchpad = {
