@@ -126,6 +126,9 @@
     (import ../modules/home-manager/scripts/compareDir.nix {inherit pkgs;})
 
     htop
+
+    hyprpaper
+    (import ../modules/home-manager/scripts/hyprpaperManager.nix {inherit pkgs;})
   ];
 
   # Let home manager manage itself.
