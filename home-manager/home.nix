@@ -169,10 +169,6 @@
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
-    # enabledExtensions = with spicePkgs.extensions; [
-    #   shuffle
-    # ];
-    theme = spicePkgs.themes.starryNight;
     colorScheme = "Forest";
     alwaysEnableDevTools = true;
     enabledExtensions = with spicePkgs.extensions; [
