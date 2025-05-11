@@ -46,11 +46,6 @@
             natural_scroll = true;
           };
         };
-        windowrule = [
-          # "opacity 0.25, title:.*waybar.*"
-          # "tile, title:(.*)"
-          # "suppressevent maximize, class:.*"
-        ];
         env = [
           "AQ_NO_MODIFIERS,1"
         ];
@@ -103,8 +98,6 @@
           "SUPER,p,exec,peek"
 
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
-
-          "SUPER,w,exec,pkill waybar && env GTK_DEBUG=interactive waybar"
         ];
         binde = [
           # ",z,exec,hyprctl dispatch sendshortcut \",q,title:(.*Factorio.*)\" && sleep 0.01 && hyprctl dispatch sendshortcut \",mouse:272,title:(.*Factorio.*)\" && sleep 0.01 && hyprctl dispatch sendshortcut \",q,title:(.*Factorio.*)\""
