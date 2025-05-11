@@ -1,0 +1,1276 @@
+{
+  "0.jpg": {
+    "Vibrant": {
+      "population": 4416,
+      "hex": "#bdb01b"
+    },
+    "DarkVibrant": {
+      "population": 9,
+      "hex": "#7d4c10"
+    },
+    "LightVibrant": {
+      "population": 3339,
+      "hex": "#d7ba9e"
+    },
+    "Muted": {
+      "population": 22822,
+      "hex": "#856a4b"
+    },
+    "DarkMuted": {
+      "population": 23671,
+      "hex": "#624d36"
+    },
+    "LightMuted": {
+      "population": 14536,
+      "hex": "#95b5ca"
+    }
+  },
+  "1.jpg": {
+    "Vibrant": {
+      "population": 4566,
+      "hex": "#4980bf"
+    },
+    "DarkVibrant": {
+      "population": 9615,
+      "hex": "#1d3962"
+    },
+    "LightVibrant": {
+      "population": 9502,
+      "hex": "#98c5f8"
+    },
+    "Muted": {
+      "population": 4312,
+      "hex": "#5981b1"
+    },
+    "DarkMuted": {
+      "population": 10930,
+      "hex": "#3c5274"
+    },
+    "LightMuted": {
+      "population": 4066,
+      "hex": "#92abcc"
+    }
+  },
+  "2.jpg": {
+    "Vibrant": {
+      "population": 15609,
+      "hex": "#c5a345"
+    },
+    "DarkVibrant": {
+      "population": 32802,
+      "hex": "#715d22"
+    },
+    "LightVibrant": {
+      "population": 1007,
+      "hex": "#ede1c6"
+    },
+    "Muted": {
+      "population": 33264,
+      "hex": "#67809a"
+    },
+    "DarkMuted": {
+      "population": 35598,
+      "hex": "#3b5372"
+    },
+    "LightMuted": {
+      "population": 4383,
+      "hex": "#cbc1a8"
+    }
+  },
+  "3.jpg": {
+    "Vibrant": {
+      "population": 147,
+      "hex": "#cbb536"
+    },
+    "DarkVibrant": {
+      "population": 1122,
+      "hex": "#5f561b"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#e3d895"
+    },
+    "Muted": {
+      "population": 66335,
+      "hex": "#838862"
+    },
+    "DarkMuted": {
+      "population": 46348,
+      "hex": "#4e4c2c"
+    },
+    "LightMuted": {
+      "population": 13537,
+      "hex": "#b0b7c7"
+    }
+  },
+  "4.jpg": {
+    "Vibrant": {
+      "population": 5378,
+      "hex": "#1493d4"
+    },
+    "DarkVibrant": {
+      "population": 14562,
+      "hex": "#5d5a0d"
+    },
+    "LightVibrant": {
+      "population": 21357,
+      "hex": "#99b9d1"
+    },
+    "Muted": {
+      "population": 44143,
+      "hex": "#566f86"
+    },
+    "DarkMuted": {
+      "population": 24482,
+      "hex": "#3f4c28"
+    },
+    "LightMuted": {
+      "population": 48177,
+      "hex": "#86a3c1"
+    }
+  },
+  "5.jpg": {
+    "Vibrant": {
+      "population": 1,
+      "hex": "#b4a414"
+    },
+    "DarkVibrant": {
+      "population": 17185,
+      "hex": "#735719"
+    },
+    "LightVibrant": {
+      "population": 2796,
+      "hex": "#93a3cc"
+    },
+    "Muted": {
+      "population": 6777,
+      "hex": "#6b789e"
+    },
+    "DarkMuted": {
+      "population": 44,
+      "hex": "#3c4428"
+    },
+    "LightMuted": {
+      "population": 12752,
+      "hex": "#98a4c2"
+    }
+  },
+  "6.jpg": {
+    "Vibrant": {
+      "population": 2016,
+      "hex": "#b3985a"
+    },
+    "DarkVibrant": {
+      "population": 3070,
+      "hex": "#0d4159"
+    },
+    "LightVibrant": {
+      "population": 7162,
+      "hex": "#e5d4bb"
+    },
+    "Muted": {
+      "population": 15,
+      "hex": "#ac6266"
+    },
+    "DarkMuted": {
+      "population": 23387,
+      "hex": "#314f60"
+    },
+    "LightMuted": {
+      "population": 13597,
+      "hex": "#b2c3d7"
+    }
+  },
+  "7.jpg": {
+    "Vibrant": {
+      "population": 4312,
+      "hex": "#eb540d"
+    },
+    "DarkVibrant": {
+      "population": 3854,
+      "hex": "#7f1627"
+    },
+    "LightVibrant": {
+      "population": 1327,
+      "hex": "#fb9e26"
+    },
+    "Muted": {
+      "population": 15169,
+      "hex": "#5666a1"
+    },
+    "DarkMuted": {
+      "population": 14818,
+      "hex": "#432c5e"
+    },
+    "LightMuted": {
+      "population": 19505,
+      "hex": "#637cb8"
+    }
+  },
+  "8.jpg": {
+    "Vibrant": {
+      "population": 65,
+      "hex": "#2474ac"
+    },
+    "DarkVibrant": {
+      "population": 39,
+      "hex": "#69471a"
+    },
+    "LightVibrant": {
+      "population": 27101,
+      "hex": "#a2c6da"
+    },
+    "Muted": {
+      "population": 23717,
+      "hex": "#4e897d"
+    },
+    "DarkMuted": {
+      "population": 10669,
+      "hex": "#2b4d5b"
+    },
+    "LightMuted": {
+      "population": 2530,
+      "hex": "#b4c6cf"
+    }
+  },
+  "9.jpg": {
+    "Vibrant": {
+      "population": 25403,
+      "hex": "#097dbe"
+    },
+    "DarkVibrant": {
+      "population": 43303,
+      "hex": "#82940f"
+    },
+    "LightVibrant": {
+      "population": 13655,
+      "hex": "#90bddf"
+    },
+    "Muted": {
+      "population": 46288,
+      "hex": "#5a8199"
+    },
+    "DarkMuted": {
+      "population": 9226,
+      "hex": "#34434f"
+    },
+    "LightMuted": {
+      "population": 36054,
+      "hex": "#bccbda"
+    }
+  },
+  "10.jpg": {
+    "Vibrant": {
+      "population": 13268,
+      "hex": "#446d9a"
+    },
+    "DarkVibrant": {
+      "population": 7347,
+      "hex": "#2a4562"
+    },
+    "LightVibrant": {
+      "population": 6154,
+      "hex": "#d8eafc"
+    },
+    "Muted": {
+      "population": 55887,
+      "hex": "#50739c"
+    },
+    "DarkMuted": {
+      "population": 457,
+      "hex": "#343c54"
+    },
+    "LightMuted": {
+      "population": 66172,
+      "hex": "#a0acbb"
+    }
+  },
+  "11.jpg": {
+    "Vibrant": {
+      "population": 20554,
+      "hex": "#0580d9"
+    },
+    "DarkVibrant": {
+      "population": 18940,
+      "hex": "#094e73"
+    },
+    "LightVibrant": {
+      "population": 10510,
+      "hex": "#379ee4"
+    },
+    "Muted": {
+      "population": 6153,
+      "hex": "#b49c69"
+    },
+    "DarkMuted": {
+      "population": 3536,
+      "hex": "#29463d"
+    },
+    "LightMuted": {
+      "population": 5847,
+      "hex": "#9dc7d1"
+    }
+  },
+  "12.jpg": {
+    "Vibrant": {
+      "population": 1,
+      "hex": "#143c9c"
+    },
+    "DarkVibrant": {
+      "population": 624,
+      "hex": "#1f3970"
+    },
+    "LightVibrant": {
+      "population": 344,
+      "hex": "#a4c3f4"
+    },
+    "Muted": {
+      "population": 72423,
+      "hex": "#6079a2"
+    },
+    "DarkMuted": {
+      "population": 81247,
+      "hex": "#405370"
+    },
+    "LightMuted": {
+      "population": 18,
+      "hex": "#9ca4c8"
+    }
+  },
+  "13.jpg": {
+    "Vibrant": {
+      "population": 39740,
+      "hex": "#6393b8"
+    },
+    "DarkVibrant": {
+      "population": 31089,
+      "hex": "#362d17"
+    },
+    "LightVibrant": {
+      "population": 37717,
+      "hex": "#84adc9"
+    },
+    "Muted": {
+      "population": 15737,
+      "hex": "#87846f"
+    },
+    "DarkMuted": {
+      "population": 20606,
+      "hex": "#595035"
+    },
+    "LightMuted": {
+      "population": 20177,
+      "hex": "#acc3d0"
+    }
+  },
+  "14.jpg": {
+    "Vibrant": {
+      "population": 52671,
+      "hex": "#0457d3"
+    },
+    "DarkVibrant": {
+      "population": 59438,
+      "hex": "#0d477b"
+    },
+    "LightVibrant": {
+      "population": 2049,
+      "hex": "#e4c29b"
+    },
+    "Muted": {
+      "population": 136,
+      "hex": "#b69379"
+    },
+    "DarkMuted": {
+      "population": 6295,
+      "hex": "#456688"
+    },
+    "LightMuted": {
+      "population": 58776,
+      "hex": "#cdb895"
+    }
+  },
+  "15.jpg": {
+    "Vibrant": {
+      "population": 11856,
+      "hex": "#2485d8"
+    },
+    "DarkVibrant": {
+      "population": 15,
+      "hex": "#744407"
+    },
+    "LightVibrant": {
+      "population": 12216,
+      "hex": "#89b9e8"
+    },
+    "Muted": {
+      "population": 413,
+      "hex": "#6c88b2"
+    },
+    "DarkMuted": {
+      "population": 3128,
+      "hex": "#443e26"
+    },
+    "LightMuted": {
+      "population": 19,
+      "hex": "#c6acac"
+    }
+  },
+  "16.jpg": {
+    "Vibrant": {
+      "population": 27098,
+      "hex": "#427093"
+    },
+    "DarkVibrant": {
+      "population": 14406,
+      "hex": "#2e587b"
+    },
+    "LightVibrant": {
+      "population": 2,
+      "hex": "#bc9470"
+    },
+    "Muted": {
+      "population": 14953,
+      "hex": "#5f89a6"
+    },
+    "DarkMuted": {
+      "population": 2304,
+      "hex": "#594a38"
+    },
+    "LightMuted": {
+      "population": 1066,
+      "hex": "#a1bacc"
+    }
+  },
+  "17.jpg": {
+    "Vibrant": {
+      "population": 6653,
+      "hex": "#1473c4"
+    },
+    "DarkVibrant": {
+      "population": 7410,
+      "hex": "#0c68b7"
+    },
+    "LightVibrant": {
+      "population": 3345,
+      "hex": "#85a9ce"
+    },
+    "Muted": {
+      "population": 7675,
+      "hex": "#5d718d"
+    },
+    "DarkMuted": {
+      "population": 6980,
+      "hex": "#31405d"
+    },
+    "LightMuted": {
+      "population": 8072,
+      "hex": "#a7b0bc"
+    }
+  },
+  "18.jpg": {
+    "Vibrant": {
+      "population": 27122,
+      "hex": "#958d18"
+    },
+    "DarkVibrant": {
+      "population": 32375,
+      "hex": "#757312"
+    },
+    "LightVibrant": {
+      "population": 30875,
+      "hex": "#8badcc"
+    },
+    "Muted": {
+      "population": 52330,
+      "hex": "#5379a5"
+    },
+    "DarkMuted": {
+      "population": 7545,
+      "hex": "#2b4450"
+    },
+    "LightMuted": {
+      "population": 21198,
+      "hex": "#a8bfca"
+    }
+  },
+  "19.jpg": {
+    "Vibrant": {
+      "population": 29220,
+      "hex": "#0790bc"
+    },
+    "DarkVibrant": {
+      "population": 14195,
+      "hex": "#0475a6"
+    },
+    "LightVibrant": {
+      "population": 3915,
+      "hex": "#9fc7dc"
+    },
+    "Muted": {
+      "population": 66747,
+      "hex": "#4d8da2"
+    },
+    "DarkMuted": {
+      "population": 66479,
+      "hex": "#33505b"
+    },
+    "LightMuted": {
+      "population": 68180,
+      "hex": "#9fbccb"
+    }
+  },
+  "20.jpg": {
+    "Vibrant": {
+      "population": 5196,
+      "hex": "#ce8d2e"
+    },
+    "DarkVibrant": {
+      "population": 24327,
+      "hex": "#6d4a30"
+    },
+    "LightVibrant": {
+      "population": 121,
+      "hex": "#c9a481"
+    },
+    "Muted": {
+      "population": 8286,
+      "hex": "#668aae"
+    },
+    "DarkMuted": {
+      "population": 19463,
+      "hex": "#573c2b"
+    },
+    "LightMuted": {
+      "population": 12211,
+      "hex": "#b1c4d3"
+    }
+  },
+  "21.jpg": {
+    "Vibrant": {
+      "population": 247,
+      "hex": "#3c7c8a"
+    },
+    "DarkVibrant": {
+      "population": 2232,
+      "hex": "#234c58"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#a2cdd6"
+    },
+    "Muted": {
+      "population": 11336,
+      "hex": "#4f8291"
+    },
+    "DarkMuted": {
+      "population": 5071,
+      "hex": "#37434d"
+    },
+    "LightMuted": {
+      "population": 3824,
+      "hex": "#b2bfc7"
+    }
+  },
+  "22.jpg": {
+    "Vibrant": {
+      "population": 0,
+      "hex": "#74868a"
+    },
+    "DarkVibrant": {
+      "population": 0,
+      "hex": "#3c4547"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#b7c0c2"
+    },
+    "Muted": {
+      "population": 11876,
+      "hex": "#7d7f82"
+    },
+    "DarkMuted": {
+      "population": 9232,
+      "hex": "#42464d"
+    },
+    "LightMuted": {
+      "population": 19223,
+      "hex": "#b1bbbd"
+    }
+  },
+  "23.jpg": {
+    "Vibrant": {
+      "population": 114,
+      "hex": "#c5682b"
+    },
+    "DarkVibrant": {
+      "population": 4,
+      "hex": "#8c500c"
+    },
+    "LightVibrant": {
+      "population": 2214,
+      "hex": "#d8bda0"
+    },
+    "Muted": {
+      "population": 27896,
+      "hex": "#798ca3"
+    },
+    "DarkMuted": {
+      "population": 1114,
+      "hex": "#2c3c54"
+    },
+    "LightMuted": {
+      "population": 16322,
+      "hex": "#abb6c4"
+    }
+  },
+  "24.jpg": {
+    "Vibrant": {
+      "population": 26830,
+      "hex": "#c85a36"
+    },
+    "DarkVibrant": {
+      "population": 24,
+      "hex": "#702312"
+    },
+    "LightVibrant": {
+      "population": 2144,
+      "hex": "#dc693e"
+    },
+    "Muted": {
+      "population": 675,
+      "hex": "#a07561"
+    },
+    "DarkMuted": {
+      "population": 21839,
+      "hex": "#553836"
+    },
+    "LightMuted": {
+      "population": 696,
+      "hex": "#b9806e"
+    }
+  },
+  "25.jpg": {
+    "Vibrant": {
+      "population": 762,
+      "hex": "#aebd44"
+    },
+    "DarkVibrant": {
+      "population": 231,
+      "hex": "#7d1b34"
+    },
+    "LightVibrant": {
+      "population": 59,
+      "hex": "#daceec"
+    },
+    "Muted": {
+      "population": 64791,
+      "hex": "#8e9b66"
+    },
+    "DarkMuted": {
+      "population": 149803,
+      "hex": "#465424"
+    },
+    "LightMuted": {
+      "population": 133333,
+      "hex": "#b0bfcb"
+    }
+  },
+  "26.jpg": {
+    "Vibrant": {
+      "population": 2508,
+      "hex": "#bf6a4c"
+    },
+    "DarkVibrant": {
+      "population": 914,
+      "hex": "#194e86"
+    },
+    "LightVibrant": {
+      "population": 6434,
+      "hex": "#f0bc9a"
+    },
+    "Muted": {
+      "population": 20372,
+      "hex": "#697ba3"
+    },
+    "DarkMuted": {
+      "population": 16846,
+      "hex": "#3e3d52"
+    },
+    "LightMuted": {
+      "population": 24859,
+      "hex": "#bec2d3"
+    }
+  },
+  "27.jpg": {
+    "Vibrant": {
+      "population": 47374,
+      "hex": "#bfa65c"
+    },
+    "DarkVibrant": {
+      "population": 197,
+      "hex": "#897613"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#d9cb9f"
+    },
+    "Muted": {
+      "population": 53396,
+      "hex": "#5b6d81"
+    },
+    "DarkMuted": {
+      "population": 31898,
+      "hex": "#303f4e"
+    },
+    "LightMuted": {
+      "population": 22025,
+      "hex": "#8296af"
+    }
+  },
+  "28.jpg": {
+    "Vibrant": {
+      "population": 3,
+      "hex": "#c47c1e"
+    },
+    "DarkVibrant": {
+      "population": 41437,
+      "hex": "#6f5119"
+    },
+    "LightVibrant": {
+      "population": 49893,
+      "hex": "#acdefa"
+    },
+    "Muted": {
+      "population": 43512,
+      "hex": "#a18649"
+    },
+    "DarkMuted": {
+      "population": 11382,
+      "hex": "#584426"
+    },
+    "LightMuted": {
+      "population": 3617,
+      "hex": "#a9b4c4"
+    }
+  },
+  "29.jpg": {
+    "Vibrant": {
+      "population": 67679,
+      "hex": "#0480cc"
+    },
+    "DarkVibrant": {
+      "population": 20800,
+      "hex": "#064865"
+    },
+    "LightVibrant": {
+      "population": 17088,
+      "hex": "#449fd7"
+    },
+    "Muted": {
+      "population": 41062,
+      "hex": "#8a9074"
+    },
+    "DarkMuted": {
+      "population": 59255,
+      "hex": "#28425c"
+    },
+    "LightMuted": {
+      "population": 11245,
+      "hex": "#d2c2ac"
+    }
+  },
+  "30.jpg": {
+    "Vibrant": {
+      "population": 791,
+      "hex": "#f8801b"
+    },
+    "DarkVibrant": {
+      "population": 261,
+      "hex": "#8f510a"
+    },
+    "LightVibrant": {
+      "population": 14325,
+      "hex": "#f98444"
+    },
+    "Muted": {
+      "population": 9613,
+      "hex": "#a96f57"
+    },
+    "DarkMuted": {
+      "population": 26882,
+      "hex": "#44353c"
+    },
+    "LightMuted": {
+      "population": 5,
+      "hex": "#b2948c"
+    }
+  },
+  "31.jpg": {
+    "Vibrant": {
+      "population": 20817,
+      "hex": "#d28099"
+    },
+    "DarkVibrant": {
+      "population": 0,
+      "hex": "#612235"
+    },
+    "LightVibrant": {
+      "population": 35627,
+      "hex": "#f4a9af"
+    },
+    "Muted": {
+      "population": 36500,
+      "hex": "#6460a0"
+    },
+    "DarkMuted": {
+      "population": 0,
+      "hex": "#70283e"
+    },
+    "LightMuted": {
+      "population": 5,
+      "hex": "#c494ac"
+    }
+  },
+  "32.jpg": {
+    "Vibrant": {
+      "population": 6419,
+      "hex": "#df8f0c"
+    },
+    "DarkVibrant": {
+      "population": 58438,
+      "hex": "#77370d"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#f8cb81"
+    },
+    "Muted": {
+      "population": 1,
+      "hex": "#b47c54"
+    },
+    "DarkMuted": {
+      "population": 1,
+      "hex": "#644434"
+    },
+    "LightMuted": {
+      "population": 1964,
+      "hex": "#e4e1cd"
+    }
+  },
+  "33.jpg": {
+    "Vibrant": {
+      "population": 176,
+      "hex": "#b43e05"
+    },
+    "DarkVibrant": {
+      "population": 66824,
+      "hex": "#8c2204"
+    },
+    "LightVibrant": {
+      "population": 68688,
+      "hex": "#dcb58d"
+    },
+    "Muted": {
+      "population": 42877,
+      "hex": "#92796c"
+    },
+    "DarkMuted": {
+      "population": 60771,
+      "hex": "#593028"
+    },
+    "LightMuted": {
+      "population": 26589,
+      "hex": "#ece6e2"
+    }
+  },
+  "34.jpg": {
+    "Vibrant": {
+      "population": 504,
+      "hex": "#34649d"
+    },
+    "DarkVibrant": {
+      "population": 2,
+      "hex": "#041c7c"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#9bb9de"
+    },
+    "Muted": {
+      "population": 27,
+      "hex": "#6d99ac"
+    },
+    "DarkMuted": {
+      "population": 617,
+      "hex": "#343d53"
+    },
+    "LightMuted": {
+      "population": 0,
+      "hex": "#264972"
+    }
+  },
+  "35.jpg": {
+    "Vibrant": {
+      "population": 389,
+      "hex": "#89b610"
+    },
+    "DarkVibrant": {
+      "population": 5180,
+      "hex": "#456e0f"
+    },
+    "LightVibrant": {
+      "population": 16,
+      "hex": "#80bbf4"
+    },
+    "Muted": {
+      "population": 12877,
+      "hex": "#6b93aa"
+    },
+    "DarkMuted": {
+      "population": 2511,
+      "hex": "#35522b"
+    },
+    "LightMuted": {
+      "population": 17049,
+      "hex": "#9cbad2"
+    }
+  },
+  "36.jpg": {
+    "Vibrant": {
+      "population": 8901,
+      "hex": "#048f98"
+    },
+    "DarkVibrant": {
+      "population": 10193,
+      "hex": "#048380"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#7df3fb"
+    },
+    "Muted": {
+      "population": 2,
+      "hex": "#449c9c"
+    },
+    "DarkMuted": {
+      "population": 2,
+      "hex": "#142c28"
+    },
+    "LightMuted": {
+      "population": 0,
+      "hex": "#038c95"
+    }
+  },
+  "37.jpg": {
+    "Vibrant": {
+      "population": 11025,
+      "hex": "#8dabcc"
+    },
+    "DarkVibrant": {
+      "population": 0,
+      "hex": "#28415b"
+    },
+    "LightVibrant": {
+      "population": 22424,
+      "hex": "#a1bed5"
+    },
+    "Muted": {
+      "population": 32877,
+      "hex": "#728396"
+    },
+    "DarkMuted": {
+      "population": 12200,
+      "hex": "#424a54"
+    },
+    "LightMuted": {
+      "population": 57216,
+      "hex": "#b3c1d2"
+    }
+  },
+  "38.jpg": {
+    "Vibrant": {
+      "population": 261,
+      "hex": "#d17411"
+    },
+    "DarkVibrant": {
+      "population": 1,
+      "hex": "#8c340c"
+    },
+    "LightVibrant": {
+      "population": 4,
+      "hex": "#fab460"
+    },
+    "Muted": {
+      "population": 2568,
+      "hex": "#9c7350"
+    },
+    "DarkMuted": {
+      "population": 14099,
+      "hex": "#534231"
+    },
+    "LightMuted": {
+      "population": 8651,
+      "hex": "#baccd1"
+    }
+  },
+  "39.jpg": {
+    "Vibrant": {
+      "population": 90,
+      "hex": "#c45c19"
+    },
+    "DarkVibrant": {
+      "population": 10,
+      "hex": "#8f2c04"
+    },
+    "LightVibrant": {
+      "population": 7484,
+      "hex": "#eece91"
+    },
+    "Muted": {
+      "population": 17874,
+      "hex": "#9d765f"
+    },
+    "DarkMuted": {
+      "population": 365,
+      "hex": "#50332c"
+    },
+    "LightMuted": {
+      "population": 15705,
+      "hex": "#c6d7e3"
+    }
+  },
+  "40.jpg": {
+    "Vibrant": {
+      "population": 2770,
+      "hex": "#b2993e"
+    },
+    "DarkVibrant": {
+      "population": 3520,
+      "hex": "#5c4e10"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#dcce9c"
+    },
+    "Muted": {
+      "population": 2,
+      "hex": "#ac6c60"
+    },
+    "DarkMuted": {
+      "population": 15951,
+      "hex": "#403524"
+    },
+    "LightMuted": {
+      "population": 3175,
+      "hex": "#d5c4b0"
+    }
+  },
+  "41.jpg": {
+    "Vibrant": {
+      "population": 288,
+      "hex": "#1d6790"
+    },
+    "DarkVibrant": {
+      "population": 229,
+      "hex": "#104a6b"
+    },
+    "LightVibrant": {
+      "population": 609,
+      "hex": "#e6c1b1"
+    },
+    "Muted": {
+      "population": 6593,
+      "hex": "#56738d"
+    },
+    "DarkMuted": {
+      "population": 6522,
+      "hex": "#2b4559"
+    },
+    "LightMuted": {
+      "population": 6289,
+      "hex": "#b89c9b"
+    }
+  },
+  "42.jpg": {
+    "Vibrant": {
+      "population": 612,
+      "hex": "#be7f4f"
+    },
+    "DarkVibrant": {
+      "population": 191,
+      "hex": "#67412a"
+    },
+    "LightVibrant": {
+      "population": 3,
+      "hex": "#8cbcf9"
+    },
+    "Muted": {
+      "population": 979,
+      "hex": "#6274b2"
+    },
+    "DarkMuted": {
+      "population": 10,
+      "hex": "#5c3436"
+    },
+    "LightMuted": {
+      "population": 202,
+      "hex": "#cab5a9"
+    }
+  },
+  "43.jpg": {
+    "Vibrant": {
+      "population": 4,
+      "hex": "#be640a"
+    },
+    "DarkVibrant": {
+      "population": 1,
+      "hex": "#843c0c"
+    },
+    "LightVibrant": {
+      "population": 25163,
+      "hex": "#f8ce9b"
+    },
+    "Muted": {
+      "population": 72104,
+      "hex": "#917d6d"
+    },
+    "DarkMuted": {
+      "population": 14467,
+      "hex": "#767f3d"
+    },
+    "LightMuted": {
+      "population": 65340,
+      "hex": "#cbb6a1"
+    }
+  },
+  "44.jpg": {
+    "Vibrant": {
+      "population": 5714,
+      "hex": "#ac7d3d"
+    },
+    "DarkVibrant": {
+      "population": 83,
+      "hex": "#1c5c78"
+    },
+    "LightVibrant": {
+      "population": 3069,
+      "hex": "#e4c8af"
+    },
+    "Muted": {
+      "population": 812,
+      "hex": "#a2715c"
+    },
+    "DarkMuted": {
+      "population": 83877,
+      "hex": "#4d3c32"
+    },
+    "LightMuted": {
+      "population": 73820,
+      "hex": "#b9a899"
+    }
+  },
+  "45.jpg": {
+    "Vibrant": {
+      "population": 44339,
+      "hex": "#d78f22"
+    },
+    "DarkVibrant": {
+      "population": 23373,
+      "hex": "#6f3814"
+    },
+    "LightVibrant": {
+      "population": 3400,
+      "hex": "#9bb6e4"
+    },
+    "Muted": {
+      "population": 7925,
+      "hex": "#527eb4"
+    },
+    "DarkMuted": {
+      "population": 2431,
+      "hex": "#273b49"
+    },
+    "LightMuted": {
+      "population": 13078,
+      "hex": "#afb9d4"
+    }
+  },
+  "46.jpg": {
+    "Vibrant": {
+      "population": 20,
+      "hex": "#9b9139"
+    },
+    "DarkVibrant": {
+      "population": 737,
+      "hex": "#506931"
+    },
+    "LightVibrant": {
+      "population": 29262,
+      "hex": "#a3cbf1"
+    },
+    "Muted": {
+      "population": 212,
+      "hex": "#a9865f"
+    },
+    "DarkMuted": {
+      "population": 1596,
+      "hex": "#4f4b36"
+    },
+    "LightMuted": {
+      "population": 9015,
+      "hex": "#ccbcad"
+    }
+  },
+  "47.jpg": {
+    "Vibrant": {
+      "population": 12,
+      "hex": "#81661d"
+    },
+    "DarkVibrant": {
+      "population": 248,
+      "hex": "#4e4719"
+    },
+    "LightVibrant": {
+      "population": 0,
+      "hex": "#e6d092"
+    },
+    "Muted": {
+      "population": 68859,
+      "hex": "#7e7a77"
+    },
+    "DarkMuted": {
+      "population": 1,
+      "hex": "#2c2c54"
+    },
+    "LightMuted": {
+      "population": 29044,
+      "hex": "#c8c0a4"
+    }
+  },
+  "48.jpg": {
+    "Vibrant": {
+      "population": 319,
+      "hex": "#8d7132"
+    },
+    "DarkVibrant": {
+      "population": 1,
+      "hex": "#6c3c24"
+    },
+    "LightVibrant": {
+      "population": 31208,
+      "hex": "#92b9de"
+    },
+    "Muted": {
+      "population": 6106,
+      "hex": "#9c8160"
+    },
+    "DarkMuted": {
+      "population": 35289,
+      "hex": "#5f5233"
+    },
+    "LightMuted": {
+      "population": 31639,
+      "hex": "#a8b5c6"
+    }
+  }
+}

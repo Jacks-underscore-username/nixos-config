@@ -3,6 +3,7 @@
 [X] - Make the *EVERYTHING* delete itself except what I define in this config
 [ ] - Setup secrets so I can store login info on the git repo
 [X] - Add backgrounds from here https://imgur.com/a/2560x1440-wallpaper-dump-mostly-nature-200-images-B6aB1hS
+[X] - Extract colors from the backgrounds for style
 [ ] - Create a status bar with ags
 [ ] - Style kitty
 [ ] - Style vscode

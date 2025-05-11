@@ -129,6 +129,8 @@
 
     hyprpaper
     (import ../modules/home-manager/scripts/hyprpaperManager.nix {inherit pkgs;})
+
+    jellyfin-ffmpeg
   ];
 
   # Let home manager manage itself.
