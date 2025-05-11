@@ -99,7 +99,7 @@
           "SUPERALT,f,fullscreen"
           "SUPER,f,togglefloating"
 
-          "SUPER,p,exec,peek"
+          "SUPER,p,exec,hyprpaperManager"
 
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
         ];
