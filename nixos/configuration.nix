@@ -110,7 +110,7 @@ in {
   users.users.jackc = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];
-    # TODO: Fix this:
+    # TODO: Figure out actual passwords.
     initialPassword = "0";
   };
 
@@ -148,7 +148,7 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  # TODO: ?
+  # TODO: WIT
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
@@ -163,7 +163,6 @@ in {
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Make home manager not complain as much.
-  # TODO: ?
   home-manager.backupFileExtension = "backup";
 
   # Configure keymap in X11
@@ -215,7 +214,7 @@ in {
     monospace = ["FiraCode Nerd Font"];
   };
 
-  # TODO: ?
+  # TODO: WIT
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = runtimeLibs;
 
