@@ -55,6 +55,8 @@
       ".cache/google-chrome"
       ".config/google-chrome"
       ".config/Code"
+      ".cache/spotify"
+      ".config/spotify"
     ];
     files = [
     ];
