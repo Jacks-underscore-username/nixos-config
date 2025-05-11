@@ -2,13 +2,11 @@ const { execSync } = require("node:child_process");
 const path = require("node:path");
 const fs = require("node:fs");
 
-const assetsPath = path.resolve(process.argv[1], "../../../../assets");
-const papersPath = path.resolve(assetsPath, "wallpapers");
-const blankPath = path.resolve(assetsPath, "black_pixel.png");
-fs.writeFileSync(
-	"/home/jackc/.config/hypr/hyprpaper.conf",
-	`preload = ${blankPath}\nwallpaper = ,${blankPath}`,
+const papersPath = path.resolve(
+	process.argv[1],
+	"../../../../assets/wallpapers",
 );
+fs.writeFileSync("/home/jackc/.config/hypr/hyprpaper.conf", "");
 
 const allPapers = new Set(fs.readdirSync(papersPath));
 const lastPapers = new Set();
