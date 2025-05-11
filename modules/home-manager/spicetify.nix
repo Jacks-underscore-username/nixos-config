@@ -10,7 +10,7 @@
     enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
       adblockify
       hidePodcasts
-      # shuffle
+      shuffle
       trashbin
       goToSong
       playlistIntersection
