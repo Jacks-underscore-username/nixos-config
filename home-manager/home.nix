@@ -131,6 +131,8 @@
     (import ../modules/home-manager/scripts/hyprpaperManager.nix {inherit pkgs;})
 
     jellyfin-ffmpeg
+
+    (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
   ];
 
   # Let home manager manage itself.

@@ -6,10 +6,21 @@ const papersPath = path.resolve(
 	process.argv[1],
 	"../../../../assets/wallpapers",
 );
+const [lightPath, darkPath] = ["light", "dark"].map((i) =>
+	path.resolve(papersPath, i),
+);
+const modePath =
+	"/persist/nixos/modules/home-manager/scripts/toggleLightMode.state";
+
 fs.writeFileSync("/home/jackc/.config/hypr/hyprpaper.conf", "");
 
-const allPapers = new Set(fs.readdirSync(papersPath));
+const [lightPapers, darkPapers] = [lightPath, darkPath].map(
+	(p) => new Set(fs.readdirSync(p)),
+);
 const lastPapers = new Set();
+
+const isLightMode = () =>
+	fs.existsSync(modePath) && fs.readFileSync(modePath) === "light";
 
 const randomizePapers = async () => {
 	while (true)
@@ -19,7 +30,7 @@ const randomizePapers = async () => {
 			).map((e) => e.name);
 			const currentPapers = new Set();
 			for (const name of monitors) {
-				const validPapers = allPapers
+				const validPapers = (isLightMode() ? lightPapers : darkPapers)
 					.difference(lastPapers)
 					.difference(currentPapers);
 				const paper =
