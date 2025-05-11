@@ -1,5 +1,3 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   outputs,
@@ -15,28 +13,12 @@
   ];
 
   nixpkgs = {
-    # You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-    };
+    config.allowUnfree = true;
   };
 
   home = {
@@ -44,25 +26,7 @@
     homeDirectory = "/home/jackc";
   };
 
-  home.persistence."/persist/home/jackc" = {
-    allowOther = true;
-    directories = [
-      ".local/share/PrismLauncher"
-      ".config/discord"
-      ".ssh"
-      ".config/gh"
-      ".vscode"
-      ".cache/google-chrome"
-      ".config/google-chrome"
-      ".config/Code"
-      ".cache/spotify"
-      ".config/spotify"
-    ];
-    files = [
-    ];
-  };
-
-  # Add stuff for your user as you see fit:
+  # TODO: Break these into modules:
   home.packages = with pkgs; [
     git
     gh
@@ -164,9 +128,10 @@
     htop
   ];
 
+  # Let home manager manage itself.
   programs.home-manager.enable = true;
 
-  # Nicely reload system units when changing configs
+  # Nicely reload system units when changing configs.
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
