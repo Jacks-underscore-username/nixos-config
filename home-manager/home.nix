@@ -135,7 +135,7 @@
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
     python314
-    fuse
+    fuse3
 
     (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
     # <MACRO INSERT>
