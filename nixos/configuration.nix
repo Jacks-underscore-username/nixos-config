@@ -32,6 +32,8 @@
     flite
 
     home-manager
+
+    fuse
   ];
 in {
   imports = [
