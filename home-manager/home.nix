@@ -134,6 +134,7 @@
 
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
+    python314
     fuse3
     node-gyp
 
