@@ -137,6 +137,7 @@
     python314
     fuse3
     node-gyp
+    pkg-config
 
     (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
     # <MACRO INSERT>
