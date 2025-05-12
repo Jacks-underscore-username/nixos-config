@@ -134,6 +134,8 @@
 
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
+    python314
+
     (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
     # <MACRO INSERT>
   ];

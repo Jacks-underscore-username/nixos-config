@@ -1,4 +1,4 @@
-const { spawn } = require("node:child_process");
+const { exec } = require("node:child_process");
 const path = require("node:path");
 const fs = require("node:fs");
 const readline = require("node:readline");
@@ -37,7 +37,7 @@ fs.writeFileSync(
 );
 fs.writeFileSync(
 	path.resolve(scriptsPath, `${name}.js`),
-	'const { execSync, spawn } = require("node:child_process");const path = require("node:path");\nconst fs = require("node:fs");\n\nconst statePath = `${process.argv[1].slice(0, process.argv[1].length - 2)}state`;',
+	'const { execSync, exec } = require("node:child_process");const path = require("node:path");\nconst fs = require("node:fs");\n\nconst statePath = `${process.argv[1].slice(0, process.argv[1].length - 2)}state`;',
 );
 fs.writeFileSync(
 	homePath,
@@ -65,11 +65,9 @@ if (hasTrigger)
 			.join("\n"),
 	);
 
-spawn(
-	`hyprctl dispatch exec "code ${path.resolve(scriptsPath, `${name}.js`)}"`,
-	{ detached: true },
-);
+exec(`code ${path.resolve(scriptsPath, `${name}.js`)}`, { detached: true });
 console.log("Macro created!");
 console.log(
 	`Run it with "bun /${path.resolve(scriptsPath, `${name}.js`)}" or just ${name} after a reload`,
 );
+process.exit(0);
