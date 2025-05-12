@@ -60,7 +60,7 @@
     obs-studio
     jetbrains.idea-community
     (import ../modules/home-manager/scripts/cycleWorkspace.nix {inherit pkgs;})
-    nodejs_23
+    # nodejs_23
     bun
     (import ../modules/home-manager/scripts/completeOrphan.nix {inherit pkgs;})
     udisks
@@ -133,12 +133,6 @@
     jellyfin-ffmpeg
 
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
-
-    python314
-    fuse3
-    fuse
-    node-gyp
-    pkg-config
 
     (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
     # <MACRO INSERT>
