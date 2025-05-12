@@ -60,7 +60,8 @@
     obs-studio
     jetbrains.idea-community
     (import ../modules/home-manager/scripts/cycleWorkspace.nix {inherit pkgs;})
-    # nodejs_23
+    nodejs_23
+    node2nix
     bun
     (import ../modules/home-manager/scripts/completeOrphan.nix {inherit pkgs;})
     udisks
