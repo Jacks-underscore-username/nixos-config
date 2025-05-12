@@ -136,6 +136,7 @@
 
     python314
     fuse3
+    fuse
     node-gyp
     pkg-config
 
