@@ -135,6 +135,8 @@
 
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
+    pkgs.unstable.ollama
+
     (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
     # <MACRO INSERT>
   ];
