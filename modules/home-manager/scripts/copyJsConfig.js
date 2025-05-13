@@ -1,5 +1,8 @@
 const fs = require("node:fs");
 const path = require("node:path");
-console.log(process.argv);
 for (const file of ["biome.jsonc", "jsconfig.json"])
-	fs.symlinkSync(path.join(__dirname, file), path.join("/persist/nixos", file));
+	if (!fs.existsSync(path.join(process.argv[2], file)))
+		fs.symlinkSync(
+			path.join("/persist/nixos", file),
+			path.join(process.argv[2], file),
+		);
