@@ -97,6 +97,7 @@ in {
     directories = [
       "/etc/NetworkManager/system-connections"
       "/var/lib/nixos"
+      "/var/lib"
     ];
   };
 
