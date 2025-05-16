@@ -1,4 +1,4 @@
 {pkgs}:
 pkgs.writeShellScriptBin "shell" ''
-  bun "/persist/nixos/modules/home-manager/scripts/shell.js" $1
+  nix-shell "/persist/nixos/shells/$\{$1}.nix"
 ''
