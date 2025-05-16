@@ -104,6 +104,9 @@ in {
   programs.fuse.userAllowOther = true;
 
   environment.systemPackages = [pkgs.kitty];
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", TAG+="uaccess"
+  '';
 
   systemd.tmpfiles.rules = [
     "d /persist/home/ 1777 root root -" # /persist/home created, owned by root
