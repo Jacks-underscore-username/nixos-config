@@ -116,7 +116,7 @@ in {
 
   users.users.jackc = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "plugdev"];
+    extraGroups = ["wheel" "networkmanager" "plugdev" "dialout"];
     # TODO: Figure out actual passwords.
     initialPassword = "0";
   };
