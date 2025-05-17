@@ -15,13 +15,19 @@
     ...
   }: let
     # Define the system architecture
-    system = builtins.currentSystem;
+    system = "x86_64-linux";
 
     # Get the package sets for the stable and unstable channels
     pkgs_stable = nixpkgs-stable.legacyPackages.${system};
     pkgs_unstable = nixpkgs-unstable.legacyPackages.${system};
 
     # Configure the unstable channel to allow unfree packages if needed
+    pkgs_stable_configured = import nixpkgs-stable {
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
+    };
     pkgs_unstable_configured = import nixpkgs-unstable {
       inherit system;
       config = {
@@ -38,8 +44,8 @@
       ninja
       gdb
       libftdi1
-      vscode
-      git
+      pkgs_stable_configured.vscode
+      pkgs_stable_configured.git
     ];
 
     # Define the library paths
@@ -60,8 +66,5 @@
         echo "Using packages from the unstable channel."
       '';
     };
-
-    # You could potentially define other outputs here, like a package for your project
-    # packages.${system}.my-pico-app = ...;
   };
 }
