@@ -39,13 +39,17 @@
     deps = with pkgs_unstable_configured; [
       python314
       pico-sdk
+      # Add the ARM cross-compiler toolchain
+      gcc-arm-embedded
       openocd
       cmake
       ninja
       gdb
       libftdi1
-      pkgs_stable_configured.vscode
-      pkgs_stable_configured.git
+      # Make sure 'make' is included, often provided by gnumake
+      gnumake
+      pkgs_stable_configured.vscode # Using vscode from stable
+      pkgs_stable_configured.git # Using git from stable
     ];
 
     # Define the library paths
@@ -55,15 +59,20 @@
     # Define the default development shell
     devShells.${system}.default = pkgs_stable.mkShell {
       # Use pkgs_stable for mkShell itself
+
+      # Most development tools should be in nativeBuildInputs for cross-compilation
       nativeBuildInputs = deps;
-      buildInputs = deps;
+
+      # buildInputs are for libraries linked by the target executable (less common for embedded)
+      # buildInputs = [];
 
       shellHook = ''
         export LD_LIBRARY_PATH="${libusbLibPath}:$LD_LIBRARY_PATH"
-        export PICO_SDK_PATH="${picoSdkPath}$PICO_SDK_PATH"
+        # Corrected export for PICO_SDK_PATH
+        export PICO_SDK_PATH="${picoSdkPath}"
 
         echo "Entering development shell for Pico project."
-        echo "Using packages from the unstable channel."
+        echo "Using packages primarily from the unstable channel."
       '';
     };
   };
