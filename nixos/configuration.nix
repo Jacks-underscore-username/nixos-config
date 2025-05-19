@@ -96,7 +96,6 @@ in {
     hideMounts = true;
     directories = [
       "/etc/NetworkManager/system-connections"
-      "/var/lib/nixos"
       "/var/lib"
     ];
   };

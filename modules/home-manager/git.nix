@@ -1,4 +1,3 @@
-# inspo: https://discourse.nixos.org/t/fix-collision-with-multiple-jdks/10812/5
 {pkgs, ...}: {
   programs.git = {
     enable = true;
