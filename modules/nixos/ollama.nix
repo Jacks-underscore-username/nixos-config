@@ -2,7 +2,7 @@
   services.ollama = {
     enable = true;
     package = pkgs.unstable.ollama;
-    loadModels = ["phi4-mini-reasoning:3.8b"];
+    loadModels = ["qwen3:8b"];
   };
   services.open-webui = {
     enable = true;
