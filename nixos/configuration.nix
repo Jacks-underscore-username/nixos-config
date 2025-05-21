@@ -97,6 +97,7 @@ in {
     directories = [
       "/etc/NetworkManager/system-connections"
       "/var/lib"
+      "/etc/ssh"
     ];
   };
 
@@ -199,16 +200,6 @@ in {
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # TODO: ?
-  # services.openssh = {
-  #   enable = true;
-  #   settings = {
-  #     PermitRootLogin = "yes";
-  #     PasswordAuthentication = true;
-  #   };
-  # };
 
   # Make everything firacode
   fonts.packages = [pkgs.unstable.nerd-fonts.fira-code];
