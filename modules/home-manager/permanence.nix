@@ -12,6 +12,7 @@
       ".config/Code"
       ".cache/spotify"
       ".config/spotify"
+      ".ssh"
     ];
     files = [
     ];
