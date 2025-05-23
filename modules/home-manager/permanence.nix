@@ -13,8 +13,8 @@
       ".cache/spotify"
       ".config/spotify"
       ".ssh"
-      ".steam"
-      ".local/share/Steam"
+      # ".steam"
+      # ".local/share/Steam"
     ];
     files = [
     ];
