@@ -14,9 +14,15 @@ const excludes = [/.*\.git$/, /^node_modules*/]
 
 const fullExcludes = [/^\/proc\/.*/, /^\/sys\/.*/, /^\/tmp\/.*/, /^\/run\/.*/, /^\/dev\/.*/]
 
+/** @typedef {Object<string, any>} record */
+
+/**
+ * @param {string} folder
+ * @param {record} parentRecord
+ */
 const scan = (folder, parentRecord) => {
   try {
-    for (item of fs.readdirSync(folder)) {
+    for (const item of fs.readdirSync(folder)) {
       const newPath = path.join(folder, item)
       try {
         if (excludes.some(regex => regex.test(item))) continue
@@ -44,11 +50,17 @@ console.log('Scanning...')
 scan(root, record)
 
 if (fs.existsSync(statePath)) {
-  const { root: oldRoot, record: oldRecord } = JSON.parse(fs.readFileSync(statePath))
+  const { root: oldRoot, record: oldRecord } = JSON.parse(fs.readFileSync(statePath, 'utf8'))
   if (root === oldRoot) {
     console.log('Evaluating diff...')
+    /** @type {string[]} */
     const currentPath = []
+    /** @type {{path: string[], mode: string}[]} */
     const diff = []
+    /**
+     * @param {record} old
+     * @param {record} current
+     */
     const computeDiff = (old, current) => {
       const oldKeys = new Set(Object.keys(old))
       const currentKeys = new Set(Object.keys(current))
@@ -83,11 +95,12 @@ if (fs.existsSync(statePath)) {
     computeDiff(oldRecord, record)
 
     let stringDiff = ''
-    lastPath = []
+    /** @type {string[]} */
+    let lastPath = []
     const diffCount = diff.length
 
     while (diff.length) {
-      const { path: itemPath, mode } = diff.pop()
+      const { path: itemPath, mode } = /** @type {{ path: string[]; mode: string; }} */ (diff.pop())
       let index
       for (index = 0; index < itemPath.length - 1; index++)
         if (index > lastPath.length || lastPath[index] !== itemPath[index]) break

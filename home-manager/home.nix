@@ -38,7 +38,6 @@
     swww
     kitty
     wofi
-    steam
     google-chrome
     pkgs.unstable.nerd-fonts.fira-code
     alejandra
