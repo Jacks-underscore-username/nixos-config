@@ -3,7 +3,7 @@
     allowOther = true;
     directories = [
       ".local/share/PrismLauncher"
-      ".config/discord"
+      # ".config/discord"
       ".ssh"
       ".config/gh"
       ".vscode"
@@ -13,6 +13,7 @@
       ".cache/spotify"
       ".config/spotify"
       ".ssh"
+      ".config/legcord"
       # ".local/share/Steam"
       # ".pki"
       # ".steam"
