@@ -13,9 +13,9 @@
       ".cache/spotify"
       ".config/spotify"
       ".ssh"
-      ".local/share/Steam"
-      ".pki"
-      ".steam"
+      # ".local/share/Steam"
+      # ".pki"
+      # ".steam"
     ];
     files = [
     ];

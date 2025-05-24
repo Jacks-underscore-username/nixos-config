@@ -5,6 +5,7 @@
     ./git.nix
     ./spicetify.nix
     ./permanence.nix
+    ./legcord.nix
   ];
 
   hyprland.monitors = [
