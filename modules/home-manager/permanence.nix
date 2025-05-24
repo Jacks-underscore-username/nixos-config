@@ -18,6 +18,7 @@
       # ".steam"
     ];
     files = [
+      ".bash_history"
     ];
   };
 }
