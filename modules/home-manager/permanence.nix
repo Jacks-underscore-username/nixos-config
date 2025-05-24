@@ -3,7 +3,6 @@
     allowOther = true;
     directories = [
       ".local/share/PrismLauncher"
-      # ".config/discord"
       ".ssh"
       ".config/gh"
       ".vscode"

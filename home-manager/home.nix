@@ -31,7 +31,6 @@
     git
     gh
     vscode
-    # discord
     waybar
     dunst
     libnotify
