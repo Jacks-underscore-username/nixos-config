@@ -61,8 +61,6 @@ in {
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  networking.hostName = "Nixos";
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -127,7 +125,10 @@ in {
   };
 
   # Enable networking
+  networking.hostName = "Nixos";
   networking.networkmanager.enable = true;
+  networking.wireless.interfaces = ["wlp0s20f3"];
+  networking.interfaces."wlp0s20f3".wakeOnLan.enable = true;
 
   # Set up bluetooth.
   hardware.bluetooth = {
