@@ -1,6 +1,6 @@
 {
   imports = [
-    ./ollama.nix
+    # ./ollama.nix
     ./sshd.nix
     ./steam.nix
   ];

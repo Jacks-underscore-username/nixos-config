@@ -127,8 +127,13 @@ in {
   # Enable networking
   networking.hostName = "Nixos";
   networking.networkmanager.enable = true;
-  networking.wireless.interfaces = ["wlp0s20f3"];
-  networking.interfaces."wlp0s20f3".wakeOnLan.enable = true;
+  # Not needed as if left empty it'll just use them all.
+  # networking.wireless.interfaces = ["wlp0s20f3"];
+  networking.interfaces."wlp0s20f3".wakeOnLan = {
+    enable = true;
+    policy = ["magic"];
+  };
+  networking.networkmanager.wifi.powersave = false;
 
   # Set up bluetooth.
   hardware.bluetooth = {
