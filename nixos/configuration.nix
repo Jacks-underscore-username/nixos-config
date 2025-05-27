@@ -127,7 +127,6 @@ in {
   # Enable networking
   networking.hostName = "Nixos";
   networking.networkmanager.enable = true;
-  # networking.networkmanshuager.wifi.powersave = false;
 
   # Set up bluetooth.
   hardware.bluetooth = {
