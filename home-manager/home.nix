@@ -10,6 +10,7 @@
     ../modules/home-manager/default.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.impermanence.nixosModules.home-manager.impermanence
+    # inputs.ags.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -25,6 +26,19 @@
     username = "jackc";
     homeDirectory = "/home/jackc";
   };
+
+  # programs.ags = {
+  #   enable = true;
+
+  #   # symlink to ~/.config/ags
+  #   configDir = ../ags;
+
+  #   # additional packages to add to gjs's runtime
+  #   extraPackages = with pkgs; [
+  #     inputs.ags.packages.${pkgs.system}.battery
+  #     fzf
+  #   ];
+  # };
 
   # TODO: Break these into modules:
   home.packages = with pkgs; [
@@ -134,7 +148,6 @@
     (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
     pkgs.unstable.ollama
-    ags
 
     (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
     # <MACRO INSERT>
