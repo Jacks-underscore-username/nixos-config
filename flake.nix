@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
-    # ags.url = "github:aylur/ags";
+    ags.url = "github:aylur/ags";
   };
 
   outputs = {
