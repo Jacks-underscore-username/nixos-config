@@ -13,6 +13,7 @@
       ".config/spotify"
       ".ssh"
       ".config/legcord"
+      "Steam"
       # ".local/share/Steam"
       # ".pki"
       # ".steam"
