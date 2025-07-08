@@ -14,6 +14,7 @@
       ".ssh"
       ".config/legcord"
       "Steam"
+      ".pki"
       # ".local/share/Steam"
       # ".pki"
       # ".steam"
