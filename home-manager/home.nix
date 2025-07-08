@@ -27,122 +27,133 @@
   };
 
   # TODO: Break these into modules:
-  home.packages = with pkgs; [
-    git
-    gh
-    vscode
-    waybar
-    dunst
-    libnotify
-    swww
-    kitty
-    wofi
-    google-chrome
-    pkgs.unstable.nerd-fonts.fira-code
-    alejandra
-    ripgrep
-    (import ../modules/home-manager/scripts/reload.nix {inherit pkgs;})
-    qt5.full
-    hyprpolkitagent
-    man-pages
-    man-pages-posix
-    linux-manual
-    lutris
-    networkmanagerapplet
-    waybar
-    playerctl
-    xfce.thunar
-    killall
-    hyprpaper
-    hyprpicker
-    obs-studio
-    jetbrains.idea-community
-    (import ../modules/home-manager/scripts/cycleWorkspace.nix {inherit pkgs;})
-    nodejs_23
-    node2nix
-    bun
-    (import ../modules/home-manager/scripts/completeOrphan.nix {inherit pkgs;})
-    udisks
-    rrsync
-    p7zip
-    biome
-    (import ../modules/home-manager/scripts/createWorkspace.nix {inherit pkgs;})
-    grim
-    swappy
-    slurp
-    wl-clipboard
-    zig
-    hyprpaper
-    hyprcursor
-    hyprdim
-    brightnessctl
-    zip
-    dunst
-    prismlauncher
-    libglvnd
-    yad
-    glfw
-    glfw-wayland
-    (import ../modules/home-manager/scripts/moveWorkspace.nix {inherit pkgs;})
-    (import ../modules/home-manager/scripts/moveWindow.nix {inherit pkgs;})
-    libxkbcommon
-    glib
-    wineWowPackages.stable
-    gradle
-    networkmanagerapplet
-    gnome-system-monitor
-    (import ../modules/home-manager/scripts/deflate.nix {inherit pkgs;})
-    ncdu
-    usbutils
-    udiskie
-    udisks
+  home.packages = let
+    wrapWithMissingLibraries = binaryFile:
+      pkgs.writeShellScriptBin (baseNameOf binaryFile) ''
+        LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath [pkgs.libuuid]}";
+        export LD_LIBRARY_PATH
+        exec ${binaryFile} "$@";
+      '';
+  in
+    with pkgs; [
+      git
+      gh
+      vscode
+      waybar
+      dunst
+      libnotify
+      swww
+      kitty
+      wofi
+      google-chrome
+      pkgs.unstable.nerd-fonts.fira-code
+      alejandra
+      ripgrep
+      (import ../modules/home-manager/scripts/reload.nix {inherit pkgs;})
+      qt5.full
+      hyprpolkitagent
+      man-pages
+      man-pages-posix
+      linux-manual
+      lutris
+      networkmanagerapplet
+      waybar
+      playerctl
+      xfce.thunar
+      killall
+      hyprpaper
+      hyprpicker
+      obs-studio
+      jetbrains.idea-community
+      (import ../modules/home-manager/scripts/cycleWorkspace.nix {inherit pkgs;})
+      (
+        wrapWithMissingLibraries
+        (lib.getExe nodejs_23)
+      )
+      node2nix
+      bun
+      (import ../modules/home-manager/scripts/completeOrphan.nix {inherit pkgs;})
+      udisks
+      rrsync
+      p7zip
+      biome
+      (import ../modules/home-manager/scripts/createWorkspace.nix {inherit pkgs;})
+      grim
+      swappy
+      slurp
+      wl-clipboard
+      zig
+      hyprpaper
+      hyprcursor
+      hyprdim
+      brightnessctl
+      zip
+      dunst
+      prismlauncher
+      libglvnd
+      yad
+      glfw
+      glfw-wayland
+      (import ../modules/home-manager/scripts/moveWorkspace.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/moveWindow.nix {inherit pkgs;})
+      libxkbcommon
+      glib
+      wineWowPackages.stable
+      gradle
+      networkmanagerapplet
+      gnome-system-monitor
+      (import ../modules/home-manager/scripts/deflate.nix {inherit pkgs;})
+      ncdu
+      usbutils
+      udiskie
+      udisks
 
-    # glfw3-minecraft
-    openal
+      # glfw3-minecraft
+      openal
 
-    ## openal
-    alsa-lib
-    libjack2
-    libpulseaudio
-    pipewire
+      ## openal
+      alsa-lib
+      libjack2
+      libpulseaudio
+      pipewire
 
-    ## glfw
-    libGL
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXext
-    xorg.libXrandr
-    xorg.libXxf86vm
+      ## glfw
+      libGL
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXext
+      xorg.libXrandr
+      xorg.libXxf86vm
 
-    udev # oshi
+      udev # oshi
 
-    vulkan-loader # VulkanMod's lwjgl
+      vulkan-loader # VulkanMod's lwjgl
 
-    flite
+      flite
 
-    openscad
+      openscad
 
-    (import ../modules/home-manager/scripts/compareDir.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/compareDir.nix {inherit pkgs;})
 
-    htop
+      htop
 
-    hyprpaper
-    (import ../modules/home-manager/scripts/hyprpaperManager.nix {inherit pkgs;})
+      hyprpaper
+      (import ../modules/home-manager/scripts/hyprpaperManager.nix {inherit pkgs;})
 
-    jellyfin-ffmpeg
+      jellyfin-ffmpeg
 
-    (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
-    pkgs.unstable.ollama
-    ags
+      pkgs.unstable.ollama
+      ags
 
-    (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
-    # <MACRO INSERT>
-    (import ../modules/home-manager/scripts/lineCounter.nix {inherit pkgs;})
-    (import ../modules/home-manager/scripts/watchBuffer.nix {inherit pkgs;})
-    (import ../modules/home-manager/scripts/shell.nix {inherit pkgs;})
-    (import ../modules/home-manager/scripts/copyJsConfig.nix {inherit pkgs;})
-  ];
+      (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
+      # <MACRO INSERT>
+      (import ../modules/home-manager/scripts/lineCounter.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/watchBuffer.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/shell.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/copyJsConfig.nix {inherit pkgs;})
+    ];
 
   # Let home manager manage itself.
   programs.home-manager.enable = true;
