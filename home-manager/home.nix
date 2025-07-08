@@ -71,7 +71,10 @@
         (lib.getExe nodejs_23)
       )
       node2nix
-      bun
+      (
+        wrapWithMissingLibraries
+        (lib.getExe bun)
+      )
       (import ../modules/home-manager/scripts/completeOrphan.nix {inherit pkgs;})
       udisks
       rrsync
