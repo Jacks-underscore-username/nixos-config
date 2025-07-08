@@ -4,27 +4,21 @@
     directories = [
       # ".local/share/PrismLauncher"
       ".ssh"
-      # ".config/gh"
+      ".config/gh"
       ".vscode"
       # ".cache/google-chrome"
-      # ".config/google-chrome"
-      # ".config/Code"
+      ".config/google-chrome"
+      ".config/Code"
       # ".cache/spotify"
-      # ".config/spotify"
-      ".ssh"
-      # ".config/legcord"
+      ".config/spotify"
+      ".config/legcord"
       "Steam"
       ".pki"
       # ".local/share/Steam"
-      ".pki"
-      # ".steam"
+      ".steam"
 
       ".local"
       ".cache"
-      # ".config"
-
-      ".config/google-chrome"
-      ".config/spotify"
     ];
     files = [
       ".bash_history"

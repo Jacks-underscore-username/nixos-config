@@ -112,6 +112,8 @@ in {
     "d /persist/home/jackc 0770 jackc users -" # /persist/home/jackc created, owned by that user
   ];
 
+  services.gnome.gnome-keyring.enable = true;
+
   users.users.jackc = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "plugdev" "dialout" "tty"];
