@@ -22,6 +22,9 @@
       ".local"
       ".cache"
       # ".config"
+
+      ".config/google-chrome"
+      ".config/spotify"
     ];
     files = [
       ".bash_history"
