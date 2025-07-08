@@ -18,6 +18,9 @@
       # ".local/share/Steam"
       # ".pki"
       # ".steam"
+
+      ".local"
+      ".cache"
     ];
     files = [
       ".bash_history"
