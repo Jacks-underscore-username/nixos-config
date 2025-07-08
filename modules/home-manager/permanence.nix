@@ -2,25 +2,26 @@
   home.persistence."/persist/home/jackc" = {
     allowOther = true;
     directories = [
-      ".local/share/PrismLauncher"
+      # ".local/share/PrismLauncher"
       ".ssh"
-      ".config/gh"
+      # ".config/gh"
       ".vscode"
-      ".cache/google-chrome"
-      ".config/google-chrome"
-      ".config/Code"
-      ".cache/spotify"
-      ".config/spotify"
+      # ".cache/google-chrome"
+      # ".config/google-chrome"
+      # ".config/Code"
+      # ".cache/spotify"
+      # ".config/spotify"
       ".ssh"
-      ".config/legcord"
+      # ".config/legcord"
       "Steam"
       ".pki"
       # ".local/share/Steam"
-      # ".pki"
+      ".pki"
       # ".steam"
 
       ".local"
       ".cache"
+      # ".config"
     ];
     files = [
       ".bash_history"
