@@ -97,6 +97,9 @@ in {
       "/var/lib"
       "/etc/ssh"
     ];
+    files = [
+      "/etc/machine-id"
+    ];
   };
 
   programs.fuse.userAllowOther = true;
