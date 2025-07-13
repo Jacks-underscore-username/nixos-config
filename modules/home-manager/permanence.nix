@@ -3,25 +3,25 @@
     allowOther = true;
     directories = [
       # ".local/share/PrismLauncher"
-      ".ssh"
+      # ".ssh"
       ".config/gh"
       ".vscode"
-      # ".cache/google-chrome"
+      ".cache/google-chrome"
       ".config/google-chrome"
       ".config/Code"
       # ".cache/spotify"
-      ".config/spotify"
+      # ".config/spotify"
       ".config/legcord"
-      "Steam"
-      ".pki"
+      # "Steam"
+      # ".pki"
       # ".local/share/Steam"
-      ".steam"
+      # ".steam"
 
-      ".local"
-      ".cache"
+      # ".local"
+      # ".cache"
     ];
     files = [
-      ".bash_history"
+      # ".bash_history"
     ];
   };
 }

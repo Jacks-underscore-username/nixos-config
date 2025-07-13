@@ -101,6 +101,7 @@ in {
 
   programs.fuse.userAllowOther = true;
 
+  # So if the hyprland config doesn't load so I can still use the default terminal
   environment.systemPackages = [pkgs.kitty];
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", TAG+="uaccess"
@@ -111,8 +112,6 @@ in {
     "d /persist/home/ 1777 root root -" # /persist/home created, owned by root
     "d /persist/home/jackc 0770 jackc users -" # /persist/home/jackc created, owned by that user
   ];
-
-  services.gnome.gnome-keyring.enable = true;
 
   users.users.jackc = {
     isNormalUser = true;
