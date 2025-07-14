@@ -16,4 +16,8 @@
     history.ignoreAllDups = true;
     history.path = "$HOME/.zsh_history";
   };
+
+  home.sessionVariables = {
+    SHELL = "zsh";
+  };
 }
