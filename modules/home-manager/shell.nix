@@ -15,6 +15,11 @@
     history.size = 10000;
     history.ignoreAllDups = true;
     history.path = "$HOME/.zsh_history";
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "sudo" "docker" "kubectl"];
+    };
   };
 
   home.sessionVariables = {
