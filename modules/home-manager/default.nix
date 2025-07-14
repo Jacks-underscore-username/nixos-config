@@ -6,6 +6,8 @@
     ./spicetify.nix
     ./permanence.nix
     ./legcord.nix
+    ./shell.nix
+    ./intellij.nix
   ];
 
   hyprland.monitors = [
