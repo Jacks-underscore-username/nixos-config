@@ -18,11 +18,11 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "sudo" "docker" "kubectl"];
+      plugins = ["git" "thefuck"];
+      theme = "robbyrussell";
     };
   };
 
   home.sessionVariables = {
-    SHELL = "zsh";
   };
 }
