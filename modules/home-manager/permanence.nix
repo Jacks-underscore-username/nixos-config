@@ -15,6 +15,9 @@
       "Steam"
       ".local/share/Steam"
       ".steam"
+      ".cache/JetBrains"
+      ".config/JetBrains"
+      ".local/share/JetBrains"
     ];
     files = [
       # ".bash_history"
