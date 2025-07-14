@@ -20,7 +20,7 @@
       # ".local/share/JetBrains"
     ];
     files = [
-      # ".bash_history"
+      ".bash_history"
     ];
   };
 }
