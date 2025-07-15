@@ -73,7 +73,7 @@
       node2nix
       (
         wrapWithMissingLibraries
-        (lib.getExe bun)
+        (lib.getExe pkgs.unstable.bun)
       )
       (import ../modules/home-manager/scripts/completeOrphan.nix {inherit pkgs;})
       udisks
