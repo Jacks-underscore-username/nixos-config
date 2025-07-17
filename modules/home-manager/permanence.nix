@@ -14,7 +14,7 @@
       ".config/legcord"
       # "Steam"
       ".local/share/Steam"
-      # ".steam"
+      ".steam"
       ".cache/JetBrains"
       ".config/JetBrains"
       ".local/share/JetBrains"
