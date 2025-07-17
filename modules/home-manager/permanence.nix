@@ -13,7 +13,7 @@
       ".config/spotify"
       ".config/legcord"
       # "Steam"
-      # ".local/share/Steam"
+      ".local/share/Steam"
       # ".steam"
       ".cache/JetBrains"
       ".config/JetBrains"
