@@ -22,6 +22,11 @@
       ".cache/fontconfig"
       ".cache/mesa_shader_cache_db"
       ".compose-cache"
+
+      ".factorio"
+      ".local/share/Celeste"
+      "Desktop"
+      ".local/share/applications"
     ];
     files = [
       ".steam/steam.token"
