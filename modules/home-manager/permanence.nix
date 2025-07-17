@@ -12,15 +12,19 @@
       ".cache/spotify"
       ".config/spotify"
       ".config/legcord"
-      # "Steam"
-      ".local/share/Steam"
-      # ".steam"
       ".cache/JetBrains"
       ".config/JetBrains"
       ".local/share/JetBrains"
       ".java/.userPrefs/jetbrains"
+
+      ".local/share/Steam"
+      ".steam"
+      ".cache/fontconfig"
+      ".cache/mesa_shader_cache_db"
+      ".compose-cache"
     ];
     files = [
+      ".pulse-cookie"
       ".bash_history"
     ];
   };
