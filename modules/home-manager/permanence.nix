@@ -24,6 +24,7 @@
       ".compose-cache"
     ];
     files = [
+      ".steam/steam.token"
       ".pulse-cookie"
       ".bash_history"
     ];
