@@ -18,13 +18,13 @@
       ".java/.userPrefs/jetbrains"
 
       ".local/share/Steam"
-      # ".steam"
-      # ".cache/fontconfig"
-      # ".cache/mesa_shader_cache_db"
-      # ".compose-cache"
+      ".steam"
+      ".cache/fontconfig"
+      ".cache/mesa_shader_cache_db"
+      ".compose-cache"
     ];
     files = [
-      # ".pulse-cookie"
+      ".pulse-cookie"
       ".bash_history"
     ];
   };
