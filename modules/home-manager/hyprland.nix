@@ -103,7 +103,7 @@
           "SUPER,l,exec,toggleLightMode"
 
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
-          "SUPERSHIFTALT,s,exec,grim - |  wl-copy"
+          "SUPERSHIFTCONTROL,s,exec,grim - |  wl-copy"
           # <MACRO INSERT>
         ];
         binde = [
