@@ -215,9 +215,10 @@ in {
   };
 
   networking.firewall.allowedTCPPorts = [
-    22
-    80
+    22 
+    80 
     443
+    3000
   ];
 
   # TODO: WIT
