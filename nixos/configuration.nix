@@ -214,6 +214,13 @@ in {
     monospace = ["FiraCode Nerd Font"];
   };
 
+  networking.firewall.allowedTCPPorts = [
+    22 # SSH, usually allowed
+    80 # HTTP
+    443 # HTTPS
+    3000 # <-- ADD THIS LINE FOR YOUR SERVER
+  ];
+
   # TODO: WIT
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = runtimeLibs;
