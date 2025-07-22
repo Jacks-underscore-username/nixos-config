@@ -215,10 +215,9 @@ in {
   };
 
   networking.firewall.allowedTCPPorts = [
-    22 # SSH, usually allowed
-    80 # HTTP
-    443 # HTTPS
-    3000 # <-- ADD THIS LINE FOR YOUR SERVER
+    22
+    80
+    443
   ];
 
   # TODO: WIT
