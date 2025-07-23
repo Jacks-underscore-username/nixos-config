@@ -104,6 +104,8 @@ in {
 
   programs.fuse.userAllowOther = true;
 
+  virtualisation.docker.enable = true;
+
   # So if the hyprland config doesn't load so I can still use the default terminal
   environment.systemPackages = [pkgs.kitty];
   services.udev.extraRules = ''
