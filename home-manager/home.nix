@@ -154,7 +154,7 @@
 
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
-    (import ../modules/home-manager/scripts/hardReboot.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/hardReboot.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/lineCounter.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/watchBuffer.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/shell.nix {inherit pkgs;})
