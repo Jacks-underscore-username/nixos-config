@@ -34,6 +34,8 @@
     home-manager
 
     fuse
+
+    keet
   ];
 in {
   imports = [

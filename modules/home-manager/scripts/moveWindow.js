@@ -4,7 +4,7 @@ const path = require('node:path')
 
 const statePath = path.resolve(process.argv[1], '../moveWindow.state')
 
-const timeout = 10_000
+const timeout = 3_000
 
 const focusedWindow = execSync('hyprctl activewindow | grep "pid: " | awk \'{print $2}\'').toString().trim()
 const focusedWorkspace = execSync(
