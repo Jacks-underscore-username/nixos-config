@@ -150,8 +150,6 @@
       pkgs.unstable.ollama
       ags
 
-      keet
-
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
       (import ../modules/home-manager/scripts/lineCounter.nix {inherit pkgs;})
