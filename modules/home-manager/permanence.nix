@@ -28,9 +28,9 @@
       "Desktop"
       ".local/share/applications"
 
-      ".config/pear-runtime"
-      ".config/pear"
-      "..cache/gtk-4.0"
+      # ".config/pear-runtime"
+      # ".config/pear"
+      # ".cache/gtk-4.0"
     ];
     files = [
       ".steam/steam.token"
