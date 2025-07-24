@@ -4,11 +4,11 @@
   fetchzip,
 }: let
   pname = "keet";
-  version = "2.4.1";
+  version = "2.5.1";
 
   src = fetchzip {
     url = "https://keet.io/downloads/${version}/Keet-x64.tar.gz";
-    hash = "sha256-Csr9M9t2brwfK0B8ldXgUQXX6lPH8z2QSkcBgCYSvaE=";
+    hash = "sha256-mM33Phf9a8+LRSfsaIiJJIQayptdyNW6xa0s7m0mkk8=";
   };
 
   appimageContents = appimageTools.extract {
