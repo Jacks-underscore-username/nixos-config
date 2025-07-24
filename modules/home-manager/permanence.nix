@@ -30,6 +30,7 @@
 
       ".config/pear-runtime"
       ".config/pear"
+      "..cache/gtk-4.0"
     ];
     files = [
       ".steam/steam.token"
