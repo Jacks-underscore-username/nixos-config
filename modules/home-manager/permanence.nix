@@ -27,6 +27,9 @@
       ".local/share/Celeste"
       "Desktop"
       ".local/share/applications"
+
+      ".config/pear-runtime"
+      ".config/pear"
     ];
     files = [
       ".steam/steam.token"
