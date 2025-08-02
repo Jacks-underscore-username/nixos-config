@@ -28,6 +28,8 @@
       "Desktop"
       ".local/share/applications"
 
+      ".config/obs-studio"
+
       ".config/pear-runtime"
       ".config/pear"
       ".cache/gtk-4.0"
