@@ -161,6 +161,10 @@
       (import ../modules/home-manager/scripts/copyJsConfig.nix {inherit pkgs;})
     ];
 
+  home.sessionPath = [
+    "/home/jackc/.config/pear/bin"
+  ];
+
   # Let home manager manage itself.
   programs.home-manager.enable = true;
 
