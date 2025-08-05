@@ -2,7 +2,6 @@
   home.persistence."/persist/home/jackc" = {
     allowOther = true;
     directories = [
-      ".local/share/PrismLauncher"
       ".ssh"
       ".config/gh"
       ".vscode"
@@ -33,6 +32,9 @@
       ".config/pear-runtime"
       ".config/pear"
       ".cache/gtk-4.0"
+
+      ".pki"
+      ".local/share/PrismLauncher"
     ];
     files = [
       ".steam/steam.token"
