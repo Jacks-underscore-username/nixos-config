@@ -5,4 +5,5 @@ pkgs: {
   keet = pkgs.callPackage ./keet {};
   custom_keet = pkgs.callPackage ./custom_keet {};
   balatro = pkgs.callPackage ./balatro {};
+  balatro-mobile-maker = pkgs.callPackage ./balatro-mobile-maker {};
 }
