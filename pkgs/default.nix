@@ -4,4 +4,5 @@ pkgs: {
   # example = pkgs.callPackage ./example { };
   keet = pkgs.callPackage ./keet {};
   custom_keet = pkgs.callPackage ./custom_keet {};
+  balatro = pkgs.callPackage ./balatro {};
 }
