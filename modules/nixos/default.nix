@@ -3,5 +3,6 @@
     ./ollama.nix
     ./sshd.nix
     ./steam.nix
+    ./ssh.nix
   ];
 }
