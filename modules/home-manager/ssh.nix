@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  programs.ssh.matchBlocks = {
+  programs.ssh.extraConfig = {
     "relay" = {
       hostname = "170.205.31.42";
       user = "jack";
