@@ -1,6 +1,8 @@
 {
   config,
   pkgs,
+  inputs,
+  home,
   ...
 }: let
   persist = home.persistence."/persist/home/jackc";
