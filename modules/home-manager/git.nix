@@ -37,42 +37,40 @@
                     "$@" \
                     | awk " \
                         BEGIN { \
-                        FS="\\t"; \
-                        printf "\n"; \
-                        last_commit=""; \
+                            FS=\"\\\\t\"; \ # Escape backslash for awk
+                            printf \"\\\\n\"; \ # Escape backslash for awk
+                            last_commit=\"\"; \
                         } \
                         /^.{40} - / { \
-                        if (last_commit != "") { \
-                            printf "\n"; \
+                            if (last_commit != \"\") { \
+                                printf \"\\\\n\"; \ # Escape backslash for awk
+                            } \
+                            print \\\$0; \ # Escape $ for shell
+                            last_commit = \\\$1; \ # Escape $ for shell
+                            next; \
                         } \
-                        print \$0; \
-                        last_commit = \$1; \
-                        next; \
-                        } \
-                        /^[0-9\\-]+/ { \
-                        adds=\$1; \
-                        dels=\$2; \
-                        filepath=\$3; \
-                        \
-                        color_code=""; \
-                        diff_summary=""; \
-                        \
-                        # Determine status based on additions/deletions (heuristic) \
-                        if (adds == "-" && dels != "-") { \
-                            color_code="\\033[0;31m"; \
-                            diff_summary="(Deleted)"; \
-                        } else if (adds != "-" && dels == "-") { \
-                            color_code="\\033[0;32m"; \
-                            diff_summary="(Added)"; \
-                        } else if (adds != "-" && dels != "-") { \
-                            color_code="\\033[0;33m"; \
-                            diff_summary=\Sprintf("(+%s, -%s)", adds, dels); \
-                        } else { \
-                            color_code="\\033[0m"; \
-                        } \
-                        \
-                        # Print formatted line \
-                        printf "%s%s\\033[0m | %s\n", color_code, filepath, diff_summary; \
+                        /^[0-9\\\\-]+/ { \ # Escape backslash for awk regex, then for shell (total of 4 backslashes)
+                            adds=\\\$1; \
+                            dels=\\\$2; \
+                            filepath=\\\$3; \
+                            \
+                            color_code=\"\"; \
+                            diff_summary=\"\"; \
+                            \
+                            if (adds == \"-\" && dels != \"-\") { \
+                                color_code=\"\\\\033[0;31m\"; \ # Escape backslashes for awk
+                                diff_summary=\"(Deleted)\"; \
+                            } else if (adds != \"-\" && dels == \"-\") { \
+                                color_code=\"\\\\033[0;32m\"; \ # Escape backslashes for awk
+                                diff_summary=\"(Added)\"; \
+                            } else if (adds != \"-\" && dels != \"-\") { \
+                                color_code=\"\\\\033[0;33m\"; \ # Escape backslashes for awk
+                                diff_summary=sprintf(\"(+%s, -%s)\", adds, dels); \ # sprintf for safety
+                            } else { \
+                                color_code=\"\\\\033[0m\"; \ # Escape backslashes for awk
+                            } \
+                            \
+                            printf \"%s%s\\\\033[0m | %s\\\\n\", color_code, filepath, diff_summary; \ # Escape backslashes for awk
                         } \
                     "; \
         }; f
