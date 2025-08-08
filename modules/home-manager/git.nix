@@ -26,7 +26,7 @@
       dlsh = "reset --hard HEAD^1";
       acp = "add -A && commit && push";
       acpf = "add -A && commit && push --force";
-      plog = "'!f() { git log --format=\"%H\" $@ | xargs -I {} git_plog {}; }; f'";
+      plog = "!f() { git log --format=\"%H\" $@ | xargs -I {} git_plog {}; }; f";
     };
   };
 }
