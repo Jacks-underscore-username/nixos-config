@@ -21,5 +21,9 @@
       };
       safe.directory = ["/persist/nixos"];
     };
+    aliases = {
+      dls = "git reset --soft HEAD^1";
+      acp = "git add -A && git commit && git push";
+    };
   };
 }
