@@ -23,6 +23,7 @@
     };
     aliases = {
       dls = "reset --soft HEAD^1";
+      dlss = "reset --soft HEAD^1";
       dlsh = "reset --hard HEAD^1";
       acp = ''!f() { git add -A && git commit -m \"$@\" && git push; }; f'';
       acpf = ''!f() { git add -A && git commit -m \"$@\" && git push --force; }; f'';
