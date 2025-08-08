@@ -24,8 +24,8 @@
     aliases = {
       dls = "reset --soft HEAD^1";
       dlsh = "reset --hard HEAD^1";
-      acp = "add -A && commit && push";
-      acpf = "add -A && commit && push --force";
+      acp = "add -A /\n commit /\n push";
+      acpf = "add -A /\n commit /\n push --force";
       plog = "!git_plog";
     };
   };
