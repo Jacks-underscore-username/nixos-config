@@ -68,7 +68,7 @@
       (import ../modules/home-manager/scripts/cycleWorkspace.nix {inherit pkgs;})
       (
         wrapWithMissingLibraries
-        (lib.getExe nodejs_23)
+        (lib.getExe nodejs_24)
       )
       node2nix
       (
@@ -153,7 +153,7 @@
       keet
       custom_keet
 
-      balatro
+      # balatro
       # balatro-mobile-maker
 
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
@@ -178,5 +178,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }
