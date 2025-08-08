@@ -59,16 +59,16 @@
                         \
                         # Determine status based on additions/deletions (heuristic) \
                         if (adds == "-" && dels != "-") { \
-                            color_code="\\033[0;31m"; /* Red for Deleted */ \
+                            color_code="\\033[0;31m"; \
                             diff_summary="(Deleted)"; \
                         } else if (adds != "-" && dels == "-") { \
-                            color_code="\\033[0;32m"; /* Green for Added */ \
+                            color_code="\\033[0;32m"; \
                             diff_summary="(Added)"; \
                         } else if (adds != "-" && dels != "-") { \
-                            color_code="\\033[0;33m"; /* Yellow for Modified */ \
+                            color_code="\\033[0;33m"; \
                             diff_summary=\Sprintf("(+%s, -%s)", adds, dels); \
                         } else { \
-                            color_code="\\033[0m"; /* No Color */ \
+                            color_code="\\033[0m"; \
                         } \
                         \
                         # Print formatted line \
