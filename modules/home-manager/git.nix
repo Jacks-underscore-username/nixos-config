@@ -27,7 +27,7 @@
       acp = "add -A && commit && push";
       acpf = "add -A && commit && push --force";
       plog = ''
-        git config --global alias.prettyLog '!f() { \
+        !f() { \
             git log --pretty=format:"%Cred%H%Creset - %C(yellow)%an%Creset, %C(cyan)%ar%Creset%n%s" \
                     --numstat \
                     --diff-filter=ACDMR \
@@ -75,7 +75,7 @@
                         printf \"%s%s\\033[0m | %s\n\", color_code, filepath, diff_summary; \
                         } \
                     "; \
-        }; f'
+        }; f
       '';
     };
   };
