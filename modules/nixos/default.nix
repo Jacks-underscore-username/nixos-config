@@ -4,5 +4,6 @@
     ./sshd.nix
     ./ssh.nix
     ./steam.nix
+    ./spotify.nix
   ];
 }

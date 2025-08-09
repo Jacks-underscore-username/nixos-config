@@ -35,8 +35,8 @@
 
     fuse
 
-    spotifyd
-    playerctl
+    # spotifyd
+    # playerctl
   ];
 in {
   imports = [
