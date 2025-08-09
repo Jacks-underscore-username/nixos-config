@@ -1,6 +1,6 @@
 {...}: {
   programs.bash.shellAliases = {
     "copy" = "wl-copy";
-    "paste" = "wl-pase";
+    "paste" = "wl-paste";
   };
 }
