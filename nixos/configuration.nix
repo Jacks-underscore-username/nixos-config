@@ -34,6 +34,9 @@
     home-manager
 
     fuse
+
+    spotifyd
+    playerctl
   ];
 in {
   imports = [
