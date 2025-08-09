@@ -5,5 +5,6 @@
     ./ssh.nix
     ./steam.nix
     ./spotify.nix
+    ./aliases.nix
   ];
 }
