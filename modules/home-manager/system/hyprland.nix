@@ -27,6 +27,11 @@
         exec-once = [
           "waybar"
           "hyprpaperManager"
+          "clipse -listen"
+        ];
+        windowrulev2 = [
+          "float,class:(clipse)"
+          "size 622 652,class:(clipse)"
         ];
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
@@ -104,6 +109,8 @@
 
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
           "SUPERSHIFTCONTROL,s,exec,grim - |  wl-copy"
+
+          "SUPERCONTROL,C,exec,kitty --class clipse -e 'clipse'"
           # <MACRO INSERT>
         ];
         binde = [
