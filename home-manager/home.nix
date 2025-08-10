@@ -153,7 +153,7 @@
       keet
       custom_keet
 
-      # balatro
+      balatro
       # balatro-mobile-maker
 
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
