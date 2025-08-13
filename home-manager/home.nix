@@ -169,6 +169,7 @@
 
   home.sessionPath = [
     "/home/jackc/.config/pear/bin"
+    ".config/pear/bin"
   ];
 
   # Let home manager manage itself.
