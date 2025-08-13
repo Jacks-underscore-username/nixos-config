@@ -177,8 +177,12 @@ in {
   # Enable hyprland.
   programs.hyprland.enable = true;
 
-  # Fix problems with pixelated apps due to hyprland.
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    # Fix problems with pixelated apps due to hyprland.
+    NIXOS_OZONE_WL = "1";
+
+    PATH = "$HOME/.config/pear/bin";
+  };
 
   # Make home manager not complain as much.
   home-manager.backupFileExtension = "backup";
