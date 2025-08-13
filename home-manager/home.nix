@@ -156,8 +156,6 @@
       balatro
       # balatro-mobile-maker
 
-      nix-index
-
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
       (import ../modules/home-manager/scripts/git_plog.nix {inherit pkgs;})
