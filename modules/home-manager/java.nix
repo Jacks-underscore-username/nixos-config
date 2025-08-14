@@ -6,6 +6,7 @@
     temurin-bin-17
     temurin-bin-11
     temurin-bin-8
+    jetbrains.jdk
   ];
 in {
   programs.java = {
