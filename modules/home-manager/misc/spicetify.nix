@@ -8,7 +8,7 @@
 in {
   programs.spicetify = {
     enable = true;
-    alwaysEnableDevTools = true;
+    # alwaysEnableDevTools = true;
     enabledExtensions = with spicePkgs.extensions; [
       # adblockify
       # hidePodcasts
@@ -22,7 +22,7 @@ in {
       # skipOrPlayLikedSongs
     ];
     theme = spicePkgs.themes.starryNight;
-    # colorScheme = "Forest";
+    colorScheme = "Forest";
   };
   # programs.spicetify = {
   #   enable = true;
