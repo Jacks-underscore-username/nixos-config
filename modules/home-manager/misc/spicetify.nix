@@ -8,10 +8,17 @@
 in {
   programs.spicetify = {
     enable = true;
+    alwaysEnableDevTools = true;
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       hidePodcasts
       shuffle
+      trashbin
+      goToSong
+      playlistIntersection
+      showQueueDuration
+      history
+      betterGenres
     ];
     theme = spicePkgs.themes.starryNight;
     colorScheme = "Forest";
