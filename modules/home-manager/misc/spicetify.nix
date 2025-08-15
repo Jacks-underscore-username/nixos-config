@@ -3,23 +3,33 @@
   home,
   inputs,
   ...
-}: {
+}: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in {
   programs.spicetify = {
     enable = true;
-    colorScheme = "Forest";
-    alwaysEnableDevTools = true;
-    enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
+    enabledExtensions = with spicePkgs.extensions; [
       adblockify
       hidePodcasts
       shuffle
-      trashbin
-      goToSong
-      playlistIntersection
-      showQueueDuration
-      history
-      betterGenres
     ];
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
   };
-
-  # home.packages = home.packages ++ [pkgs.spotify-tui];
+  # programs.spicetify = {
+  #   enable = true;
+  #   colorScheme = "Forest";
+  #   alwaysEnableDevTools = true;
+  #   enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
+  #     adblockify
+  #     hidePodcasts
+  #     shuffle
+  #     trashbin
+  #     goToSong
+  #     playlistIntersection
+  #     showQueueDuration
+  #     history
+  #     betterGenres
+  #   ];
+  # };
 }
