@@ -9,7 +9,7 @@ in {
   programs.spicetify = {
     enable = true;
     # alwaysEnableDevTools = true;
-    enabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
       # adblockify
       # hidePodcasts
       shuffle
