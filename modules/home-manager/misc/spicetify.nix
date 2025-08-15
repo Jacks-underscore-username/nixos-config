@@ -12,7 +12,7 @@ in {
     enabledExtensions = with spicePkgs.extensions; [
       # adblockify
       # hidePodcasts
-      # shuffle
+      shuffle
       # trashbin
       # goToSong
       # playlistIntersection
