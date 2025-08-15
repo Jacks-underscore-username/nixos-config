@@ -21,7 +21,7 @@ in {
       # betterGenres
       # skipOrPlayLikedSongs
     ];
-    # theme = spicePkgs.themes.starryNight;
+    theme = spicePkgs.themes.starryNight;
     # colorScheme = "Forest";
   };
   # programs.spicetify = {
