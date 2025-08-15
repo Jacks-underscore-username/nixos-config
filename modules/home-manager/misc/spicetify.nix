@@ -10,18 +10,19 @@ in {
     enable = true;
     alwaysEnableDevTools = true;
     enabledExtensions = with spicePkgs.extensions; [
-      adblockify
-      hidePodcasts
-      shuffle
-      trashbin
-      goToSong
-      playlistIntersection
-      showQueueDuration
-      history
-      betterGenres
+      # adblockify
+      # hidePodcasts
+      # shuffle
+      # trashbin
+      # goToSong
+      # playlistIntersection
+      # showQueueDuration
+      # history
+      # betterGenres
+      # skipOrPlayLikedSongs
     ];
-    theme = spicePkgs.themes.starryNight;
-    colorScheme = "Forest";
+    # theme = spicePkgs.themes.starryNight;
+    # colorScheme = "Forest";
   };
   # programs.spicetify = {
   #   enable = true;
