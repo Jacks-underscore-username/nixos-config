@@ -3,19 +3,19 @@
   home,
   inputs,
   ...
-}: let
-in {
+}:
+with inputs.spicetify-nix.legacyPackages.${pkgs.system}; {
   programs.spicetify = {
     enable = true;
-    # alwaysEnableDevTools = true;
-    enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
-      # adblockify
-      # hidePodcasts
+    alwaysEnableDevTools = true;
+    enabledExtensions = with extensions; [
+      adblockify
+      hidePodcasts
       shuffle
-      # betterGenres
-      # skipOrPlayLikedSongs
+      betterGenres
+      skipOrPlayLikedSongs
     ];
-    # theme = spicePkgs.themes.starryNight;
-    # colorScheme = "Forest";
+    theme = themes.starryNight;
+    colorScheme = "Forest";
   };
 }
