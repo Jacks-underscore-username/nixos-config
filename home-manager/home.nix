@@ -151,10 +151,6 @@
       ags
 
       keet
-      custom_keet
-
-      balatro
-      # balatro-mobile-maker
 
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
@@ -166,15 +162,6 @@
       (import ../modules/home-manager/scripts/shell.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/copyJsConfig.nix {inherit pkgs;})
     ];
-
-  # programs.nix-index.enable = true;
-
-  # programs.nushell = {
-  #   enable = true;
-  #   extraConfig = ''
-  #     $env.config.hooks.command_not_found = source ${pkgs.nix-index}/etc/profile.d/command-not-found.nu
-  #   '';
-  # };
 
   # Let home manager manage itself.
   programs.home-manager.enable = true;
