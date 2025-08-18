@@ -233,9 +233,9 @@ in {
     3000
     3001
     5500
-
-    10819
   ];
+
+  networking.firewall.enable = false;
 
   # TODO: WIT
   # programs.nix-ld.enable = true;
