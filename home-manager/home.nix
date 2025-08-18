@@ -152,8 +152,13 @@
 
       keet
 
+      # hyperssh
+
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
+      (import ../modules/home-manager/scripts/newAlias.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/newMacro.nix {inherit pkgs;})
+      (import ../modules/home-manager/scripts/createAlias.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/git_plog.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/git_plog.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/hardReboot.nix {inherit pkgs;})
