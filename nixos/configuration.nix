@@ -235,8 +235,6 @@ in {
     5500
   ];
 
-  networking.firewall.enable = false;
-
   # TODO: WIT
   # programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = runtimeLibs;

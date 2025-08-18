@@ -5,16 +5,16 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "hyperssh";
-  version = "4.7.0";
+  version = "5.0.4";
 
   src = fetchFromGitHub {
-    owner = "jesec";
+    owner = "holepunchto";
     repo = "hyperssh";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-BR+ZGkBBfd0dSQqAvujsbgsEPFYw/ThrylxUbOksYxM=";
+    hash = "sha256-R3D/MNYXLmgw4WbbYDLJpy8WnaseMqjzLOHqXu9458A=";
   };
 
-  npmDepsHash = "sha256-tuEfyePwlOy2/mOPdXbqJskO6IowvAP4DWg8xSZwbJw=";
+  npmDepsHash = "";
 
   # The prepack script runs the build script, which we'd rather do in the build phase.
   npmPackFlags = ["--ignore-scripts"];
@@ -22,9 +22,9 @@ buildNpmPackage (finalAttrs: {
   NODE_OPTIONS = "--openssl-legacy-provider";
 
   meta = {
-    description = "Modern web UI for various torrent clients with a Node.js backend and React frontend";
+    description = "SSH and SSHFS over the Hyperswarm DHT!";
     homepage = "https://github.com/holepunchto/hyperssh";
-    license = lib.licenses.gpl3Only;
-    maintainers = with lib.maintainers; [winter];
+    license = lib.licenses.mit;
+    maintainers = [];
   };
 })
