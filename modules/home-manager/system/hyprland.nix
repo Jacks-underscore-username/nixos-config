@@ -129,6 +129,9 @@
           "SUPER,mouse:272,movewindow"
           "SUPER,mouse:273,resizewindow"
         ];
+        ecosystem = {
+          "no_update_news" = true;
+        };
       };
     };
   };
