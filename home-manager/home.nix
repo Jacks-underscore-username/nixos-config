@@ -152,10 +152,9 @@
 
       keet
 
-      hyperssh
-
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
+      (import ../modules/home-manager/scripts/hssh.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/nix-repl.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/newAlias.nix {inherit pkgs;})
       (import ../modules/home-manager/scripts/newMacro.nix {inherit pkgs;})

@@ -3,5 +3,4 @@
 pkgs:
 with pkgs; {
   keet = callPackage ./keet {};
-  hyperssh = callPackage ./hyperssh {};
 }
