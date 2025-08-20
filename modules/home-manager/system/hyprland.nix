@@ -38,7 +38,7 @@
         #   mode = "rotate";
         #   rotate.length = 10;
         # };
-        winodwrule = [
+        windowrule = [
           "float, class:intellij, title:intellij"
         ];
         monitor = config.hyprland.monitors;
