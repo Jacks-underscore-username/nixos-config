@@ -11,5 +11,6 @@
       name = ".jdks/${jdk.version}";
       value = {source = jdk;};
     })
-    pkgs.jetbrainsJdks);
+    (pkgs.jetbrainsJdks
+      ++ [pkgs.jetbrains.jdk-no-jcef-17]));
 }

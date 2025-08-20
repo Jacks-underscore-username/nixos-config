@@ -12,6 +12,8 @@
     hash,
     # run `git log -1 --pretty=%ct` in jdk repo for new value on update
     sourceEpoc,
+    jdk,
+    bootstrap-jdk,
   } @ javaConfig:
     pkgs.callPackage ./generic.nix {inherit javaConfig;};
 in [
@@ -22,13 +24,17 @@ in [
       tag = "jbr-21.0.6+7";
       hash = "sha256-Neh0PGer4JnNaForBKRlGPLft5cae5GktreyPRNjFCk=";
       sourceEpoc = 1726275531;
+      jdk = pkgs.jdk;
+      bootstrap-jdk = pkgs.jdk;
     })
   # (ver
   #   {
-  #     version = "17.0.12";
-  #     build = "1207.37";
-  #     tag = "jdk-18+0";
-  #     hash = "sha256-L+PGirdcuZYWzl1ryvNdXVY2NRCw9cKj6McW13r/sAw=";
-  #     sourceEpoc = 1727269058;
+  #     version = "17.0.11";
+  #     build = "1207.24";
+  #     tag = "jbr-17.0.8+7";
+  #     hash = "sha256-a7cJF2iCW/1GK0/GmVbaY5pYcn3YtZy5ngFkyAGRhu0=";
+  #     sourceEpoc = 1715809405;
+  #     jdk = pkgs.openjdk17;
+  #     bootstrap-jdk = pkgs.openjdk17-bootstrap;
   #   })
 ]

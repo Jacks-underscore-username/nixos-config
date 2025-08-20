@@ -38,7 +38,7 @@ assert debugBuild -> withJcef; let
     } or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
   cpu = stdenv.hostPlatform.parsed.cpu.name;
 in
-  jdk.overrideAttrs (oldAttrs: rec {
+  javaConfig.jdk.overrideAttrs (oldAttrs: rec {
     pname = "jetbrains-jdk" + lib.optionalString withJcef "-jcef";
     javaVersion = javaConfig.version;
     build = javaConfig.build;
@@ -52,7 +52,7 @@ in
       hash = javaConfig.hash;
     };
 
-    BOOT_JDK = jdk.home;
+    BOOT_JDK = javaConfig.bootstrap-jdk.home;
     SOURCE_DATE_EPOCH = javaConfig.sourceEpoc;
 
     patches = [];
@@ -107,7 +107,7 @@ in
       jbrsdkDir = "jbrsdk${jcefSuffix}-${javaVersion}-linux-${arch}${debugSuffix}-b${build}";
     in
       ''
-        runHook preInstall
+          runHook preInstall
 
         mv build/linux-${cpu}-server-${buildType}/images/jdk/man build/linux-${cpu}-server-${buildType}/images/${jbrsdkDir}
         rm -rf build/linux-${cpu}-server-${buildType}/images/jdk
@@ -181,7 +181,7 @@ in
         your own risk.
       '';
       homepage = "https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime";
-      inherit (jdk.meta) license platforms mainProgram;
+      inherit (javaConfig.jdk.meta) license platforms mainProgram;
       maintainers = with maintainers; [
         edwtjo
         aoli-al
