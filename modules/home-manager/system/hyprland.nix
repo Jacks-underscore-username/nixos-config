@@ -39,7 +39,7 @@
         #   rotate.length = 10;
         # };
         windowrule = [
-          "float, class:intellij, title:intellij"
+          "float, class:jetbrains-idea-ce"
         ];
         monitor = config.hyprland.monitors;
         general = {
