@@ -39,9 +39,9 @@
         #   rotate.length = 10;
         # };
         windowrule = [
-          "float, class:jetbrains-idea-ce"
-          "fullscreen, class:jetbrains-idea-ce"
           # "float, class:jetbrains-idea-ce"
+          # "fullscreen, class:jetbrains-idea-ce"
+          "size 0 0, class:jetbrains-idea-ce"
         ];
         monitor = config.hyprland.monitors;
         general = {
