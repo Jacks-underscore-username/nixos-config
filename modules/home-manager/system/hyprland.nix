@@ -38,9 +38,12 @@
         #   mode = "rotate";
         #   rotate.length = 10;
         # };
+        winodwrule = [
+          "float, class:intellij, title:intellij"
+        ];
         monitor = config.hyprland.monitors;
         general = {
-          # no_focus_fallback = true;
+          no_focus_fallback = true;
         };
         misc = {
           disable_hyprland_logo = true;
