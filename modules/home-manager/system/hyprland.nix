@@ -41,7 +41,7 @@
         windowrule = [
           "float, class:jetbrains-idea-ce"
           # "fullscreen, class:jetbrains-idea-ce"
-          "size 0 0, class:jetbrains-idea-ce"
+          "size 100 100, class:jetbrains-idea-ce"
         ];
         monitor = config.hyprland.monitors;
         general = {
