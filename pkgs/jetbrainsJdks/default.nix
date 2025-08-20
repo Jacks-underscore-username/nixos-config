@@ -23,4 +23,12 @@ in [
       hash = "sha256-Neh0PGer4JnNaForBKRlGPLft5cae5GktreyPRNjFCk=";
       sourceEpoc = 1726275531;
     })
+  # (ver
+  #   {
+  #     version = "17.0.12";
+  #     build = "1207.37";
+  #     tag = "jdk-18+0";
+  #     hash = "sha256-L+PGirdcuZYWzl1ryvNdXVY2NRCw9cKj6McW13r/sAw=";
+  #     sourceEpoc = 1727269058;
+  #   })
 ]
