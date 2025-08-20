@@ -40,7 +40,7 @@
         # };
         windowrule = [
           "float, class:jetbrains-idea-ce"
-          "maximize, class:jetbrains-idea-ce"
+          "fullscreen, class:jetbrains-idea-ce"
           # "float, class:jetbrains-idea-ce"
         ];
         monitor = config.hyprland.monitors;
