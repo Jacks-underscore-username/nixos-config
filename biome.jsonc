@@ -26,7 +26,8 @@
     "rules": {
       "suspicious": {
         "noAssignInExpressions": "off",
-        "noAsyncPromiseExecutor": "off"
+        "noAsyncPromiseExecutor": "off",
+        "noDuplicateParameters": "error"
       },
       "style": {
         "noParameterAssign": "off",

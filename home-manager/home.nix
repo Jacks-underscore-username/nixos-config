@@ -152,6 +152,8 @@
 
       keet
 
+      jetbrainsJdks."21.0.6"
+
       (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
       # <MACRO INSERT>
       (import ../modules/home-manager/scripts/hssh.nix {inherit pkgs;})
