@@ -3,5 +3,5 @@
 pkgs:
 with pkgs; {
   keet = callPackage ./keet {};
-  jetbrainsJdks = import ./jetbrainsJdks {pkgs = pkgs;};
+  jetbrainsJdks = import ./jetbrainsJdks {inherit pkgs;};
 }

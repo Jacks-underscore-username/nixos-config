@@ -26,11 +26,6 @@
   wayland,
   udev,
   javaConfig,
-  #   javaVersion,
-  #   javaBuild7,
-  #   openjdkTag,
-  #   gitHash,
-  #   sourceEpoc,
 }:
 assert debugBuild -> withJcef; let
   arch =
@@ -47,12 +42,6 @@ in
     pname = "jetbrains-jdk" + lib.optionalString withJcef "-jcef";
     javaVersion = javaConfig.version;
     build = javaConfig.build;
-    # To get the new tag:
-    # git clone https://github.com/jetbrains/jetbrainsruntime
-    # cd jetbrainsruntime
-    # git checkout jbr-release-${javaVersion}b${build}
-    # git log --simplify-by-decoration --decorate=short --pretty=short | grep "jbr-" --color=never | cut -d "(" -f2 | cut -d ")" -f1 | awk '{print $2}' | sort -t "-" -k 2 -g | tail -n 1 | tr -d ","
-    #   openjdkTag = "jbr-21.0.6+7";
     openjdkTag = javaConfig.tag;
     version = "${javaVersion}-b${build}";
 
@@ -64,7 +53,6 @@ in
     };
 
     BOOT_JDK = jdk.home;
-    # run `git log -1 --pretty=%ct` in jdk repo for new value on update
     SOURCE_DATE_EPOCH = javaConfig.sourceEpoc;
 
     patches = [];

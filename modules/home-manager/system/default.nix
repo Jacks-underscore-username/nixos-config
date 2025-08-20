@@ -2,7 +2,7 @@
   imports = [
     ./hyprland.nix
     ./permanence.nix
-    # ./java.nix
+    ./java.nix
   ];
 
   hyprland.monitors = [
