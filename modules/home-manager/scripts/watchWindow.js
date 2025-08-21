@@ -1,4 +1,13 @@
-const { execSync, exec } = require("node:child_process");const path = require("node:path");
-const fs = require("node:fs");
+const { execSync } = require('node:child_process')
 
-const statePath = `${process.argv[1].slice(0, process.argv[1].length - 2)}state`;
+let lastValue = ''
+const update = () => {
+  const value = execSync('hyprctl activewindow').toString()
+  if (value !== lastValue) {
+    console.clear()
+    console.log(value)
+    lastValue = value
+  }
+  setTimeout(update, 100)
+}
+update()
