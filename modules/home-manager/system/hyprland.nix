@@ -30,9 +30,11 @@
           "clipse -listen"
         ];
         windowrule = [
-          "float,class:clipse"
-          "size 622 652,class:clipse"
-          "rounding 25,class:clipse"
+          "float, class:clipse"
+          "size 622 652, class:clipse"
+          "rounding 25, class:clipse"
+          "dimaround, class:clipse"
+          "opacity 0.5, class:clipse"
         ];
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
