@@ -36,7 +36,11 @@
             "rounding 25, class:clipse"
             "opacity 0.75, class:.*"
           ]
-          ++ builtins.map (x: "opacity 1, class:.*" + x + ".*") ["Minecraft" "YouTube"];
+          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:.*" + key + ".*") {
+            Minecraft = 1;
+            YouTube = 1;
+            code = 0.9;
+          };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
         #   mode = "rotate";
