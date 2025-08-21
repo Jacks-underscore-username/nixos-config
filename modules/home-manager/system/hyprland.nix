@@ -34,7 +34,9 @@
             "float, class:clipse"
             "size 622 652, class:clipse"
             "rounding 25, class:clipse"
-            "opacity 0.75, class:.*"
+            (
+              "opacity " + lib.strings.floatToString 0.75 + ", class:.*"
+            )
           ]
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:.*" + key + ".*") {
             Minecraft = 1;
