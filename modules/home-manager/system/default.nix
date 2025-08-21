@@ -58,10 +58,11 @@
     };
     results = [c l t r r2];
     str = lib.strings.floatToString;
-  in [
-    ",preferred,auto,1"
-  ];
-  # ++ lib.map (m: m.name + "," + str m.w + "x" + str m.h + m.hz + "," + m.x + "x" + m.y + "," + str m.s + m.t) results;
+  in
+    [
+      ",preferred,auto,1"
+    ]
+    ++ lib.map (m: m.name + "," + str m.w + "x" + str m.h + m.hz + "," + str m.x + "x" + str m.y + "," + str m.s + m.t) results;
   # "eDP-1,2880x1800@90Hz,0x1000,1.8"
   # "DP-2,2560x1600,0x0,1.6"
   # "DP-4,1920x1080@60Hz,1600x300,1"
