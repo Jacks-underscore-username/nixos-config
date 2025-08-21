@@ -34,12 +34,16 @@
             "float, class:clipse"
             "size 622 652, class:clipse"
             "rounding 25, class:clipse"
+            "float, class:watchWindow"
+            "size 622 652, class:watchWindow"
+            "rounding 25, class:watchWindow"
             "opacity 0.75, class:.*"
           ]
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:.*" + key + ".*") {
             Minecraft = 1;
             YouTube = 1;
             code = 0.9;
+            jetbrains-idea-ce = 0.9;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;

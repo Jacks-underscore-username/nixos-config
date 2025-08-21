@@ -157,6 +157,7 @@
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
         # <MACRO INSERT>
+    (import ../modules/home-manager/scripts/watchWindow.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/listMacros.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/hssh.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/nix-repl.nix {inherit pkgs;})
