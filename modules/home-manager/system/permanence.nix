@@ -35,6 +35,10 @@
 
       ".pki"
       ".local/share/PrismLauncher"
+
+      ".gradle"
+      ".cache/JetBrains"
+      ".config/JetBrains"
     ];
     files = [
       ".steam/steam.token"
