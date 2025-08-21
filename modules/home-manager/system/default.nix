@@ -74,7 +74,7 @@
         name = "DP-1";
         hz = "@60Hz";
         s = 1.6;
-        t = ".transform,3";
+        t = ",transform,3";
       };
       t = rec {
         x = c.x;
