@@ -29,12 +29,14 @@
           "hyprpaperManager"
           "clipse -listen"
         ];
-        windowrule = [
-          "float, class:clipse"
-          "size 622 652, class:clipse"
-          "rounding 25, class:clipse"
-          "opacity 0.75, class:.*"
-        ];
+        windowrule =
+          [
+            "float, class:clipse"
+            "size 622 652, class:clipse"
+            "rounding 25, class:clipse"
+            "opacity 0.75, class:.*"
+          ]
+          ++ builtins.map (x: "opacity 1, class:" + x) [".*Minecraft.*"];
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
         #   mode = "rotate";
