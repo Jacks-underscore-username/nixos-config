@@ -153,7 +153,6 @@
 
         keet
       ]
-      ++ jetbrainsJdks
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
         # <MACRO INSERT>
