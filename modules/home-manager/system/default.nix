@@ -58,7 +58,7 @@
     result = let
       c = rec {
         x = 0;
-        y = 1000;
+        y = 0;
         w = 2880;
         h = 1800;
         name = "eDP-1";
