@@ -36,7 +36,7 @@
             "rounding 25, class:clipse"
             "opacity 0.75, class:.*"
           ]
-          ++ builtins.map (x: "opacity 1, class:" + x) [".*Minecraft.*"];
+          ++ builtins.map (x: "opacity 1, class:.*" + x + ".*") ["Minecraft" "YouTube"];
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
         #   mode = "rotate";
