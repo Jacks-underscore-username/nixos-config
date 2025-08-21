@@ -184,6 +184,21 @@ in {
     PATH = "$HOME/.config/pear/bin";
   };
 
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "65536";
+    }
+    {
+      domain = "*";
+      type = "hard";
+      item = "nofile";
+      value = "1048576";
+    }
+  ];
+
   # Make home manager not complain as much.
   home-manager.backupFileExtension = "backup";
 
