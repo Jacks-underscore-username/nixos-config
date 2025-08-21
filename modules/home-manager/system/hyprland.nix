@@ -33,8 +33,8 @@
           "float, class:clipse"
           "size 622 652, class:clipse"
           "rounding 25, class:clipse"
-          "dimaround, class:clipse"
-          "opacity 0.5, class:clipse"
+          "dimaround, class:clipse, focus: 1"
+          "opacity 0.75, class:clipse, focus: 1"
         ];
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
