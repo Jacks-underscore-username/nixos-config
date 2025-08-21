@@ -47,72 +47,61 @@
       finalResult = removeTrailingDotChar resultWithZerosTrimmed;
     in
       finalResult;
-    target = [
-      ",preferred,auto,1"
-      "eDP-1,2880x1800@90Hz,0x1000,1.8"
-      "DP-1,2560x1600@60Hz,-1000x375,1.6,transform,3"
-      "DP-2,2560x1600,0x0,1.6"
-      "DP-4,1920x1080@60Hz,1600x300,1"
-      "DP-5,1920x1080@60Hz,1600x300,1"
-    ];
-    result = let
-      c = rec {
-        x = 0;
-        y = 0;
-        w = 2880;
-        h = 1800;
-        name = "eDP-1";
-        hz = "@90Hz";
-        s = 1.8;
-        t = "";
-      };
-      l = rec {
-        x = c.x - h / s;
-        y = c.y - w / s / 2.56;
-        w = 2560;
-        h = 1600;
-        name = "DP-1";
-        hz = "@60Hz";
-        s = 1.6;
-        t = ",transform,3";
-      };
-      t = rec {
-        x = c.x;
-        y = c.y - c.h / c.s;
-        w = 2560;
-        h = 1600;
-        name = "DP-2";
-        hz = "";
-        s = 1.6;
-        t = "";
-      };
-      r = rec {
-        x = c.x + c.w / c.s;
-        y = c.y - h / s / 1.5;
-        w = 1920;
-        h = 1080;
-        name = "DP-4";
-        hz = "@60Hz";
-        s = 1;
-        t = "";
-      };
-      r2 = rec {
-        x = r.x;
-        y = r.y;
-        w = r.w;
-        h = r.h;
-        name = "DP-5";
-        hz = r.hz;
-        s = r.s;
-        t = r.t;
-      };
-      results = [c l t r r2];
-      str = cleanFloatString;
-    in
-      [
-        ",preferred,auto,1"
-      ]
-      ++ lib.map (m: m.name + "," + str m.w + "x" + str m.h + m.hz + "," + str m.x + "x" + str m.y + "," + str m.s + m.t) results;
+    c = rec {
+      x = 0;
+      y = 0;
+      w = 2880;
+      h = 1800;
+      name = "eDP-1";
+      hz = "@90Hz";
+      s = 1.8;
+      t = "";
+    };
+    l = rec {
+      x = c.x - h / s;
+      y = c.y - w / s / 2.56;
+      w = 2560;
+      h = 1600;
+      name = "DP-1";
+      hz = "@60Hz";
+      s = 1.6;
+      t = ",transform,3";
+    };
+    t = rec {
+      x = c.x;
+      y = c.y - c.h / c.s;
+      w = 2560;
+      h = 1600;
+      name = "DP-2";
+      hz = "";
+      s = 1.6;
+      t = "";
+    };
+    r = rec {
+      x = c.x + c.w / c.s;
+      y = c.y - h / s / 1.5;
+      w = 1920;
+      h = 1080;
+      name = "DP-4";
+      hz = "@60Hz";
+      s = 1;
+      t = "";
+    };
+    r2 = rec {
+      x = r.x;
+      y = r.y;
+      w = r.w;
+      h = r.h;
+      name = "DP-5";
+      hz = r.hz;
+      s = r.s;
+      t = r.t;
+    };
+    results = [c l t r r2];
+    str = cleanFloatString;
   in
-    lib.trace ("\nGot:\n" + lib.concatLines result + "\n\nWanted:\n" + lib.concatLines target) result;
+    [
+      ",preferred,auto,1"
+    ]
+    ++ lib.map (m: m.name + "," + str m.w + "x" + str m.h + m.hz + "," + str m.x + "x" + str m.y + "," + str m.s + m.t) results;
 }
