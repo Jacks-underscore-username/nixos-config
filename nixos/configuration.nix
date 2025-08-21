@@ -184,27 +184,6 @@ in {
     PATH = "$HOME/.config/pear/bin";
   };
 
-  # Set global file descriptor limit
-  boot.kernel.sysctl = {
-    "fs.file-max" = 100000; # System-wide max open files (adjust as needed)
-  };
-
-  # Set default ulimit for all user processes (soft and hard limits)
-  security.pam.loginLimits = [
-    {
-      domain = "*"; # Applies to all users
-      type = "soft";
-      item = "nofile";
-      value = 65536;
-    }
-    {
-      domain = "*"; # Applies to all users
-      type = "hard";
-      item = "nofile";
-      value = 65536;
-    }
-  ];
-
   # Make home manager not complain as much.
   home-manager.backupFileExtension = "backup";
 
