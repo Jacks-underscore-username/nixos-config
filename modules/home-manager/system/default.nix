@@ -88,7 +88,7 @@
       };
       r = rec {
         x = c.x + c.w / c.s;
-        y = c.y - w / s / 1.54;
+        y = c.y - h / s / 1.5;
         w = 1920;
         h = 1080;
         name = "DP-4";
