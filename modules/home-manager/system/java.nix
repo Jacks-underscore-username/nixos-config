@@ -3,7 +3,7 @@
   programs.java = {
     enable = true;
     # This determines JAVA_HOME - set to Java 21 at the moment as that is what modern Minecraft uses
-    package = pkgs.zulu;
+    package = pkgs.zulu17;
   };
 
   home.sessionPath = ["$HOME/.jdks"];
@@ -13,12 +13,12 @@
         value = {source = jdk;};
       })
       [
-        zulu24
-        zulu23
-        zulu
+        # zulu24
+        # zulu23
+        # zulu
         zulu17
-        zulu11
-        zulu8
+        # zulu11
+        # zulu8
         # pkgs.jetbrains.jdk
         # pkgs.jetbrains.jdk-no-jcef-17
       ]);
