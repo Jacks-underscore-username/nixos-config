@@ -1,16 +1,16 @@
 # inspo: https://discourse.nixos.org/t/fix-collision-with-multiple-jdks/10812/5
 {pkgs, ...}: let
-  jdks = [
+  jdks = with pkgs; [
     # jdk
     # jdk17
     # jdk11
-    pkgs.jetbrains.jdk
-    pkgs.jetbrains.jdk-no-jcef-17
+    jetbrains.jdk-no-jcef
+    jetbrains.jdk-no-jcef-17
   ];
 in {
   programs.java = {
     enable = true;
-    # This determines JAVA_HOME - set to Java 21 at the moment as that is what modern Minecraft uses
+    # This determines JAVA_HOME
     package = builtins.elemAt jdks 0;
   };
 

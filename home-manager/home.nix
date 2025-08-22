@@ -151,6 +151,9 @@
         ags
 
         keet
+
+        # jetbrains.jdk-no-jcef
+        # jetbrains.jdk-no-jcef-17
       ]
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
