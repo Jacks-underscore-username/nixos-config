@@ -42,7 +42,7 @@
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:.*" + key + ".*") {
             Minecraft = 1;
             code = 0.9;
-            jetbrains-idea-ce = 0.9;
+            jetbrains-idea-ce = 1;
           }
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:.*" + key + ".*") {
             YouTube = 1;
