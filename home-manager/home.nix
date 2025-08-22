@@ -56,7 +56,6 @@
         man-pages
         man-pages-posix
         linux-manual
-        lutris
         networkmanagerapplet
         waybar
         playerctl
