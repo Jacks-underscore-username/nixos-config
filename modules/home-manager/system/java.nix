@@ -3,7 +3,7 @@
   programs.java = {
     enable = true;
     # This determines JAVA_HOME - set to Java 21 at the moment as that is what modern Minecraft uses
-    package = pkgs.temurin-jre-bin;
+    package = pkgs.jdk;
   };
 
   home.sessionPath = ["$HOME/.jdks"];
@@ -13,9 +13,9 @@
         value = {source = jdk;};
       })
       [
-        temurin-jre-bin
-        temurin-jre-bin-17
-        temurin-jre-bin-11
+        jdk
+        jdk17
+        jdk11
         # pkgs.jetbrains.jdk
         # pkgs.jetbrains.jdk-no-jcef-17
       ]);
