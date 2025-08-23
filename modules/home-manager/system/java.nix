@@ -6,6 +6,7 @@
     # jdk11
     jetbrains.jdk-no-jcef
     jetbrains.jdk-no-jcef-17
+    zulu8
   ];
 in {
   programs.java = {
