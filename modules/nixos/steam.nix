@@ -174,6 +174,7 @@ in {
   environment.sessionVariables = {
     LD_LIBRARY_PATH = [
       "${pkgs.krb5}/lib"
+      "${pkgs.libkrb5}/lib"
       "${pkgs.libtirpc}/lib"
     ];
   };
