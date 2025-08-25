@@ -173,6 +173,12 @@ in {
     localNetworkGameTransfers.openFirewall = true;
     extraCompatPackages = runtimeLibs;
   };
+  environment.sessionVariables = {
+    LD_LIBRARY_PATH = [
+      "${pkgs.krb5}/lib"
+      "${pkgs.libtirpc}/lib"
+    ];
+  };
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
