@@ -147,6 +147,7 @@
     e2fsprogs
 
     libkrb5
+    krb5
   ];
 in {
   imports = [
