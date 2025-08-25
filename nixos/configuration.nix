@@ -154,6 +154,15 @@
     jack2
     qjackctl
     jack_capture
+    nss_latest
+    zlib
+    alsa-lib
+    libpulseaudio
+    vulkan-loader
+    krb5
+    libkrb5
+    libtirpc
+    pulseaudio
   ];
 in {
   imports = [
