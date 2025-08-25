@@ -17,7 +17,7 @@
       ".java/.userPrefs/jetbrains"
 
       # DO NOT DO ".steam"!!!
-      ".local/share/Steam"
+      # ".local/share/Steam"
       ".cache/fontconfig"
       ".cache/mesa_shader_cache_db"
       ".compose-cache"
