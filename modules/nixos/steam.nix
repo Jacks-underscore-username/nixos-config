@@ -20,6 +20,7 @@ in {
       vulkan-loader
       krb5
       libkrb5
+      libtirpc
     ];
   };
   hardware.graphics = {
