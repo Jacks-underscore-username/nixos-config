@@ -157,6 +157,7 @@
     nss_latest
     zlib
     alsa-lib
+    alsa-plugins
     libpulseaudio
     vulkan-loader
     krb5

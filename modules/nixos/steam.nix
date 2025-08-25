@@ -147,9 +147,6 @@
     fuse
     e2fsprogs
 
-    libkrb5
-    krb5
-
     pavucontrol
     libjack2
     jack2
