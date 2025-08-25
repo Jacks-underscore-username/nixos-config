@@ -148,6 +148,12 @@
 
     libkrb5
     krb5
+
+    pavucontrol
+    libjack2
+    jack2
+    qjackctl
+    jack_capture
   ];
 in {
   imports = [
@@ -237,7 +243,7 @@ in {
 
   users.users.jackc = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "plugdev" "dialout" "tty"];
+    extraGroups = ["wheel" "networkmanager" "plugdev" "dialout" "tty" "jackaudio"];
     # TODO: Figure out actual passwords.
     initialPassword = "0";
   };
@@ -309,21 +315,21 @@ in {
 
   # Enable sound with pipewire.
   # TODO: ?
-  services.pulseaudio.enable = true;
-  services.pipewire.enable = false;
+  # services.pulseaudio.enable = true;
+  # services.pipewire.enable = false;
   security.rtkit.enable = true;
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  #   # If you want to use JACK applications, uncomment this
-  #   jack.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    jack.enable = true;
 
-  #   # use the example session manager (no others are packaged yet so this is enabled by default,
-  #   # no need to redefine it in your config for now)
-  #   #media-session.enable = true;
-  # };
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -353,7 +359,7 @@ in {
     libraries = runtimeLibs;
   };
 
-  environment.variables.LD_LIBRARY_PATH = lib.makeLibraryPath runtimeLibs;
+  environment.variables.LD_LIBRARY_PATH = lib.mkForce (lib.makeLibraryPath runtimeLibs);
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";
