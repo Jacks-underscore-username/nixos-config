@@ -18,6 +18,8 @@ in {
       alsa-lib
       libpulseaudio
       vulkan-loader
+      krb5
+      libkrb5
     ];
   };
   hardware.graphics = {
