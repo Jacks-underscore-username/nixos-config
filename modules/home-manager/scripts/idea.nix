@@ -1,4 +1,4 @@
 {pkgs}:
 pkgs.writeShellScriptBin "idea" ''
-  idea-community "$(pwd)"
+  hyprctl dispatch exec 'idea-community "$(pwd)"'
 ''
