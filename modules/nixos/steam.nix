@@ -162,6 +162,8 @@
     libkrb5
     libtirpc
     pulseaudio
+
+    winetricks
   ];
 in {
   programs.steam = {
