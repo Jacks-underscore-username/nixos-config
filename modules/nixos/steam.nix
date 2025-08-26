@@ -182,19 +182,4 @@ in {
     enable = true;
     enable32Bit = true;
   };
-
-  # persist =
-  #   persist
-  #   ++ [
-  #     # DO NOT DO ".steam"!!!
-  #     ".local/share/Steam"
-  #     ".cache/fontconfig"
-  #     ".cache/mesa_shader_cache_db"
-  #     ".compose-cache"
-
-  #     ".factorio"
-  #     ".local/share/Celeste"
-  #     "Desktop"
-  #     ".local/share/applications"
-  #   ];
 }
