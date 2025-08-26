@@ -154,6 +154,10 @@
 
         # jetbrains.jdk-no-jcef
         # jetbrains.jdk-no-jcef-17
+
+        winetricks
+        freetype
+        fontconfig
       ]
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
