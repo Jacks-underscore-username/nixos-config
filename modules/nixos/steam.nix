@@ -164,6 +164,8 @@
     pulseaudio
 
     winetricks
+    freetype
+    fontconfig
   ];
 in {
   programs.steam = {
