@@ -173,7 +173,11 @@ in {
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
-    extraCompatPackages = runtimeLibs;
+    extraCompatPackages =
+      runtimeLibs
+      ++ (with pkgs; [
+        proton-ge-bin
+      ]);
   };
   programs.steam.package = pkgs.steam.override {
     extraPkgs = pkgs':
@@ -186,10 +190,9 @@ in {
           libpng
           libpulseaudio
           libvorbis
-          stdenv.cc.cc.lib # Provides libstdc++.so.6
+          stdenv.cc.cc.lib
           libkrb5
           keyutils
-          # Add other libraries as needed
         ]
         ++ runtimeLibs;
   };
