@@ -44,11 +44,11 @@
             code = 0.9;
             jetbrains-idea-ce = 0.9;
             factorio = 1;
-            "\[DEV\]" = 1;
           }
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:.*" + key + ".*") {
             YouTube = 1;
             Cosmoteer = 1;
+            "\[DEV\]" = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
