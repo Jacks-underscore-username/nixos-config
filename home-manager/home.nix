@@ -152,9 +152,6 @@
 
         keet
 
-        # jetbrains.jdk-no-jcef
-        # jetbrains.jdk-no-jcef-17
-
         winetricks
         freetype
         fontconfig
