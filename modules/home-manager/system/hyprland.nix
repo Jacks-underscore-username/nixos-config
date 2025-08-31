@@ -48,7 +48,8 @@
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:.*" + key + ".*") {
             YouTube = 1;
             Cosmoteer = 1;
-            "\[DEV\]" = 1;
+            "\[OPAQUE\]" = 1;
+            Modrinth = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
