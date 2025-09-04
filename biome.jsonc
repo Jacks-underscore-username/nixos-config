@@ -33,6 +33,10 @@
         "noParameterAssign": "off",
         "useSingleVarDeclarator": "off"
       },
+      "complexity": {
+        "useLiteralKeys": "off",
+        "useArrowFunction": "error"
+      },
       "recommended": true
     }
   },
