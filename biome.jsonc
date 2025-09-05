@@ -37,6 +37,9 @@
         "useLiteralKeys": "off",
         "useArrowFunction": "error"
       },
+      "performance": {
+        "noDelete": "off"
+      },
       "recommended": true
     }
   },
