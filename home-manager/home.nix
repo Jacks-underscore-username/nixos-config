@@ -132,8 +132,6 @@
 
         vulkan-loader # VulkanMod's lwjgl
 
-        flite
-
         openscad
 
         (import ../modules/home-manager/scripts/compareDir.nix {inherit pkgs;})
