@@ -156,8 +156,6 @@
         freetype
         fontconfig
 
-        flite
-
         everest-mons
 
         direnv

@@ -7,8 +7,6 @@
   ...
 }: let
   runtimeLibs = with pkgs; [
-    flite
-
     # List by default
     zlib
     zstd
