@@ -157,6 +157,8 @@
         fontconfig
 
         flite
+
+        everest-mons
       ]
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
