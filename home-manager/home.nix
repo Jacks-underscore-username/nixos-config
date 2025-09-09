@@ -159,6 +159,8 @@
         flite
 
         everest-mons
+
+        direnv
       ]
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
