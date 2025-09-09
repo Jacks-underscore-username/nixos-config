@@ -23,7 +23,7 @@
       ".compose-cache"
 
       ".factorio"
-      ".local/share/Celeste"
+      # ".local/share/Celeste"
       "Desktop"
       ".local/share/applications"
 
