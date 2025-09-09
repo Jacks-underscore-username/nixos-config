@@ -49,7 +49,7 @@
             YouTube = 1;
             Cosmoteer = 1;
             OPAQUE = 1;
-            Celeste = 1;
+            # Celeste = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
