@@ -223,6 +223,12 @@ in {
     umount /btrfs_tmp
   '';
 
+  fileSystems."/mnt/btrfs_root" = {
+    device = "/dev/root_vg/root";
+    fsType = "btrfs";
+    options = ["noatime" "compress=zstd"];
+  };
+
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     hideMounts = true;
