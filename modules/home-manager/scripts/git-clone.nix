@@ -1,6 +1,6 @@
 {pkgs}:
 pkgs.writeShellScriptBin "git-clone" ''
-  if [ "$
+  if [ "$#" -lt 2 ]; then
     echo "Usage: git-clone-regex <repository_url> <regex_pattern> [target_directory]"
     echo "Example: git-clone-regex https://github.com/owner/repo '.*\.md$' my-docs"
     echo "  Clones files matching '.*\.md$' from the repository into 'my-docs/'"
@@ -37,13 +37,13 @@ pkgs.writeShellScriptBin "git-clone" ''
       files_to_move+=("$file")
   done < <(${pkgs.findutils}/bin/find . -type f -print0 | grep -Pz "$REGEX_PATTERN")
 
-  if [ ''${
+  if [ "''${#files_to_move[@]}" -eq 0 ]; then
       echo "No files found matching the regex '$REGEX_PATTERN' in the repository."
       exit 0
   fi
 
-  echo "Found ''${
-  for file in "''${files_to_move[@]}"; do
+  echo "Found ''${#files_to_move[@]} matching files:"
+    for file in "''${files_to_move[@]}"; do
     echo "- '$file'"
   done
   echo "--------------------------------------------------"
