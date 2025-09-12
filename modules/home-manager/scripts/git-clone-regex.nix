@@ -35,7 +35,7 @@ pkgs.writeShellScriptBin "git-clone-regex" ''
   declare -a files_to_move=()
   while IFS= read -r -d $'\0' file; do
       files_to_move+=("$file")
-  done < <(${pkgs.findutils}/bin/find . -type f -print0 | grep -Pz "$REGEX_PATTERN")
+  done < <(${pkgs.findutils}/bin/find . -print0 | grep -Pz "$REGEX_PATTERN")
 
   if [ "''${#files_to_move[@]}" -eq 0 ]; then
       echo "No files found matching the regex '$REGEX_PATTERN' in the repository."
