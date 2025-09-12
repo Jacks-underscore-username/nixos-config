@@ -27,11 +27,9 @@ pkgs.writeShellScriptBin "rn-regex" ''
     fi
 
     new_path=$(
-      # Explicitly redirect perl's standard input from /dev/null
-      # to prevent it from consuming input meant for the 'while read' loop.
       echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
         BEGIN { \$old_path = shift; chomp \$old_path; }
-        s{$SEARCH_REGEX}{\$REPLACE_STRING}g
+        s{$SEARCH_REGEX}{$REPLACE_STRING}g
       " < /dev/null
     )
 
