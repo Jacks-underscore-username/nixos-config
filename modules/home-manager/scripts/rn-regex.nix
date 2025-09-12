@@ -26,14 +26,8 @@ pkgs.writeShellScriptBin "rn-regex" ''
       continue
     fi
 
-    new_path=$(
-      echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
-        BEGIN { \$old_path = shift; chomp \$old_path; }
-        s{$SEARCH_REGEX}{$REPLACE_STRING}g
-      " < /dev/null
-    )
-
-    if [[ "$old_path" != "$new_path" ]]; then
+      echo "$old_path" | ${pkgs.perl}/bin/perl -pe 's{'"$SEARCH_REGEX"'}{'"$REPLACE_STRING"'}g' < /dev/null
+      if [[ "$old_path" != "$new_path" ]]; then
       old_names+=("$old_path")
       new_names+=("$new_path")
       num_renames=$((num_renames + 1))
