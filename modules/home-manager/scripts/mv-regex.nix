@@ -19,7 +19,7 @@ pkgs.writeShellScriptBin "mv-regex" ''
     exit 0
   fi
 
-  echo "The following files will be COPIED:"
+  echo "The following files will be MOVED:"
   for file in "''${files_to_move[@]}"; do
     echo "- '$file'"
   done
@@ -32,7 +32,7 @@ pkgs.writeShellScriptBin "mv-regex" ''
   fi
 
   echo "Proceeding with moving..."
-  printf "%s\0" "''${files_to_move[@]}" | xargs -0 mv --parents -t "$2"
+  printf "%s\0" "''${files_to_move[@]}" | xargs -0 mv -t "$2"
 
   echo "Moving complete."
 ''
