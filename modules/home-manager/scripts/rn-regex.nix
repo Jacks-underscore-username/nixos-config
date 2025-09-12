@@ -19,14 +19,15 @@ pkgs.writeShellScriptBin "rn-regex" ''
   declare -a new_names=()
   declare -i num_renames=0
 
-  # This is the line that needs to be removed/changed:
-  # while IFS= read -r -d $'\0' line; do
+  echo "HERE 1"
 
-  # The find command should directly pipe to the loop that processes old_path.
   ${pkgs.findutils}/bin/find . -print0 | while IFS= read -r -d $'\0' old_path; do
+    echo "HERE 2"
     if [ "$old_path" = "." ]; then
       continue
     fi
+
+    echo "HERE 3"
 
     new_path=$(
       echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
@@ -34,15 +35,16 @@ pkgs.writeShellScriptBin "rn-regex" ''
         s{$1}{$2}g
       "
     )
+    echo "HERE 4"
 
     if [[ "$old_path" != "$new_path" ]]; then
       old_names+=("$old_path")
       new_names+=("$new_path")
       num_renames=$((num_renames + 1))
     fi
+    echo "HERE 5"
   done
-  # This is the corresponding 'done' that needs to be removed.
-  # done
+  echo "HERE 6"
 
   if [ "$num_renames" -eq 0 ]; then
     echo "No files found that match the regex or would be renamed."
