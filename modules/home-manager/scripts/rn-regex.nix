@@ -8,11 +8,13 @@ pkgs.writeShellScriptBin "rn-regex" ''
     exit 1
   fi
 
+  SEARCH_REGEX=$1
+  REPLACE_STRING=$2
   START_DIR=$(pwd)
 
   echo "Searching for files to rename from directory: '$START_DIR'"
-  echo "Regex pattern to match: '$1'"
-  echo "Replacement string (Perl syntax): '$2'"
+  echo "Regex pattern to match: '$SEARCH_REGEX'"
+  echo "Replacement string (Perl syntax): '$REPLACE_STRING'"
   echo "--------------------------------------------------"
 
   declare -a old_names=()
@@ -29,7 +31,7 @@ pkgs.writeShellScriptBin "rn-regex" ''
       # to prevent it from consuming input meant for the 'while read' loop.
       echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
         BEGIN { \$old_path = shift; chomp \$old_path; }
-        s{$ARGV[0]}{\$ARGV[1]}g
+        s{$SEARCH_REGEX}{\$REPLACE_STRING}g
       " < /dev/null
     )
 
