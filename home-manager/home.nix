@@ -162,7 +162,10 @@
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
         # <MACRO INSERT>
-        (import ../modules/home-manager/scripts/git-clone.nix {inherit pkgs;})
+        (import ../modules/home-manager/scripts/rn-regex.nix {inherit pkgs;})
+        (import ../modules/home-manager/scripts/mv-regex.nix {inherit pkgs;})
+        (import ../modules/home-manager/scripts/cp-regex.nix {inherit pkgs;})
+        (import ../modules/home-manager/scripts/git-clone-regex.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/rm-regex.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/nix-find.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/watchWindow.nix {inherit pkgs;})

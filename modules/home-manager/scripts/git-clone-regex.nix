@@ -1,5 +1,5 @@
 {pkgs}:
-pkgs.writeShellScriptBin "git-clone" ''
+pkgs.writeShellScriptBin "git-clone-regex" ''
   if [ "$#" -lt 2 ]; then
     echo "Usage: git-clone-regex <repository_url> <regex_pattern> [target_directory]"
     echo "Example: git-clone-regex https://github.com/owner/repo '.*\.md$' my-docs"

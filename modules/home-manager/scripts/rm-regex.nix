@@ -1,7 +1,7 @@
 {pkgs}:
 pkgs.writeShellScriptBin "rm-regex" ''
   if [ -z "$1" ]; then
-    echo "Usage: rm-regex \"REGEX\""
+    echo "Usage: rm-regex <regex_pattern>"
     exit 1
   fi
 
