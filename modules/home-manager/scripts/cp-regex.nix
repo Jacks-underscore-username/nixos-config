@@ -32,7 +32,7 @@ pkgs.writeShellScriptBin "cp-regex" ''
   fi
 
   echo "Proceeding with copying..."
-  printf "%s\0" "''${files_to_copy[@]}" | xargs -0 cp -r --parents "$2"
+  printf "%s\0" "''${files_to_copy[@]}" | xargs -0 cp -r --parents -t "$2"
 
   echo "Copying complete."
 ''
