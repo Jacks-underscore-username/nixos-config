@@ -29,7 +29,7 @@ pkgs.writeShellScriptBin "rn-regex" ''
       # to prevent it from consuming input meant for the 'while read' loop.
       echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
         BEGIN { \$old_path = shift; chomp \$old_path; }
-        s{$1}{$2}g
+        s{$ARGV[0]}{\$ARGV[1]}g
       " < /dev/null
     )
 
