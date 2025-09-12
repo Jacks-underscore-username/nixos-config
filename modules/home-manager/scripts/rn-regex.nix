@@ -28,17 +28,11 @@ pkgs.writeShellScriptBin "rn-regex" ''
 
     new_path=$(echo "$old_path" | ${pkgs.perl}/bin/perl -pe 's{'"$SEARCH_REGEX"'}{'"$REPLACE_STRING"'}g')
     if [[ "$old_path" != "$new_path" ]]; then
-      echo "before: $num_renames"
       old_names+=("$old_path")
       new_names+=("$new_path")
       num_renames=$((num_renames + 1))
-      echo "after: $num_renames"
     fi
   done < <(${pkgs.findutils}/bin/find . -type f -print0)
-
-  echo "old_names: $old_names"
-  echo "new_names: $new_names"
-  echo "num_renames: $num_renames"
 
   if [ "$num_renames" -eq 0 ]; then
     echo "No files found that match the regex or would be renamed."
