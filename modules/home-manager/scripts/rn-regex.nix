@@ -22,12 +22,13 @@ pkgs.writeShellScriptBin "rn-regex" ''
   declare -i num_renames=0
 
   ${pkgs.findutils}/bin/find . -print0 | while IFS= read -r -d $'\0' old_path; do
+    echo "$old_path"
     if [ "$old_path" = "." ]; then
       continue
     fi
 
-      new_path=$(echo "$old_path" | ${pkgs.perl}/bin/perl -pe 's{'"$SEARCH_REGEX"'}{'"$REPLACE_STRING"'}g')
-      if [[ "$old_path" != "$new_path" ]]; then
+    new_path=$(echo "$old_path" | ${pkgs.perl}/bin/perl -pe 's{'"$SEARCH_REGEX"'}{'"$REPLACE_STRING"'}g')
+    if [[ "$old_path" != "$new_path" ]]; then
       old_names+=("$old_path")
       new_names+=("$new_path")
       num_renames=$((num_renames + 1))
