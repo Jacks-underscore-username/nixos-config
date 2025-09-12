@@ -36,6 +36,8 @@ pkgs.writeShellScriptBin "rn-regex" ''
     fi
   done
 
+  echo "old_names: $old_names"
+  echo "new_names: $new_names"
   echo "num_renames: $num_renames"
 
   if [ "$num_renames" -eq 0 ]; then
