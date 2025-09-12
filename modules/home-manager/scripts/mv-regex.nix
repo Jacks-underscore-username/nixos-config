@@ -32,7 +32,7 @@ pkgs.writeShellScriptBin "mv-regex" ''
   fi
 
   echo "Proceeding with moving..."
-  printf "%s\0" "''${files_to_move[@]}" | xargs -0 mv -t "$2"
+  printf "%s\0" "''${files_to_move[@]}" | xargs -0 mv -f -t "$2"
 
   echo "Moving complete."
 ''
