@@ -21,7 +21,7 @@ pkgs.writeShellScriptBin "rn-regex" ''
   declare -a new_names=()
   declare -i num_renames=0
 
-  ${pkgs.findutils}/bin/find . -type f -print0 | while IFS= read -r -d $'\0' old_path; do
+  while IFS= read -r -d $'\0' old_path; do
     if [ "$old_path" = "." ]; then
       continue
     fi
@@ -34,7 +34,7 @@ pkgs.writeShellScriptBin "rn-regex" ''
       num_renames=$((num_renames + 1))
       echo "after: $num_renames"
     fi
-  done
+  done < <(${pkgs.findutils}/bin/find . -type f -print0)
 
   echo "old_names: $old_names"
   echo "new_names: $new_names"
