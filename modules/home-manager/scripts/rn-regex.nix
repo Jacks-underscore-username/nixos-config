@@ -30,6 +30,7 @@ pkgs.writeShellScriptBin "rn-regex" ''
     new_path=$(echo "$old_path" | ${pkgs.perl}/bin/perl -pe 's{'"$SEARCH_REGEX"'}{'"$REPLACE_STRING"'}g')
     echo "new: $new_path"
     if [[ "$old_path" != "$new_path" ]]; then
+    echo "HERE"
       old_names+=("$old_path")
       new_names+=("$new_path")
       num_renames=$((num_renames + 1))
