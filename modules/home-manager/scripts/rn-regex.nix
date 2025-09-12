@@ -20,26 +20,24 @@ pkgs.writeShellScriptBin "rn-regex" ''
   declare -i num_renames=0
 
   while IFS= read -r -d $'\0' line; do
-    (
-      ${pkgs.findutils}/bin/find . -print0 | while IFS= read -r -d $'\0' old_path; do
-        if [ "$old_path" = "." ]; then
-          continue
-        fi
+    ${pkgs.findutils}/bin/find . -print0 | while IFS= read -r -d $'\0' old_path; do
+      if [ "$old_path" = "." ]; then
+        continue
+      fi
 
-        new_path=$(
-          echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
-            BEGIN { \$old_path = shift; chomp \$old_path; }
-            s{$1}{$2}g
-          "
-        )
+      new_path=$(
+        echo "$old_path" | ${pkgs.perl}/bin/perl -pe "
+          BEGIN { \$old_path = shift; chomp \$old_path; }
+          s{$1}{$2}g
+        "
+      )
 
-        if [[ "$old_path" != "$new_path" ]]; then
-          old_names+=("$old_path")
-          new_names+=("$new_path")
-          num_renames=$((num_renames + 1))
-        fi
-      done
-    )
+      if [[ "$old_path" != "$new_path" ]]; then
+        old_names+=("$old_path")
+        new_names+=("$new_path")
+        num_renames=$((num_renames + 1))
+      fi
+    done
   done
 
   if [ "$num_renames" -eq 0 ]; then
