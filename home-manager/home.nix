@@ -17,6 +17,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.unstable-small-packages
     ];
     config.allowUnfree = true;
   };
@@ -102,7 +103,7 @@
         libxkbcommon
         glib
         wineWowPackages.stable
-        gradle
+        pkgs.unstable-small.gradle_9
         networkmanagerapplet
         gnome-system-monitor
         (import ../modules/home-manager/scripts/deflate.nix {inherit pkgs;})
