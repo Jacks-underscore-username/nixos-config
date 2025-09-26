@@ -242,6 +242,12 @@ in {
     ];
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4";
+  };
+
   programs.fuse.userAllowOther = true;
 
   # virtualisation.podman = {
@@ -257,8 +263,8 @@ in {
   '';
 
   systemd.tmpfiles.rules = [
-    "d /persist/home/ 1777 root root -" # /persist/home created, owned by root
-    "d /persist/home/jackc 0770 jackc users -" # /persist/home/jackc created, owned by that user
+    "d /persist/home/ 1777 root root -"
+    "d /persist/home/jackc 0770 jackc users -"
   ];
 
   users.users.jackc = {
@@ -318,26 +324,26 @@ in {
   boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288; # often good to increase for Steam
   boot.kernel.sysctl."fs.file-max" = 1048576; # Max files for the entire system
 
-  # Increase the default per-user soft and hard limits
-  security.pam.loginLimits = [
-    {
-      domain = "*";
-      type = "soft";
-      item = "nofile";
-      value = "65536";
-    }
-    {
-      domain = "*";
-      type = "hard";
-      item = "nofile";
-      value = "1048576";
-    }
-  ];
+  # # Increase the default per-user soft and hard limits
+  # security.pam.loginLimits = [
+  #   {
+  #     domain = "*";
+  #     type = "soft";
+  #     item = "nofile";
+  #     value = "65536";
+  #   }
+  #   {
+  #     domain = "*";
+  #     type = "hard";
+  #     item = "nofile";
+  #     value = "1048576";
+  #   }
+  # ];
 
-  # If using systemd user services (e.g., for home-manager managed Steam):
-  systemd.user.extraConfig = ''
-    DefaultLimitNOFILE=65536
-  '';
+  # # If using systemd user services (e.g., for home-manager managed Steam):
+  # systemd.user.extraConfig = ''
+  #   DefaultLimitNOFILE=65536
+  # '';
 
   environment.sessionVariables = {
     # Fix problems with pixelated apps due to hyprland.

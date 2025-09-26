@@ -27,7 +27,8 @@
       "suspicious": {
         "noAssignInExpressions": "off",
         "noAsyncPromiseExecutor": "off",
-        "noDuplicateParameters": "error"
+        "noDuplicateParameters": "error",
+        "noExplicitAny": "off"
       },
       "style": {
         "noParameterAssign": "off",
@@ -39,6 +40,9 @@
       },
       "performance": {
         "noDelete": "off"
+      },
+      "security": {
+        "noGlobalEval": "off"
       },
       "recommended": true
     }

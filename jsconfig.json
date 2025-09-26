@@ -3,7 +3,7 @@
     "module": "NodeNext",
     "target": "ESNext",
     "lib": ["ESNext", "dom"],
-    "moduleResolution": "nodenext",
+    "maxNodeModuleJsDepth": 100,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "checkJs": true,
@@ -22,6 +22,6 @@
     "noUnusedParameters": true,
     "noPropertyAccessFromIndexSignature": true
   },
-  "include": ["**/*.js"],
+  "include": ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.ts"],
   "exclude": ["node_modules"]
 }
