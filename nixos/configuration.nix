@@ -250,6 +250,8 @@ in {
 
   programs.fuse.userAllowOther = true;
 
+  services.earlyoom.enable = true;
+
   # virtualisation.podman = {
   #   enable = true;
   #   dockerCompat = true;
