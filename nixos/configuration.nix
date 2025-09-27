@@ -242,11 +242,11 @@ in {
     ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  zramSwap = {
-    enable = true;
-    algorithm = "lz4";
-  };
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # zramSwap = {
+  #   enable = true;
+  #   algorithm = "lz4";
+  # };
 
   programs.fuse.userAllowOther = true;
 
