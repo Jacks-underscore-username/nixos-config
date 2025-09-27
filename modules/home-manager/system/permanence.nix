@@ -17,7 +17,10 @@
       ".java/.userPrefs/jetbrains"
 
       # DO NOT DO ".steam"!!!
-      ".local/share/Steam"
+      {
+        directory = ".local/share/Steam";
+        method = "symlink";
+      }
       ".cache/fontconfig"
       ".cache/mesa_shader_cache_db"
       ".compose-cache"
