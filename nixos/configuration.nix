@@ -327,25 +327,25 @@ in {
   boot.kernel.sysctl."fs.file-max" = 1048576; # Max files for the entire system
 
   # # Increase the default per-user soft and hard limits
-  # security.pam.loginLimits = [
-  #   {
-  #     domain = "*";
-  #     type = "soft";
-  #     item = "nofile";
-  #     value = "65536";
-  #   }
-  #   {
-  #     domain = "*";
-  #     type = "hard";
-  #     item = "nofile";
-  #     value = "1048576";
-  #   }
-  # ];
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "65536";
+    }
+    {
+      domain = "*";
+      type = "hard";
+      item = "nofile";
+      value = "1048576";
+    }
+  ];
 
-  # # If using systemd user services (e.g., for home-manager managed Steam):
-  # systemd.user.extraConfig = ''
-  #   DefaultLimitNOFILE=65536
-  # '';
+  # If using systemd user services (e.g., for home-manager managed Steam):
+  systemd.user.extraConfig = ''
+    DefaultLimitNOFILE=65536
+  '';
 
   environment.sessionVariables = {
     # Fix problems with pixelated apps due to hyprland.
