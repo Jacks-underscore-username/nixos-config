@@ -250,7 +250,7 @@ in {
 
   programs.fuse.userAllowOther = true;
 
-  services.earlyoom.enable = true;
+  # services.earlyoom.enable = true;
 
   # virtualisation.podman = {
   #   enable = true;
