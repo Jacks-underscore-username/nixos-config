@@ -65,7 +65,7 @@
         hyprpaper
         hyprpicker
         obs-studio
-        jetbrains.idea-community
+        unstable.jetbrains.idea-community
         (import ../modules/home-manager/scripts/cycleWorkspace.nix {inherit pkgs;})
         (
           wrapWithMissingLibraries
@@ -146,7 +146,7 @@
 
         (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
-        pkgs.unstable.ollama
+        # pkgs.unstable.ollama
         ags
 
         keet
