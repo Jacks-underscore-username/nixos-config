@@ -147,7 +147,7 @@
         (import ../modules/home-manager/scripts/toggleLightMode.nix {inherit pkgs;})
 
         # pkgs.unstable.ollama
-        ags
+        # ags
 
         keet
 

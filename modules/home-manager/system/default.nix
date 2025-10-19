@@ -3,6 +3,7 @@
     ./hyprland.nix
     ./permanence.nix
     ./java.nix
+    ./ags.nix
   ];
 
   hyprland.monitors = let
