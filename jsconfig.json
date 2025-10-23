@@ -22,6 +22,13 @@
     "noUnusedParameters": true,
     "noPropertyAccessFromIndexSignature": true
   },
-  "include": ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.ts"],
+  "include": [
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.cjs",
+    "**/*.ts",
+    "**/*.jsx",
+    "**/*.tsx"
+  ],
   "exclude": ["node_modules"]
 }

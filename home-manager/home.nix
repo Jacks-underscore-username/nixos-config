@@ -80,7 +80,7 @@
         udisks
         rrsync
         p7zip
-        biome
+        unstable.biome
         (import ../modules/home-manager/scripts/createWorkspace.nix {inherit pkgs;})
         grim
         swappy
