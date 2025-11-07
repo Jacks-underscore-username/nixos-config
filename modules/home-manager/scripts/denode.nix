@@ -15,21 +15,14 @@ pkgs.writeShellScriptBin "denode" ''
         folder_size_bytes=$(du -sb "$node_modules_folder" 2>/dev/null | awk '{print $1}')
 
         if [ -z "$folder_size_bytes" ]; then
-            folder_size_bytes=0 # Set to 0 if du failed or folder is empty
+            folder_size_bytes=0
         fi
 
-        echo "Size: $(numfmt --to=iec-i --suffix=B --padding=7 "$folder_size_bytes")"
+        echo "Deleting '$node_modules_folder'..."
+        # rm -rf "$node_modules_folder"
+        echo "'$node_modules_folder' deleted."
 
-        read -rp "Do you want to delete this folder? (y/N): " confirmation
-        if [[ "$confirmation" =~ ^[Yy]$ ]]; then
-          echo "Deleting '$node_modules_folder'..."
-          rm -rf "$node_modules_folder"
-          echo "'$node_modules_folder' deleted."
-
-          total_space_saved_bytes=$((total_space_saved_bytes + folder_size_bytes))
-        else
-          echo "Skipping '$node_modules_folder'."
-        fi
+        total_space_saved_bytes=$((total_space_saved_bytes + folder_size_bytes))
       else
         echo "Skipping: $node_modules_folder (no 'package-lock.json' or 'bun.lockb' found in $parent_dir)"
       fi
