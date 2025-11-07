@@ -2,7 +2,6 @@
 pkgs.writeShellScriptBin "7zip" ''
   if [ "$#" -ne 1 ]; then
     echo "Usage: compress-folder <path_to_folder>"
-    echo "Example: compress-folder my_project_data"
     exit 1
   fi
 
