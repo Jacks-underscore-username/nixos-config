@@ -162,6 +162,7 @@
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
         # <MACRO INSERT>
+    (import ../modules/home-manager/scripts/denode.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/rs.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/rn-regex.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/mv-regex.nix {inherit pkgs;})
