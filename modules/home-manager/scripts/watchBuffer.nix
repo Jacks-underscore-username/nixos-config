@@ -26,7 +26,7 @@ pkgs.writeShellScriptBin "watchBuffer" ''
       fi
 
       if [ -r "/sys/block/$device/stat" ]; then
-        stats=$(${pkgs.gawk}/bin/awk '"'"'{
+        stats=$(${pkgs.gawk}/bin/awk -v dev_name="$device" '"'"'{
           rd_sectors=$3;
           wr_sectors=$7;
           io_ticks=$10; # This is total I/O time in milliseconds
@@ -34,7 +34,7 @@ pkgs.writeShellScriptBin "watchBuffer" ''
           rd_bytes = rd_sectors * 512;
           wr_bytes = wr_sectors * 512;
 
-          printf "%s: ", "'"$device"'";
+          printf "%s: ", dev_name;
 
           if (rd_bytes > 1024 * 1024 * 1024) {
             printf "Read: %.2fG ", rd_bytes / (1024*1024*1024);
