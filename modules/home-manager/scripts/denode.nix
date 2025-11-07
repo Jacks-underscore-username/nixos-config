@@ -1,6 +1,6 @@
 {pkgs}:
 pkgs.writeShellScriptBin "denode" ''
-  target_directory=''${target_directory:-.}
+  target_directory=/persist/code
 
   # Check if the target directory exists
   if [ ! -d "$target_directory" ]; then
