@@ -17,8 +17,6 @@ pkgs.writeShellScriptBin "denode" ''
             folder_size_bytes=0
         fi
 
-        echo "Size: $(numfmt --to=iec-i --suffix=B --padding=7 "$folder_size_bytes")"
-
         echo "Deleting '$node_modules_folder'..."
          rm -rf "$node_modules_folder"
 
