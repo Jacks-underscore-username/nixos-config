@@ -6,7 +6,8 @@ pkgs.writeShellScriptBin "denode" ''
 
   total_space_saved_bytes=0
 
-  find "$target_directory" -type d -name "node_modules" -not -path "*/node_modules/*" | while read -r node_modules_folder; do
+  # Use process substitution to avoid the subshell issue
+  while read -r node_modules_folder; do
       parent_dir=$(dirname "$node_modules_folder")
 
       if [[ -f "$parent_dir/package-lock.json" || -f "$parent_dir/bun.lock" ]]; then
@@ -28,12 +29,11 @@ pkgs.writeShellScriptBin "denode" ''
       else
         echo "Skipping: $node_modules_folder (no 'package-lock.json' or 'bun.lock' found in $parent_dir)"
       fi
-    done
+  done < <(find "$target_directory" -type d -name "node_modules" -not -path "*/node_modules/*")
 
-    echo ""
-    echo "Scan complete."
+  echo ""
+  echo "Scan complete."
 
-
-    human_readable_space=$(numfmt --to=iec-i --suffix=B "$total_space_saved_bytes")
-    echo "Total disk space saved: $human_readable_space"
+  human_readable_space=$(numfmt --to=iec-i --suffix=B "$total_space_saved_bytes")
+  echo "Total disk space saved: $human_readable_space"
 ''
