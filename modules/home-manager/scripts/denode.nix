@@ -9,7 +9,7 @@ pkgs.writeShellScriptBin "denode" ''
   find "$target_directory" -type d -name "node_modules" -not -path "*/node_modules/*" | while read -r node_modules_folder; do
       parent_dir=$(dirname "$node_modules_folder")
 
-      if [[ -f "$parent_dir/package-lock.json" || -f "$parent_dir/bun.lockb" ]]; then
+      if [[ -f "$parent_dir/package-lock.json" || -f "$parent_dir/bun.lock" ]]; then
         echo "Found: $node_modules_folder (with associated lock file in $parent_dir)"
 
         folder_size_bytes=$(du -sb "$node_modules_folder" 2>/dev/null | awk '{print $1}')
@@ -24,7 +24,7 @@ pkgs.writeShellScriptBin "denode" ''
 
         total_space_saved_bytes=$((total_space_saved_bytes + folder_size_bytes))
       else
-        echo "Skipping: $node_modules_folder (no 'package-lock.json' or 'bun.lockb' found in $parent_dir)"
+        echo "Skipping: $node_modules_folder (no 'package-lock.json' or 'bun.lock' found in $parent_dir)"
       fi
     done
 
