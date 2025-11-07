@@ -17,7 +17,7 @@ pkgs.writeShellScriptBin "7zip" ''
   echo "Compressing folder: '$FOLDER_PATH'"
   echo "Output archive: '$OUTPUT_ARCHIVE'"
 
-  if ${pkgs.p7zip.out}/bin/7z a -r -mx=9 -t7z "$OUTPUT_ARCHIVE" "$FOLDER_PATH"; then
+  if ${pkgs.p7zip.out}/bin/7z a -r -mx=9 -t7z -bsp1 "$OUTPUT_ARCHIVE" "$FOLDER_PATH"; then
     echo "Compression successful. Archive created at '$OUTPUT_ARCHIVE'"
   else
     echo "Error: Compression failed for '$FOLDER_PATH'."
