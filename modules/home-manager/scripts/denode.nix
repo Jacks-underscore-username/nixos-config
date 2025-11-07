@@ -1,10 +1,10 @@
 {pkgs}:
 pkgs.writeShellScriptBin "denode" ''
-    target_directory=/persist/code
+  target_directory=/persist/code
 
-    echo "Searching for 'node_modules' folders with associated lock files in '$target_directory'..."
+  echo "Searching for 'node_modules' folders with associated lock files in '$target_directory'..."
 
-    total_space_saved_bytes=0
+  total_space_saved_bytes=0
 
   find "$target_directory" -type d -name "node_modules" -not -path "*/node_modules/*" | while read -r node_modules_folder; do
       parent_dir=$(dirname "$node_modules_folder")
@@ -17,6 +17,8 @@ pkgs.writeShellScriptBin "denode" ''
         if [ -z "$folder_size_bytes" ]; then
             folder_size_bytes=0
         fi
+
+        echo "Size: $(numfmt --to=iec-i --suffix=B --padding=7 "$folder_size_bytes")"
 
         echo "Deleting '$node_modules_folder'..."
         # rm -rf "$node_modules_folder"
