@@ -1,6 +1,6 @@
 {pkgs}:
 pkgs.writeShellScriptBin "denode" ''
-  target_directory=/persist/code
+  target_directory="''${1:-/persist/code}"
 
   echo "Searching for 'node_modules' folders with associated lock files in '$target_directory'..."
 
