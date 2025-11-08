@@ -18,7 +18,6 @@ pkgs.writeShellScriptBin "watchBuffer" ''
       }'"'"'
 
     echo -e "\n--- Disk I/O (Cumulative) ---"
-    echo "Note: These values are cumulative since boot, not per-second rates."
 
     for device in $(${pkgs.coreutils}/bin/ls -1 /sys/block/); do
       if [[ "$device" == "loop"* ]]; then
