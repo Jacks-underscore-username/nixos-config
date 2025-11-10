@@ -7,5 +7,8 @@
     unitConfig = {
       Type = "oneshot";
     };
+    script = ''
+      echo "Hello World!"
+    '';
   };
 }
