@@ -155,7 +155,7 @@
         freetype
         fontconfig
 
-        everest-mons
+        unstable.olympus
 
         direnv
       ]
