@@ -6,5 +6,6 @@
     ./steam.nix
     ./spotify.nix
     ./aliases.nix
+    ./codeBackup.nix
   ];
 }
