@@ -26,7 +26,7 @@
       ".compose-cache"
 
       ".factorio"
-      # ".local/share/Celeste"
+      ".local/share/Celeste"
       # Something for celeste I think
       # ".compose-cache/l4_030_04b84530_0e7768ba"
       "Desktop"
