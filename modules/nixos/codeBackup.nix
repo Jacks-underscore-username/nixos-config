@@ -14,7 +14,7 @@ in {
     serviceConfig = {
       Type = "oneshot";
       User = user;
-      Environment = ["HOME=/home/${user}"];
+      Environment = ["HOME=/persist/home/${user}"];
       RemainAfterExit = true;
       ExecStop = backupScript;
     };
