@@ -6,7 +6,8 @@ in {
     enable = true;
     description = "Backup the code folder";
 
-    after = ["network-online.target"];
+    after = ["network-online.target" "persist.mount"];
+    requires = ["network-online.target" "persist.mount"];
     wants = ["network-online.target"];
     wantedBy = ["multi-user.target"];
 
