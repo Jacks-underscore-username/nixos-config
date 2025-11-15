@@ -4,7 +4,7 @@
     "${pkgs.openssh}/bin/ssh"
     + " -i /persist/home/${user}/.ssh/id_ed25519"
     + " -o UserKnownHostsFile=/persist/home/${user}/.ssh/known_hosts";
-  ssh-command = "${ssh-settings} ${user}@192.168.4.62";
+  ssh-command = "${ssh-settings} root@192.168.4.62";
 in let
   backupScript = ''
     ${ssh-command} 'echo "Test message" | wall'
