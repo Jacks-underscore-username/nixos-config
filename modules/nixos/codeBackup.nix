@@ -3,7 +3,8 @@
   backupScript = ''
     ${pkgs.openssh}/bin/ssh ${user}@192.168.4.62 \
       -i /persist/home/${user}/.ssh/id_ed25519 \
-      'echo "Hello from the other server!" | wall'
+      -o UserKnownHostsFile=/persist/home/${user}/.ssh/known_hosts \
+      'echo "Test message" | wall'
   '';
 in {
   systemd.services.codeBackup = {
