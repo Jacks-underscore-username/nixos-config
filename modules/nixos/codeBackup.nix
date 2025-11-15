@@ -1,15 +1,15 @@
 {pkgs, ...}: let
   user = "jackc";
+  ssh-settings =
+    "${pkgs.openssh}/bin/ssh"
+    + " -i /persist/home/${user}/.ssh/id_ed25519"
+    + " -o UserKnownHostsFile=/persist/home/${user}/.ssh/known_hosts";
+  ssh-command = "${ssh-settings} ${user}@192.168.4.62";
+in let
   backupScript = ''
-    ${pkgs.openssh}/bin/ssh ${user}@192.168.4.62 \
-      -i /persist/home/${user}/.ssh/id_ed25519 \
-      -o UserKnownHostsFile=/persist/home/${user}/.ssh/known_hosts \
-      'echo "Test message" | wall'
+    ${ssh-command} 'echo "Test message" | wall'
 
-    ${pkgs.rsync}/bin/rsync \
-      -avz --delete --info=progress2 --stats \
-      -e '${pkgs.openssh}/bin/ssh -i /persist/home/${user}/.ssh/id_ed25519 -o UserKnownHostsFile=/persist/home/${user}/.ssh/known_hosts' \
-      /persist/code/ ${user}@192.168.4.62:/mnt/ssd/codeBackups/latest
+    ${pkgs.rsync}/bin/rsync -avz --delete --info=progress2 --stats  -e '${ssh-settings}' /persist/code/ ${user}@192.168.4.62:/mnt/ssd/codeBackups/latest
   '';
 in {
   systemd.services.codeBackup = {
