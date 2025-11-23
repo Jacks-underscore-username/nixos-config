@@ -23,16 +23,14 @@
     "enabled": true,
     "rules": {
       "suspicious": {
-        "noAssignInExpressions": "off",
-        "noAsyncPromiseExecutor": "off",
-        "noDuplicateParameters": "error",
-        "noExplicitAny": "off"
+        "noAssignInExpressions": "off"
       },
       "style": {
         "noParameterAssign": "off",
         "useSingleVarDeclarator": "off"
       },
       "complexity": {
+        "noForEach": "error",
         "useLiteralKeys": "off",
         "useArrowFunction": "error"
       },
@@ -41,9 +39,7 @@
       },
       "security": {
         "noGlobalEval": "off"
-      },
-      "a11y": {},
-      "recommended": true
+      }
     }
   },
   "javascript": {

@@ -284,6 +284,7 @@ in {
   # Enable networking
   networking.hostName = "Nixos";
   networking.networkmanager.enable = true;
+  networking.firewall.enable = false;
 
   # Set up bluetooth.
   hardware.bluetooth = {
