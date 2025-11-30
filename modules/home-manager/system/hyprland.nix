@@ -53,6 +53,7 @@
             Celeste = 1;
             "shapez 2" = 1;
             "Among Us" = 1;
+            "R.E.P.O." = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
