@@ -51,6 +51,8 @@
             Cosmoteer = 1;
             OPAQUE = 1;
             Celeste = 1;
+            "shapez 2" = 1;
+            "Among Us" = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
