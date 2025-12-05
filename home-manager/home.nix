@@ -52,7 +52,7 @@
         alejandra
         ripgrep
         (import ../modules/home-manager/scripts/reload.nix {inherit pkgs;})
-        qt5.full
+        # qt5.full
         hyprpolkitagent
         man-pages
         man-pages-posix
@@ -97,7 +97,6 @@
         libglvnd
         yad
         glfw
-        glfw-wayland
         (import ../modules/home-manager/scripts/moveWorkspace.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/moveWindow.nix {inherit pkgs;})
         libxkbcommon
@@ -194,5 +193,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 }
