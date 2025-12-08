@@ -8,7 +8,7 @@
 
   src = fetchzip {
     url = "https://static.keet.io/downloads/${version}/Keet-x64.tar.gz";
-    hash = "sha256-wM5Z8zjha5uHmjBtjWRLQf8R/Xcz0O6myLrOMkeXBDM=";
+    hash = "sha256-mM33Phf9a8+LRSfsaIiJJIQayptdyNW6xa0s7m0mkk8=";
   };
 
   appimageContents = appimageTools.extract {
