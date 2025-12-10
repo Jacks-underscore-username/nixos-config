@@ -52,7 +52,7 @@
         alejandra
         ripgrep
         (import ../modules/home-manager/scripts/reload.nix {inherit pkgs;})
-        # qt5.full
+        qt5.full
         hyprpolkitagent
         man-pages
         man-pages-posix
@@ -194,5 +194,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "25.11";
+  home.stateVersion = "25.05";
 }
