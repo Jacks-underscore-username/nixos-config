@@ -48,6 +48,7 @@
         kitty
         wofi
         google-chrome
+        ungoogled-chromium
         pkgs.unstable.nerd-fonts.fira-code
         alejandra
         ripgrep
