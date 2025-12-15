@@ -163,6 +163,7 @@
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
         # <MACRO INSERT>
+        (import ../modules/home-manager/scripts/screenRecord.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/7zip.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/denode.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/rs.nix {inherit pkgs;})

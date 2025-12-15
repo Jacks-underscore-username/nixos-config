@@ -4,7 +4,7 @@ const fs = require('node:fs')
 const readline = require('node:readline')
 
 const homePath = '/persist/nixos/home-manager/home.nix'
-const hyprlandPath = '/persist/nixos/modules/home-manager/hyprland.nix'
+const hyprlandPath = '/persist/nixos/modules/home-manager/system/hyprland.nix'
 const scriptsPath = '/persist/nixos/modules/home-manager/scripts'
 ;(async () => {
   const rl = readline.createInterface({

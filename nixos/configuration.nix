@@ -269,6 +269,8 @@ in {
     "d /persist/home/jackc 0770 jackc users -"
   ];
 
+  programs.gpu-screen-recorder.enable = true;
+
   users.users.jackc = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "plugdev" "dialout" "tty" "jackaudio"];

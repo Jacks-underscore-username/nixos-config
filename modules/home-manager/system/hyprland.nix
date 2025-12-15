@@ -140,6 +140,7 @@
 
           "SUPERCONTROL,C,exec,kitty --class clipse -e 'clipse'"
           # <MACRO INSERT>
+          "SUPERCONTROLSHIFT,S,exec,screenRecord"
         ];
         binde = [
           # ",z,exec,hyprctl dispatch sendshortcut \",q,title:(.*Factorio.*)\" && sleep 0.01 && hyprctl dispatch sendshortcut \",mouse:272,title:(.*Factorio.*)\" && sleep 0.01 && hyprctl dispatch sendshortcut \",q,title:(.*Factorio.*)\""
