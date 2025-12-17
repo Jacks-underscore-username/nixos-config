@@ -3,6 +3,7 @@
     enable = true;
     extraConfig = {
       submodule.recurse = true;
+      push.recurseSubmodules = "on-demand";
       user = {
         email = "jacksunderscoreusername@gmail.com";
         name = "Jacks-underscore-username";
