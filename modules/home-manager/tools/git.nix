@@ -6,6 +6,7 @@
       push = {
         recurseSubmodules = "on-demand";
         autoSetupRemote = "true";
+        default = "current";
       };
       user = {
         email = "jacksunderscoreusername@gmail.com";
