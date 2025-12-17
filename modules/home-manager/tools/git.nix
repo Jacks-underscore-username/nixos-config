@@ -2,8 +2,11 @@
   programs.git = {
     enable = true;
     extraConfig = {
-      user.email = "jacksunderscoreusername@gmail.com";
-      user.name = "Jacks-underscore-username";
+      submodule.recurse = true;
+      user = {
+        email = "jacksunderscoreusername@gmail.com";
+        name = "Jacks-underscore-username";
+      };
       init.defaultBranch = "main";
       credential = {
         "https://github.com" = {
