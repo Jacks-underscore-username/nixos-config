@@ -45,6 +45,7 @@
             jetbrains-idea-ce = 0.9;
             factorio = 1;
             Mindustry = 1;
+            Replicube = 1;
           }
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:.*" + key + ".*") {
             YouTube = 1;
