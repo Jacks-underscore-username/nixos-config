@@ -271,6 +271,8 @@ in {
 
   programs.gpu-screen-recorder.enable = true;
 
+  services.flatpak.enable = true;
+
   users.users.jackc = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "plugdev" "dialout" "tty" "jackaudio"];
