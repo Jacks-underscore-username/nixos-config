@@ -39,7 +39,7 @@
             "rounding 25, class:watchWindow"
             "opacity 0.75, class:.*"
           ]
-          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:.*" + key + ".*") {
+          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:" + key) {
             Minecraft = 1;
             code = 0.9;
             jetbrains-idea-ce = 0.9;
@@ -47,11 +47,11 @@
             Mindustry = 1;
             Replicube = 1;
           }
-          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:.*" + key + ".*") {
-            YouTube = 1;
-            Cosmoteer = 1;
-            OPAQUE = 1;
-            Celeste = 1;
+          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:" + key) {
+            ".*YouTube.*" = 1;
+            "Cosmoteer" = 1;
+            ".*OPAQUE.*" = 1;
+            "Celeste" = 1;
             "shapez 2" = 1;
             "Among Us" = 1;
             "R.E.P.O." = 1;
