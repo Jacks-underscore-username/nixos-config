@@ -159,6 +159,8 @@
 
         direnv
         tmux
+
+        blender
       ]
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
