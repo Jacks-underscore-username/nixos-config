@@ -87,7 +87,7 @@
         swappy
         slurp
         wl-clipboard
-        zig
+        unstable.zig
         hyprpaper
         hyprcursor
         hyprdim
