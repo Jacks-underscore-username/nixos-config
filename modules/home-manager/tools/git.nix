@@ -36,6 +36,7 @@
       slc = ''!f() { LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B); git reset --soft HEAD^1 && git add -A && git commit -m "$LAST_COMMIT_MESSAGE" && git push --force; }; f'';
       acp = ''!f() { git add -A && git commit -m "$@" && git push; }; f'';
       acpf = ''!f() { git add -A && git commit -m "$@" && git push --force; }; f'';
+      ac = ''!f() { git add -A && git commit -m "$@" }; f'';
       plog = "!git_plog";
     };
   };

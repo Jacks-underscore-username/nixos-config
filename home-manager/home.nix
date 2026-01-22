@@ -87,23 +87,21 @@
         swappy
         slurp
         wl-clipboard
-        unstable.zig
         hyprpaper
         hyprcursor
         hyprdim
         brightnessctl
         zip
-        dunst
         prismlauncher
         libglvnd
         yad
         glfw
         (import ../modules/home-manager/scripts/moveWorkspace.nix {inherit pkgs;})
         (import ../modules/home-manager/scripts/moveWindow.nix {inherit pkgs;})
-        libxkbcommon
-        glib
-        wineWowPackages.stable
-        pkgs.unstable-small.gradle_9
+        # libxkbcommon
+        # glib
+        # wineWowPackages.stable
+        # pkgs.unstable-small.gradle_9
         networkmanagerapplet
         gnome-system-monitor
         (import ../modules/home-manager/scripts/deflate.nix {inherit pkgs;})
@@ -113,7 +111,7 @@
         udisks
 
         # glfw3-minecraft
-        openal
+        # openal
 
         ## openal
         alsa-lib
@@ -161,8 +159,6 @@
         tmux
 
         blender
-
-        python314
       ]
       ++ [
         (import ../modules/home-manager/scripts/createMacro.nix {inherit pkgs;})
