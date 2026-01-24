@@ -105,7 +105,7 @@
       h = 1080;
       name = "desc:Microstep MSI MP273A PB4H784100605";
       hz = "";
-      s = 0.8;
+      s = 1;
       t = "";
     };
     results = [c l t r r2 inside_dock];
