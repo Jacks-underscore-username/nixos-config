@@ -100,7 +100,7 @@
     };
     inside_dock = rec {
       x = c.x;
-      y = c.y - c.h / c.s;
+      y = c.y - h / s;
       w = 1920;
       h = 1080;
       name = "desc:Microstep MSI MP273A PB4H784100605";
