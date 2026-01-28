@@ -57,6 +57,7 @@
             "R.E.P.O." = 1;
             "REPO" = 1;
             "Minecraft.*" = 1;
+            "DDSS" = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
