@@ -252,10 +252,10 @@ in {
 
   # services.earlyoom.enable = true;
 
-  # virtualisation.podman = {
-  #   enable = true;
-  #   dockerCompat = true;
-  # };
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   # So if the hyprland config doesn't load so I can still use the default terminal
   environment.systemPackages = with pkgs; [kitty clipse wl-clipboard] ++ runtimeLibs;
