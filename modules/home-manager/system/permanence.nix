@@ -45,6 +45,9 @@
         directory = ".gradle";
         method = "symlink";
       }
+
+      ".cache/zig"
+      ".cache/zls"
     ];
     files = [
       ".steam/steam.token"
