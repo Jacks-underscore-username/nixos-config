@@ -58,6 +58,7 @@
             "REPO" = 1;
             "Minecraft.*" = 1;
             "DDSS" = 1;
+            "MTGA" = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
