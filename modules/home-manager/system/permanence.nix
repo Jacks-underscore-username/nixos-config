@@ -41,12 +41,12 @@
       ".pki"
       ".local/share/PrismLauncher"
 
-      ".gradle"
+      # ".gradle"
 
-      # {
-      #   directory = ".gradle";
-      #   method = "symlink";
-      # }
+      {
+        directory = ".gradle";
+        method = "symlink";
+      }
 
       ".cache/zig"
       ".cache/zls"
