@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   users.users.jackc.shell = pkgs.fish;
 
+  programs.nix-index.enableFishIntegration = true;
+
   programs.fish = {
     enable = true;
     shellInit = "starship init fish | source";
