@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   users.users.jackc.shell = pkgs.fish;
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = "starship init fish | source";
+  };
 
   programs.starship = {
     enable = true;
