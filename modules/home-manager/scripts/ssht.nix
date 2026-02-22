@@ -1,4 +1,4 @@
 {pkgs}:
 pkgs.writeShellScriptBin "ssht" ''
-  /usr/bin/ssh -t "$@" tmux new -A "Jack"
+  /run/current-system/sw/bin/ssh -t "$@" tmux new -A "Jack"
 ''
