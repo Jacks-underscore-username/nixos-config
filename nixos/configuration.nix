@@ -258,7 +258,7 @@ in {
   };
 
   # So if the hyprland config doesn't load so I can still use the default terminal
-  environment.systemPackages = with pkgs; [kitty clipse wl-clipboard] ++ runtimeLibs;
+  environment.systemPackages = with pkgs; [fish clipse wl-clipboard] ++ runtimeLibs;
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", TAG+="uaccess"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666", GROUP="plugdev", TAG+="uaccess"
