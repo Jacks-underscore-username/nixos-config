@@ -45,7 +45,7 @@
         dunst
         libnotify
         swww
-        fish
+        kitty
         wofi
         google-chrome
         ungoogled-chromium

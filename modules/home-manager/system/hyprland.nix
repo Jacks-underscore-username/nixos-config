@@ -93,7 +93,7 @@
         ];
         "binds:scroll_event_delay" = 100;
         bind = [
-          "SUPER,return,exec,fish"
+          "SUPER,return,exec,kitty"
           "SUPER,r,exec,wofi --show drun"
           "SUPER,b,exec,google-chrome-stable"
 
@@ -143,7 +143,7 @@
           "SUPERSHIFT,s,exec,grim -g \"$(slurp)\" - |  wl-copy"
           "SUPERSHIFTCONTROL,s,exec,grim - |  wl-copy"
 
-          "SUPERCONTROL,C,exec,fish --class clipse -e 'clipse'"
+          "SUPERCONTROL,C,exec,kitty --class clipse -e 'clipse'"
           # <MACRO INSERT>
           "SUPERCONTROLSHIFT,S,exec,screenRecord"
         ];
