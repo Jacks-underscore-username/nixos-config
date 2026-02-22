@@ -273,11 +273,14 @@ in {
 
   services.flatpak.enable = true;
 
+  programs.fish.enable = true;
+
   users.users.jackc = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "plugdev" "dialout" "tty" "jackaudio"];
     # TODO: Figure out actual passwords.
     initialPassword = "0";
+    shell = pkgs.fish;
   };
 
   home-manager = {
