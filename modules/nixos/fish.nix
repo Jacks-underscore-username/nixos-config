@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   users.users.jackc.shell = pkgs.fish;
 
   programs.nix-index.enableFishIntegration = true;
@@ -36,11 +40,20 @@
 
   programs.starship = {
     enable = true;
-    settings = {
-      character = {
-        success_symbol = "[➜](bold green)";
-        error_symbol = "[➜](bold red)";
-      };
-    };
+    settings = lib.mkMerge [
+      (builtins.fromTOML
+        (
+          builtins.readFile "${pkgs.starship}/share/starship/presets/catppuccin-powerline.toml"
+        ))
+      {
+        # palette = lib.mkForce "catppuccin_frappe";
+      }
+    ];
+    # settings = {
+    #   character = {
+    #     success_symbol = "[➜](bold green)";
+    #     error_symbol = "[➜](bold red)";
+    #   };
+    # };
   };
 }
