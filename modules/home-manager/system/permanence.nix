@@ -50,6 +50,8 @@
 
       ".cache/zig"
       ".cache/zls"
+
+      ".local/share/fish"
     ];
     files = [
       ".steam/steam.token"
