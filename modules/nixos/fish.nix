@@ -11,7 +11,7 @@
     enable = true;
     shellInit = ''
       starship init fish | source
-      set fish_greeting
+      set --erase fish_greeting
     '';
   };
 
