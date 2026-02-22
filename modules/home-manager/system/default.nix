@@ -5,7 +5,6 @@
     ./java.nix
     ./ags.nix
     # ./aliases.nix
-    ./starship.nix
   ];
 
   hyprland.monitors = let
