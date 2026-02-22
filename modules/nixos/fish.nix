@@ -43,7 +43,7 @@
     settings = lib.mkMerge [
       (builtins.fromTOML
         (
-          builtins.readFile "${pkgs.starship}/share/starship/presets/catppuccin-powerline.toml"
+          builtins.readFile "${pkgs.starship}/share/starship/presets/jetpack.toml"
         ))
       {
         # palette = lib.mkForce "catppuccin_frappe";
