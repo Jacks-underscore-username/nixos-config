@@ -49,7 +49,7 @@
         fish
         wofi
         google-chrome
-        ungoogled-chromium
+        # ungoogled-chromium
         pkgs.unstable.nerd-fonts.fira-code
         alejandra
         ripgrep
