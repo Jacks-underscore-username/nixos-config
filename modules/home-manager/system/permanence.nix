@@ -52,6 +52,10 @@
       ".cache/zls"
 
       ".local/share/fish"
+
+      ".config/opencode"
+      ".local/share/opencode"
+      ".local/state/opencode"
     ];
     files = [
       ".steam/steam.token"
