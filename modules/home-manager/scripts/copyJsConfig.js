@@ -3,7 +3,8 @@ const path = require('node:path')
 /** @type {{ [key: string]: string | undefined }} */
 const linkMap = {
   'biome.jsonc': undefined,
-  'jsconfig.json': undefined
+  'jsconfig.json': undefined,
+  'baseTypes.d.js': 'jsConfig.baseTypes.d.js'
 }
 for (let [name, filePath] of Object.entries(linkMap)) {
   filePath = filePath ?? name
