@@ -14,6 +14,7 @@ in {
     git
     gh
     alejandra
+    jq
     ripgrep
     node2nix
     unstable.biome

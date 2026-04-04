@@ -1,7 +1,39 @@
-{colors, ...}: let
+{
+  pkgs,
+  lib,
+  config,
+  colors,
+  ...
+}: let
   c = colors;
+  jq = "${pkgs.jq}/bin/jq";
 
-  # Generate the custom Tokyo Night theme JSON from colors.nix
+  nixRepoDir = "/persist/nixos";
+  opencodeDir = "${config.home.homeDirectory}/.config/opencode";
+
+  # Paths in the Nix repo (saved runtime state)
+  savedTuiPath = "${nixRepoDir}/configs/opencode-tui.json";
+  savedConfigPath = "${nixRepoDir}/configs/opencode-config.json";
+
+  # Runtime paths
+  runtimeTuiPath = "${opencodeDir}/tui.json";
+  runtimeConfigPath = "${opencodeDir}/opencode.json";
+
+  # Nix-managed keys for tui.json (theme always wins)
+  # Written to files in the Nix store to avoid shell quoting issues
+  nixManagedTuiFile = pkgs.writeText "opencode-nix-managed-tui.json" (builtins.toJSON {
+    "$schema" = "https://opencode.ai/tui.json";
+    theme = "tokyo-night-nix";
+  });
+
+  # Nix-managed keys for opencode.json (model/permission always win)
+  nixManagedConfigFile = pkgs.writeText "opencode-nix-managed-config.json" (builtins.toJSON {
+    "$schema" = "https://opencode.ai/config.json";
+    model = "anthropic/claude-opus-4-6";
+    permission = {"*" = "ask";};
+  });
+
+  # The theme file is fully Nix-generated (immutable, symlink is fine)
   themeJson = builtins.toJSON {
     "$schema" = "https://opencode.ai/theme.json";
 
@@ -277,22 +309,59 @@
       };
     };
   };
-
-  tuiConfig = builtins.toJSON {
-    "$schema" = "https://opencode.ai/tui.json";
-    theme = "tokyo-night-nix";
-    scroll_speed = 3;
-    scroll_acceleration = {enabled = true;};
-    diff_style = "auto";
-  };
-
-  opencodeConfig = builtins.toJSON {
-    "$schema" = "https://opencode.ai/config.json";
-    model = "anthropic/claude-opus-4-6";
-    permission = {"*" = "ask";};
-  };
 in {
+  # Theme file is fully generated from colors.nix — immutable symlink is fine
   home.file.".config/opencode/themes/tokyo-night-nix.json".text = themeJson;
-  home.file.".config/opencode/tui.json".text = tuiConfig;
-  home.file.".config/opencode/opencode.json".text = opencodeConfig;
+
+  # On activation: merge saved runtime state + Nix-managed keys -> writable config files
+  home.activation.opencodeSettings = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    merge_config() {
+      local saved="$1" nix_file="$2" runtime="$3"
+
+      if [ -f "$saved" ]; then
+        base=$(cat "$saved")
+      else
+        base='{}'
+      fi
+
+      merged=$(echo "$base" | ${jq} --argjson nix "$(cat "$nix_file")" '. * $nix')
+
+      # Remove existing symlink if home-manager left one
+      [ -L "$runtime" ] && rm -f "$runtime"
+
+      mkdir -p "$(dirname "$runtime")"
+      echo "$merged" | ${jq} '.' > "$runtime"
+    }
+
+    merge_config "${savedTuiPath}" "${nixManagedTuiFile}" "${runtimeTuiPath}"
+    merge_config "${savedConfigPath}" "${nixManagedConfigFile}" "${runtimeConfigPath}"
+  '';
+
+  # On shutdown: save runtime configs back to the Nix repo
+  systemd.user.services.opencode-settings-save = {
+    Unit = {
+      Description = "Save OpenCode configs back to Nix repo on shutdown";
+      DefaultDependencies = false;
+      Before = ["shutdown.target"];
+    };
+    Service = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.coreutils}/bin/true";
+      ExecStop = pkgs.writeShellScript "opencode-settings-save" ''
+        save_config() {
+          local runtime="$1" saved="$2"
+          if [ -f "$runtime" ] && [ ! -L "$runtime" ]; then
+            ${jq} '.' "$runtime" > "$saved.tmp" && mv "$saved.tmp" "$saved"
+          fi
+        }
+
+        save_config "${runtimeTuiPath}" "${savedTuiPath}"
+        save_config "${runtimeConfigPath}" "${savedConfigPath}"
+      '';
+    };
+    Install = {
+      WantedBy = ["default.target"];
+    };
+  };
 }

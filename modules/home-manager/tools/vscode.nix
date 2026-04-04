@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   colors,
   ...
 }: let
@@ -1399,18 +1400,71 @@
     '';
     installPhase = "true";
   };
+  # Nix-managed keys that always take priority over runtime changes
+  # Written to a file in the Nix store to avoid shell quoting issues
+  # (single quotes in font names break --argjson inline)
+  nixManagedSettingsFile = pkgs.writeText "vscode-nix-managed.json" (builtins.toJSON {
+    "workbench.colorTheme" = "Tokyo Night (Nix)";
+    "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
+    "editor.fontLigatures" = true;
+    "editor.fontSize" = 14;
+    "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
+  });
+
+  nixRepoDir = "/persist/nixos";
+  savedSettingsPath = "${nixRepoDir}/configs/vscode-settings.json";
+  runtimeSettingsPath = "${config.home.homeDirectory}/.config/Code/User/settings.json";
+  jq = "${pkgs.jq}/bin/jq";
 in {
   programs.vscode = {
     enable = true;
     profiles.default = {
-      userSettings = {
-        "workbench.colorTheme" = "Tokyo Night (Nix)";
-        "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
-      };
       extensions = [tokyoNightThemeExtension];
+    };
+  };
+
+  # On activation: merge saved runtime state + Nix-managed keys -> writable settings.json
+  home.activation.vscodeSettings = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    # Start from saved runtime state, fall back to empty object
+    if [ -f "${savedSettingsPath}" ]; then
+      base=$(cat "${savedSettingsPath}")
+    else
+      base='{}'
+    fi
+
+    # Deep-merge Nix-managed keys on top (they always win)
+    merged=$(echo "$base" | ${jq} --argjson nix "$(cat ${nixManagedSettingsFile})" '. * $nix')
+
+    # Remove existing symlink if home-manager left one
+    if [ -L "${runtimeSettingsPath}" ]; then
+      rm -f "${runtimeSettingsPath}"
+    fi
+
+    mkdir -p "$(dirname "${runtimeSettingsPath}")"
+    echo "$merged" | ${jq} '.' > "${runtimeSettingsPath}"
+  '';
+
+  # On shutdown: save runtime settings.json back to the Nix repo
+  # Uses RemainAfterExit + ExecStop so ExecStop runs when the service is stopped at shutdown
+  systemd.user.services.vscode-settings-save = {
+    Unit = {
+      Description = "Save VSCode settings back to Nix repo on shutdown";
+      DefaultDependencies = false;
+      Before = ["shutdown.target"];
+    };
+    Service = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.coreutils}/bin/true";
+      ExecStop = pkgs.writeShellScript "vscode-settings-save" ''
+        if [ -f "${runtimeSettingsPath}" ] && [ ! -L "${runtimeSettingsPath}" ]; then
+          ${jq} '.' "${runtimeSettingsPath}" > "${savedSettingsPath}.tmp" && \
+            mv "${savedSettingsPath}.tmp" "${savedSettingsPath}"
+        fi
+      '';
+    };
+    Install = {
+      WantedBy = ["default.target"];
     };
   };
 }

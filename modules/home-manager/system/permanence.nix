@@ -41,8 +41,6 @@
       ".pki"
       ".local/share/PrismLauncher"
 
-      # ".gradle"
-
       {
         directory = ".gradle";
         method = "symlink";
