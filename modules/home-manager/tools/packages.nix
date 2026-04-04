@@ -13,17 +13,17 @@ in {
   home.packages = with pkgs; [
     git
     gh
-    vscode
     alejandra
     ripgrep
     node2nix
     unstable.biome
     ncdu
-    htop
     direnv
-    tmux
     picocom
     pkgs.unstable.opencode
+    vivid
+    fastfetch
+    cava
 
     (
       wrapWithMissingLibraries

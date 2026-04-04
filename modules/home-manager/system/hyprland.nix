@@ -37,6 +37,13 @@
             "float, class:watchWindow"
             "size 622 652, class:watchWindow"
             "rounding 25, class:watchWindow"
+            "float, class:cava"
+            "size 800 400, class:cava"
+            "move 50% 60%, class:cava"
+            "noblur, class:cava"
+            "noshadow, class:cava"
+            "noborder, class:cava"
+            "opacity 0.7 0.5, class:cava"
           ]
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + " " + lib.strings.floatToString value + ", class:" + key) {
             code = 0.9;
@@ -228,6 +235,15 @@
         ecosystem = {
           "no_update_news" = true;
         };
+        layerrule = [
+          "blur, waybar"
+          "blurpopups, waybar"
+          "ignorezero, waybar"
+          "blur, wofi"
+          "ignorezero, wofi"
+          "blur, notifications"
+          "ignorezero, notifications"
+        ];
       };
     };
   };
