@@ -118,6 +118,12 @@
   gutter_deleted = "#703438";
   gutter_deleted_bg = "#823c41";
 
+  # Inline diff backgrounds (dark, blended tints for diff viewers)
+  diff_added_bg = "#1a2b32";
+  diff_removed_bg = "#32212a";
+  diff_added_line_number_bg = "#1b2b34";
+  diff_removed_line_number_bg = "#2d1f26";
+
   # Minimap gutter diff
   minimap_modified = "#425882";
   minimap_added = "#1C5957";
@@ -206,6 +212,11 @@
     git_add = "#399a96";
     git_change = "#6482bd";
     git_delete = "#c47981";
+
+    diff_added_bg = "#d5e5d5";
+    diff_removed_bg = "#f7d8db";
+    diff_added_line_number_bg = "#c5d5c5";
+    diff_removed_line_number_bg = "#e7c8cb";
 
     border_highlight = "#2496ac";
     border = "#e1e2e7";
