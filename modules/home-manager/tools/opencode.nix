@@ -293,6 +293,6 @@
   };
 in {
   home.file.".config/opencode/themes/tokyo-night-nix.json".text = themeJson;
-  home.file.".config/opencode/tui.jsonc".text = tuiConfig;
-  home.file.".config/opencode/opencode.jsonc".text = opencodeConfig;
+  home.file.".config/opencode/tui.json".text = tuiConfig;
+  home.file.".config/opencode/opencode.json".text = opencodeConfig;
 }
