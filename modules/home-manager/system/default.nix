@@ -4,12 +4,6 @@
     ./permanence.nix
     ./java.nix
     ./packages.nix
-    ./theming.nix
-    ./kitty.nix
-    ./waybar.nix
-    ./dunst.nix
-    ./wofi.nix
-    ./hyprlock.nix
   ];
 
   hyprland.monitors = let

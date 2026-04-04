@@ -22,12 +22,12 @@
   config = {
     wayland.windowManager.hyprland = {
       enable = true;
+      # plugins = [pkgs.hyprlandPlugins.hypr-dynamic-cursors];
       settings = {
         exec-once = [
           "waybar"
           "hyprpaperManager"
           "clipse -listen"
-          "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
         ];
         windowrule =
           [
@@ -37,23 +37,17 @@
             "float, class:watchWindow"
             "size 622 652, class:watchWindow"
             "rounding 25, class:watchWindow"
-            "float, class:cava"
-            "size 800 400, class:cava"
-            "move 50% 60%, class:cava"
-            "noblur, class:cava"
-            "noshadow, class:cava"
-            "noborder, class:cava"
-            "opacity 0.7 0.5, class:cava"
+            "opacity 0.75, class:.*"
           ]
-          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + " " + lib.strings.floatToString value + ", class:" + key) {
+          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:" + key) {
+            Minecraft = 1;
             code = 0.9;
             jetbrains-idea-ce = 0.9;
-            Minecraft = 1;
             factorio = 1;
             Mindustry = 1;
             Replicube = 1;
           }
-          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + " " + lib.strings.floatToString value + ", title:" + key) {
+          ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", title:" + key) {
             ".*YouTube.*" = 1;
             "Cosmoteer" = 1;
             ".*OPAQUE.*" = 1;
@@ -67,77 +61,19 @@
             "MTGA" = 1;
             ".*ASTRONEER.*" = 1;
           };
+        # "plugin:dynamic-cursors" = {
+        #   shake.enabled = false;
+        #   mode = "rotate";
+        #   rotate.length = 10;
+        # };
+        # windowrule = [
+        # "float, class:jetbrains-idea-ce"
+        # "fullscreen, class:jetbrains-idea-ce"
+        # "size 100 100, class:jetbrains-idea-ce"
+        # ];
         monitor = config.hyprland.monitors;
         general = {
           no_focus_fallback = true;
-          gaps_in = 5;
-          gaps_out = 14;
-          border_size = 2;
-          "col.active_border" = "rgba(b4befeff) rgba(89b4faff) 45deg";
-          "col.inactive_border" = "rgba(313244aa)";
-          layout = "dwindle";
-          allow_tearing = false;
-        };
-        decoration = {
-          rounding = 14;
-          active_opacity = 1.0;
-          inactive_opacity = 0.92;
-          shadow = {
-            enabled = true;
-            range = 20;
-            render_power = 3;
-            color = "rgba(1a1a2ecc)";
-          };
-          blur = {
-            enabled = true;
-            size = 8;
-            passes = 3;
-            noise = 1.0e-2;
-            contrast = 0.9;
-            brightness = 0.8;
-            vibrancy = 0.17;
-            vibrancy_darkness = 0.0;
-            new_optimizations = true;
-            xray = false;
-            popups = true;
-          };
-        };
-        animations = {
-          enabled = true;
-          bezier = [
-            "overshot, 0.05, 0.9, 0.1, 1.05"
-            "smoothOut, 0.36, 0, 0.66, -0.56"
-            "smoothIn, 0.25, 1, 0.5, 1"
-            "wind, 0.05, 0.9, 0.1, 1.05"
-            "fluent, 0.0, 0.0, 0.2, 1.0"
-          ];
-          animation = [
-            "windows, 1, 5, wind, slide"
-            "windowsIn, 1, 5, wind, slide"
-            "windowsOut, 1, 4, smoothOut, slide"
-            "windowsMove, 1, 4, wind, slide"
-            "border, 1, 10, default"
-            "borderangle, 1, 100, default, loop"
-            "fade, 1, 5, smoothIn"
-            "fadeDim, 1, 5, smoothIn"
-            "workspaces, 1, 5, wind"
-          ];
-        };
-        dwindle = {
-          pseudotile = true;
-          preserve_split = true;
-          smart_split = false;
-        };
-        group = {
-          "col.border_active" = "rgba(b4befeff)";
-          "col.border_inactive" = "rgba(313244aa)";
-          groupbar = {
-            font_family = "FiraCode Nerd Font";
-            font_size = 11;
-            gradients = true;
-            "col.active" = "rgba(b4befe44)";
-            "col.inactive" = "rgba(31324488)";
-          };
         };
         misc = {
           disable_hyprland_logo = true;
@@ -145,8 +81,7 @@
           font_family = "FiraCode Nerd Font";
           animate_manual_resizes = true;
           animate_mouse_windowdragging = true;
-          background_color = "0x1e1e2e";
-          vfr = true;
+          background_color = "0x000000";
         };
         input = {
           touchpad = {
@@ -155,9 +90,6 @@
         };
         env = [
           "AQ_NO_MODIFIERS,1"
-          "HYPRCURSOR_THEME,catppuccin-mocha-lavender-cursors"
-          "HYPRCURSOR_SIZE,28"
-          "XCURSOR_SIZE,28"
         ];
         "binds:scroll_event_delay" = 100;
         bind = [
@@ -190,7 +122,6 @@
           ",XF86AudioPrev,exec,playerctl previous"
 
           "SUPERALT,s,exec,systemctl suspend"
-          "SUPER,escape,exec,hyprlock"
 
           "SUPER,z,exec,cycleWorkspace -1"
           "SUPER,x,exec,cycleWorkspace 1"
@@ -235,15 +166,6 @@
         ecosystem = {
           "no_update_news" = true;
         };
-        layerrule = [
-          "blur, waybar"
-          "blurpopups, waybar"
-          "ignorezero, waybar"
-          "blur, wofi"
-          "ignorezero, wofi"
-          "blur, notifications"
-          "ignorezero, notifications"
-        ];
       };
     };
   };
