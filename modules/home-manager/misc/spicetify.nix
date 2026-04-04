@@ -10,7 +10,7 @@ with inputs.spicetify-nix.legacyPackages.${pkgs.system}; {
     alwaysEnableDevTools = true;
     enabledExtensions = with extensions; [
       adblockify
-      # hidePodcasts
+      hidePodcasts
       shuffle
       betterGenres
       skipOrPlayLikedSongs
