@@ -1,13 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # Wayland / Hyprland
-    waybar
-    dunst
     libnotify
-    swww
-    kitty
     fish
-    wofi
     hyprpolkitagent
     hyprpaper
     hyprpicker
