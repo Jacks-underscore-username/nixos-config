@@ -5,8 +5,6 @@
     dunst
     libnotify
     swww
-    kitty
-    fish
     wofi
     hyprpolkitagent
     hyprpaper

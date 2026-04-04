@@ -1,6 +1,8 @@
 {lib, ...}: {
   imports = [
+    ./fish.nix
     ./hyprland.nix
+    ./kitty.nix
     ./permanence.nix
     ./java.nix
     ./packages.nix
