@@ -3,7 +3,6 @@
     # Wayland / Hyprland
     libnotify
     swww
-    wofi
     hyprpolkitagent
     hyprpaper
     hyprpicker

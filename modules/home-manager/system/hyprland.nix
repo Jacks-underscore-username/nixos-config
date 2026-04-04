@@ -29,7 +29,7 @@ in {
       # plugins = [pkgs.hyprlandPlugins.hypr-dynamic-cursors];
       settings = {
         exec-once = [
-          "waybar"
+          "quickshell"
           "hyprpaperManager"
           "clipse -listen"
         ];
@@ -128,7 +128,7 @@ in {
         "binds:scroll_event_delay" = 100;
         bind = [
           "SUPER,return,exec,kitty"
-          "SUPER,r,exec,wofi --show drun"
+          "SUPER,r,exec,quickshell msg launcher toggle"
           "SUPER,b,exec,google-chrome-stable"
 
           "SUPER,q,killactive"
