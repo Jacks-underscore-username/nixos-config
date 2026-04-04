@@ -35,7 +35,7 @@ in {
       # Backgrounds / foregrounds
       foreground = c.fg_dark;
       background = c.bg;
-      selection_foreground = c.none;
+      selection_foreground = "none";
       selection_background = c.bg_visual;
 
       # Appearance
