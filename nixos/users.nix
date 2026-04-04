@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  colors,
   ...
 }: {
   users.users.jackc = {
@@ -16,7 +17,7 @@
   ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {inherit inputs outputs colors;};
     users.jackc = import ../home-manager/home.nix;
     backupFileExtension = "backup";
   };

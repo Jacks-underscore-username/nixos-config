@@ -30,6 +30,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    colors = import ./lib/colors.nix;
   in {
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
@@ -38,7 +39,7 @@
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs outputs;
+          inherit inputs outputs colors;
         };
         modules = [
           inputs.disko.nixosModules.default
