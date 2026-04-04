@@ -3,8 +3,12 @@
   pkgs,
   lib,
   inputs,
+  colors,
   ...
-}: {
+}: let
+  # Strip "#" prefix for Hyprland's rgb()/rgba() format
+  h = c: builtins.replaceStrings ["#"] [""] c;
+in {
   options = {
     hyprland.monitors = lib.mkOption {
       type = lib.types.listOf lib.types.str;
@@ -74,6 +78,36 @@
         monitor = config.hyprland.monitors;
         general = {
           no_focus_fallback = true;
+          "col.active_border" = "rgb(${h colors.blue}) rgb(${h colors.magenta}) 45deg";
+          "col.inactive_border" = "rgb(${h colors.bg_highlight})";
+          border_size = 2;
+          gaps_in = 4;
+          gaps_out = 8;
+        };
+        group = {
+          "col.border_active" = "rgb(${h colors.blue})";
+          "col.border_inactive" = "rgb(${h colors.bg_highlight})";
+          "col.border_locked_active" = "rgb(${h colors.orange})";
+          "col.border_locked_inactive" = "rgb(${h colors.bg_highlight})";
+          groupbar = {
+            "col.active" = "rgb(${h colors.blue0})";
+            "col.inactive" = "rgb(${h colors.bg_dark})";
+            "col.locked_active" = "rgb(${h colors.orange})";
+            "col.locked_inactive" = "rgb(${h colors.bg_dark})";
+            font_family = "FiraCode Nerd Font";
+            font_size = 11;
+            text_color = "rgb(${h colors.fg})";
+          };
+        };
+        decoration = {
+          rounding = 8;
+          shadow = {
+            enabled = true;
+            range = 12;
+            render_power = 3;
+            color = "rgba(${h colors.black}66)";
+            color_inactive = "rgba(${h colors.black}33)";
+          };
         };
         misc = {
           disable_hyprland_logo = true;
@@ -81,7 +115,7 @@
           font_family = "FiraCode Nerd Font";
           animate_manual_resizes = true;
           animate_mouse_windowdragging = true;
-          background_color = "0x000000";
+          background_color = "rgb(${h colors.bg_dark})";
         };
         input = {
           touchpad = {
