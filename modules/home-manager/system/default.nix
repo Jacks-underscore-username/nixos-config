@@ -3,28 +3,10 @@
     ./hyprland.nix
     ./permanence.nix
     ./java.nix
+    ./packages.nix
   ];
 
   hyprland.monitors = let
-    removeTrailingZeros = s: let
-      s' = lib.strings.replaceStrings ["0+"] [""] s;
-      trimFloatString = str: let
-        trimmedZeros = let
-          chars = lib.strings.stringToCharacters str;
-          removeZerosIter = s:
-            if lib.strings.hasSuffix "0" s && lib.strings.hasInfix "." s
-            then removeZerosIter (lib.strings.substring 0 (lib.strings.stringLength s - 1) s)
-            else s;
-        in
-          removeZerosIter str;
-        trimmedDot =
-          if lib.strings.hasSuffix "." trimmedZeros
-          then lib.strings.substring 0 (lib.strings.stringLength trimmedZeros - 1) trimmedZeros
-          else trimmedZeros;
-      in
-        trimmedDot;
-    in
-      trimFloatString (lib.strings.floatToString s);
     cleanFloatString = floatValue: let
       floatStr = lib.strings.floatToString floatValue;
       removeTrailingZeroChars = s: let

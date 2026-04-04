@@ -4,5 +4,6 @@
     ./system
     ./tools
     ./misc
+    ./scripts
   ];
 }
