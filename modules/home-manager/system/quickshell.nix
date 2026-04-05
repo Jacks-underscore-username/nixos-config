@@ -6,8 +6,15 @@
 }: let
   c = colors;
 
-  # Generate Theme.qml singleton with all colors from colors.nix
-  themeQml = pkgs.writeText "Theme.qml" ''
+  # Build all QML files into a single directory derivation so quickshell
+  # can resolve sibling types (Bar, Notifications, Launcher, Theme) correctly.
+  # Individual writeText files end up in separate /nix/store paths, breaking
+  # QML type resolution when quickshell follows the symlink.
+  quickshellConfig = pkgs.runCommandLocal "quickshell-config" {} ''
+    mkdir -p $out
+
+    # Theme.qml — Singleton with all Tokyo Night colors from colors.nix
+    cat > $out/Theme.qml << 'THEMEEOF'
     pragma Singleton
     import Quickshell
     import QtQuick
@@ -59,24 +66,23 @@
       readonly property int fontSize: 13
       readonly property int fontSizeSmall: 11
     }
-  '';
+    THEMEEOF
 
-  # shell.qml — entry point
-  shellQml = pkgs.writeText "shell.qml" ''
+    # shell.qml — entry point
+    cat > $out/shell.qml << 'SHELLEOF'
     import Quickshell
 
     ShellRoot {
       Bar {}
       Notifications {}
+      Launcher {}
     }
-  '';
+    SHELLEOF
 
-  # Bar.qml — status bar (replaces waybar)
-  barQml = pkgs.writeText "Bar.qml" ''
+    # Bar.qml — status bar
+    cat > $out/Bar.qml << 'BAREOF'
     import Quickshell
     import Quickshell.Hyprland
-    import Quickshell.Services.Pipewire
-    import Quickshell.Services.UPower
     import QtQuick
     import QtQuick.Layouts
 
@@ -84,7 +90,7 @@
       id: root
 
       readonly property string time: Qt.formatDateTime(clock.date, "HH:mm")
-      readonly property string date_: Qt.formatDateTime(clock.date, "ddd MMM d")
+      readonly property string dateStr: Qt.formatDateTime(clock.date, "ddd MMM d")
 
       SystemClock {
         id: clock
@@ -108,7 +114,6 @@
 
           Rectangle {
             anchors.fill: parent
-            anchors.margins: 0
             color: Theme.bgDark
             opacity: 0.85
 
@@ -135,7 +140,7 @@
 
                     Text {
                       anchors.centerIn: parent
-                      text: modelData.name ?? modelData.id
+                      text: modelData.name ?? modelData.id.toString()
                       font.family: Theme.fontFamily
                       font.pixelSize: Theme.fontSizeSmall
                       color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
@@ -161,14 +166,13 @@
               }
               Item { Layout.fillWidth: true }
 
-              // Right: status indicators
+              // Right: date
               RowLayout {
                 Layout.alignment: Qt.AlignRight
                 spacing: 16
 
-                // Date
                 Text {
-                  text: root.date_
+                  text: root.dateStr
                   font.family: Theme.fontFamily
                   font.pixelSize: Theme.fontSizeSmall
                   color: Theme.fgDark
@@ -179,10 +183,10 @@
         }
       }
     }
-  '';
+    BAREOF
 
-  # Notifications.qml — notification display (replaces dunst)
-  notificationsQml = pkgs.writeText "Notifications.qml" ''
+    # Notifications.qml — notification popups
+    cat > $out/Notifications.qml << 'NOTIFEOF'
     import Quickshell
     import Quickshell.Services.Notifications
     import QtQuick
@@ -203,16 +207,17 @@
 
         onNotification: (notification) => {
           notification.tracked = true;
-          root.popups = [notification, ...root.popups].slice(0, 5);
+          let newList = [notification];
+          for (let i = 0; i < root.popups.length && newList.length < 5; i++) {
+            newList.push(root.popups[i]);
+          }
+          root.popups = newList;
 
-          // Auto-dismiss based on urgency
-          let timeout = notification.urgency === NotificationUrgency.Critical ? 0 : 5000;
-          if (timeout > 0) {
-            Qt.callLater(() => {
-              dismissTimer.createObject(root, {
-                notification: notification,
-                interval: timeout
-              });
+          // Auto-dismiss non-critical after 5 seconds
+          if (notification.urgency !== NotificationUrgency.Critical) {
+            dismissTimer.createObject(root, {
+              notification: notification,
+              interval: 5000
             });
           }
         }
@@ -226,7 +231,11 @@
           repeat: false
           onTriggered: {
             notification.tracked = false;
-            root.popups = root.popups.filter(n => n !== notification);
+            let filtered = [];
+            for (let i = 0; i < root.popups.length; i++) {
+              if (root.popups[i] !== notification) filtered.push(root.popups[i]);
+            }
+            root.popups = filtered;
             this.destroy();
           }
         }
@@ -247,7 +256,6 @@
           implicitHeight: notifColumn.implicitHeight + 16
           color: "transparent"
           exclusionMode: ExclusionMode.Ignore
-          aboveWindows: true
 
           margins {
             top: 44
@@ -306,7 +314,11 @@
                   anchors.fill: parent
                   onClicked: {
                     modelData.tracked = false;
-                    root.popups = root.popups.filter(n => n !== modelData);
+                    let filtered = [];
+                    for (let i = 0; i < root.popups.length; i++) {
+                      if (root.popups[i] !== modelData) filtered.push(root.popups[i]);
+                    }
+                    root.popups = filtered;
                   }
                 }
               }
@@ -315,43 +327,45 @@
         }
       }
     }
-  '';
+    NOTIFEOF
 
-  # Launcher.qml — app launcher (replaces wofi)
-  # Triggered via quickshell IPC from a keybind
-  launcherQml = pkgs.writeText "Launcher.qml" ''
+    # Launcher.qml — app launcher triggered via IPC
+    cat > $out/Launcher.qml << 'LAUNCHEOF'
     import Quickshell
     import Quickshell.Io
-    import Quickshell.Hyprland
     import QtQuick
     import QtQuick.Layouts
 
     Scope {
       id: root
-      property bool visible: false
+      property bool showing: false
       property string searchText: ""
-      property var allEntries: DesktopEntries.applications
+
       property var filteredEntries: {
+        let apps = DesktopEntries.applications.values;
         let query = searchText.toLowerCase();
-        if (query === "") return allEntries;
-        return allEntries.filter(entry =>
-          (entry.name ?? "").toLowerCase().includes(query)
-        );
+        if (query === "") return apps;
+        let result = [];
+        for (let i = 0; i < apps.length; i++) {
+          let name = apps[i].name ?? "";
+          if (name.toLowerCase().indexOf(query) !== -1) result.push(apps[i]);
+        }
+        return result;
       }
 
       IpcHandler {
         target: "launcher"
-        onMessage: (msg, responder) => {
-          root.visible = !root.visible;
-          if (root.visible) {
+
+        function toggle(): void {
+          root.showing = !root.showing;
+          if (root.showing) {
             root.searchText = "";
           }
-          responder.respond("");
         }
       }
 
       FloatingWindow {
-        visible: root.visible
+        visible: root.showing
         color: "transparent"
         width: 500
         height: 450
@@ -385,7 +399,7 @@
                 font.pixelSize: Theme.fontSize
                 color: Theme.fg
                 clip: true
-                focus: root.visible
+                focus: root.showing
 
                 onTextChanged: root.searchText = text
 
@@ -397,11 +411,11 @@
                   visible: !searchInput.text && !searchInput.activeFocus
                 }
 
-                Keys.onEscapePressed: root.visible = false
+                Keys.onEscapePressed: root.showing = false
                 Keys.onReturnPressed: {
                   if (root.filteredEntries.length > 0) {
                     root.filteredEntries[0].execute();
-                    root.visible = false;
+                    root.showing = false;
                   }
                 }
               }
@@ -445,7 +459,7 @@
                   hoverEnabled: true
                   onClicked: {
                     modelData.execute();
-                    root.visible = false;
+                    root.showing = false;
                   }
                 }
               }
@@ -454,17 +468,13 @@
         }
       }
     }
+    LAUNCHEOF
   '';
 in {
   home.packages = [
     inputs.quickshell.packages.x86_64-linux.default
   ];
 
-  xdg.configFile = {
-    "quickshell/shell.qml".source = shellQml;
-    "quickshell/Theme.qml".source = themeQml;
-    "quickshell/Bar.qml".source = barQml;
-    "quickshell/Notifications.qml".source = notificationsQml;
-    "quickshell/Launcher.qml".source = launcherQml;
-  };
+  # Symlink the entire directory so quickshell sees all QML files as siblings
+  xdg.configFile."quickshell".source = quickshellConfig;
 }

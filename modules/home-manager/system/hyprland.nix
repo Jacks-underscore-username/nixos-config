@@ -128,7 +128,7 @@ in {
         "binds:scroll_event_delay" = 100;
         bind = [
           "SUPER,return,exec,kitty"
-          "SUPER,r,exec,quickshell msg launcher toggle"
+          "SUPER,r,exec,qs ipc call launcher toggle"
           "SUPER,b,exec,google-chrome-stable"
 
           "SUPER,q,killactive"
