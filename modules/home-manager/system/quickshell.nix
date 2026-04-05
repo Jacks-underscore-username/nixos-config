@@ -367,8 +367,8 @@
       FloatingWindow {
         visible: root.showing
         color: "transparent"
-        width: 500
-        height: 450
+        implicitWidth: 500
+        implicitHeight: 450
 
         Rectangle {
           anchors.fill: parent
