@@ -41,6 +41,7 @@ in {
             "float, class:watchWindow"
             "size 622 652, class:watchWindow"
             "rounding 25, class:watchWindow"
+            "float, class:org.quickshell"
             "opacity 0.75, class:.*"
           ]
           ++ lib.mapAttrsToList (key: value: "opacity " + lib.strings.floatToString value + ", class:" + key) {

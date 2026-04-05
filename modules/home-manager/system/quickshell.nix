@@ -101,8 +101,22 @@
         model: Quickshell.screens
 
         PanelWindow {
+          id: bar
           required property var modelData
           screen: modelData
+
+          // Workspaces on this specific monitor only
+          property var monitorWorkspaces: {
+            let all = Hyprland.workspaces.values;
+            let screenName = bar.screen.name;
+            let result = [];
+            for (let i = 0; i < all.length; i++) {
+              if (all[i].monitor !== null && all[i].monitor.name === screenName) {
+                result.push(all[i]);
+              }
+            }
+            return result;
+          }
 
           anchors {
             top: true
@@ -123,13 +137,13 @@
               anchors.rightMargin: 12
               spacing: 0
 
-              // Left: workspaces
+              // Left: workspaces for this monitor
               RowLayout {
                 Layout.alignment: Qt.AlignLeft
                 spacing: 4
 
                 Repeater {
-                  model: Hyprland.workspaces
+                  model: bar.monitorWorkspaces
 
                   delegate: Rectangle {
                     required property var modelData
