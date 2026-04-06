@@ -372,9 +372,8 @@
 
         function toggle(): void {
           root.showing = !root.showing;
-          if (root.showing) {
-            root.searchText = "";
-          }
+          root.searchText = "";
+          searchInput.text = "";
         }
       }
 
@@ -425,11 +424,17 @@
                   visible: !searchInput.text && !searchInput.activeFocus
                 }
 
-                Keys.onEscapePressed: root.showing = false
+                Keys.onEscapePressed: {
+                  root.showing = false;
+                  root.searchText = "";
+                  searchInput.text = "";
+                }
                 Keys.onReturnPressed: {
                   if (root.filteredEntries.length > 0) {
                     root.filteredEntries[0].execute();
                     root.showing = false;
+                    root.searchText = "";
+                    searchInput.text = "";
                   }
                 }
               }
@@ -449,7 +454,8 @@
                 width: ListView.view.width
                 height: 40
                 radius: 8
-                color: delegateMouse.containsMouse ? Theme.bgVisual : "transparent"
+                color: index === 0 ? Theme.bgVisual
+                  : delegateMouse.containsMouse ? Theme.bgHighlight : "transparent"
 
                 RowLayout {
                   anchors.fill: parent
@@ -474,6 +480,8 @@
                   onClicked: {
                     modelData.execute();
                     root.showing = false;
+                    root.searchText = "";
+                    searchInput.text = "";
                   }
                 }
               }
