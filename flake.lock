@@ -121,11 +121,11 @@
         "rev": "7c5a6c4bd4be1f258aa47626cf5cde02215adad2",
         "revCount": 796,
         "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+        "url": "https://git.outfoxxed.me/quickshell/quickshell.git"
       },
       "original": {
         "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+        "url": "https://git.outfoxxed.me/quickshell/quickshell.git"
       }
     },
     "root": {
