@@ -3,5 +3,9 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
-  "workbench.colorTheme": "Tokyo Night (Nix)"
+  "workbench.colorTheme": "Tokyo Night (Nix)",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.formatOnSave": true
 }

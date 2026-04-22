@@ -74,5 +74,7 @@
 
     udev # oshi
     vulkan-loader # VulkanMod's lwjgl
+
+    vscode
   ];
 }

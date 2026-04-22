@@ -3,6 +3,6 @@
     ./git.nix
     ./opencode.nix
     ./packages.nix
-    ./vscode.nix
+    # ./vscode.nix
   ];
 }
