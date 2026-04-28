@@ -6,12 +6,11 @@ import QtQuick.Layouts
 Scope {
   id: root
 
-  readonly property string time: Qt.formatDateTime(clock.date, "dd/MM/yyyy HH:mm:ss:zzz AP (t)")
-  readonly property string dateStr: Qt.formatDateTime(clock.date, "dd/MM/yyyy")
+  readonly property string time: Qt.formatDateTime(clock.date, "dd/MM/yyyy HH:mm:ss AP (t)")
 
   SystemClock {
     id: clock
-    precision: SystemClock.Milliseconds
+    precision: SystemClock.Seconds
   }
 
   Variants {
