@@ -6,12 +6,12 @@ import QtQuick.Layouts
 Scope {
   id: root
 
-  readonly property string time: Qt.formatDateTime(clock.date, "HH:mm:ss:zzz ap (t)")
-  readonly property string dateStr: Qt.formatDateTime(clock.date, "dd:MM:d")
+  readonly property string time: Qt.formatDateTime(clock.date, "dd/MM/yyyy HH:mm:ss:zzz AP (t)")
+  readonly property string dateStr: Qt.formatDateTime(clock.date, "dd/MM/yyyy")
 
   SystemClock {
     id: clock
-    precision: SystemClock.Seconds
+    precision: SystemClock.Milliseconds
   }
 
   Variants {
@@ -91,18 +91,6 @@ Scope {
               color: Theme.blue
             }
             Item { Layout.fillWidth: true }
-
-            RowLayout {
-              Layout.alignment: Qt.AlignRight
-              spacing: 16
-
-              Text {
-                text: root.dateStr
-                font.family: Theme.fontFamily
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.fgDark
-              }
-            }
           }
         }
       }
