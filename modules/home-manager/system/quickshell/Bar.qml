@@ -22,96 +22,89 @@ Scope {
       required property var modelData
       screen: modelData
 
-      // Workspaces on this specific monitor only
       property var monitorWorkspaces: {
         let all = Hyprland.workspaces.values;
         let screenName = bar.screen.name;
         let result = [];
-        for (let i = 0; i < all.length; i++) {
+        for (let i = 0; i < all.length; i++)
           if (all[i].monitor !== null && all[i].monitor.name === screenName)
-          {
             result.push(all[i]);
-          }
+          return result;
         }
-        return result;
-      }
 
-      anchors {
-        top: true
-        left: true
-        right: true
-      }
-      implicitHeight: 38
-      color: "transparent"
+        anchors {
+          top: true
+          left: true
+          right: true
+        }
+        implicitHeight: 38
+        color: "transparent"
 
-      Rectangle {
-        anchors.fill: parent
-        color: Theme.bgDark
-        opacity: 0.85
-
-        RowLayout {
+        Rectangle {
           anchors.fill: parent
-          anchors.leftMargin: 12
-          anchors.rightMargin: 12
-          spacing: 0
+          color: Theme.bgDark
+          opacity: 0.85
 
-          // Left: workspaces for this monitor
           RowLayout {
-            Layout.alignment: Qt.AlignLeft
-            spacing: 4
+            anchors.fill: parent
+            anchors.leftMargin: 12
+            anchors.rightMargin: 12
+            spacing: 0
 
-            Repeater {
-              model: bar.monitorWorkspaces
+            RowLayout {
+              Layout.alignment: Qt.AlignLeft
+              spacing: 4
 
-              delegate: Rectangle {
-                required property var modelData
-                width: 28; height: 22
-                radius: 6
-                color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
-                ? Theme.blue0 : "transparent"
+              Repeater {
+                model: bar.monitorWorkspaces
 
-                Text {
-                  anchors.centerIn: parent
-                  text: modelData.name ?? modelData.id.toString()
-                  font.family: Theme.fontFamily
-                  font.pixelSize: Theme.fontSizeSmall
+                delegate: Rectangle {
+                  required property var modelData
+                  width: 28; height: 22
+                  radius: 6
                   color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
-                  ? Theme.fg : Theme.comment
-                }
+                  ? Theme.blue0 : "transparent"
 
-                MouseArea {
-                  anchors.fill: parent
-                  onClicked: Hyprland.dispatch("workspace " + modelData.id)
+                  Text {
+                    anchors.centerIn: parent
+                    text: modelData.name ?? modelData.id.toString()
+                    font.family: Theme.fontFamily
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
+                    ? Theme.fg : Theme.comment
+                  }
+
+                  MouseArea {
+                    anchors.fill: parent
+                    onClicked: Hyprland.dispatch("workspace " + modelData.id)
+                  }
                 }
               }
             }
-          }
 
-          // Center: clock
-          Item { Layout.fillWidth: true }
-          Text {
-            Layout.alignment: Qt.AlignCenter
-            text: root.time
-            font.family: Theme.fontFamily
-            font.pixelSize: Theme.fontSize
-            color: Theme.blue
-          }
-          Item { Layout.fillWidth: true }
-
-          // Right: date
-          RowLayout {
-            Layout.alignment: Qt.AlignRight
-            spacing: 16
-
+            Item { Layout.fillWidth: true }
             Text {
-              text: root.dateStr
+              Layout.alignment: Qt.AlignCenter
+              text: root.time
               font.family: Theme.fontFamily
-              font.pixelSize: Theme.fontSizeSmall
-              color: Theme.fgDark
+              font.pixelSize: Theme.fontSize
+              color: Theme.blue
+            }
+            Item { Layout.fillWidth: true }
+
+            RowLayout {
+              Layout.alignment: Qt.AlignRight
+              spacing: 16
+
+              Text {
+                text: root.dateStr
+                font.family: Theme.fontFamily
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.fgDark
+              }
             }
           }
         }
       }
     }
   }
-}
