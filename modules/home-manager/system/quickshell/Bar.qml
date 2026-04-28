@@ -6,7 +6,7 @@ import QtQuick.Layouts
 Scope {
   id: root
 
-  readonly property string time: Qt.formatDateTime(clock.date, "HH:mm")
+  readonly property string time: Qt.formatDateTime(clock.date, "HH:mm:ss")
   readonly property string dateStr: Qt.formatDateTime(clock.date, "ddd MMM d")
 
   SystemClock {
@@ -28,7 +28,8 @@ Scope {
         let screenName = bar.screen.name;
         let result = [];
         for (let i = 0; i < all.length; i++) {
-          if (all[i].monitor !== null && all[i].monitor.name === screenName) {
+          if (all[i].monitor !== null && all[i].monitor.name === screenName)
+          {
             result.push(all[i]);
           }
         }
@@ -67,7 +68,7 @@ Scope {
                 width: 28; height: 22
                 radius: 6
                 color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
-                  ? Theme.blue0 : "transparent"
+                ? Theme.blue0 : "transparent"
 
                 Text {
                   anchors.centerIn: parent
@@ -75,7 +76,7 @@ Scope {
                   font.family: Theme.fontFamily
                   font.pixelSize: Theme.fontSizeSmall
                   color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
-                    ? Theme.fg : Theme.comment
+                  ? Theme.fg : Theme.comment
                 }
 
                 MouseArea {
