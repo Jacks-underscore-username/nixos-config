@@ -65,6 +65,7 @@ in {
             "DDSS" = 1;
             "MTGA" = 1;
             ".*ASTRONEER.*" = 1;
+            "Opus Magnum" = 1;
           };
         # "plugin:dynamic-cursors" = {
         #   shake.enabled = false;
