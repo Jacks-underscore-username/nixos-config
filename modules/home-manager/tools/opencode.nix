@@ -41,24 +41,24 @@
 
     defs = {
       # Backgrounds
-      bg        = c.bg;
-      bgPanel   = c.bgPanel;
+      bg = c.bg;
+      bgPanel = c.bgPanel;
       bgElement = c.bgHighlight;
 
       # Foregrounds
-      fg      = c.fg;
-      fgDark  = c.fgSubtle;
+      fg = c.fg;
+      fgDark = c.fgSubtle;
       fgMuted = c.fgMuted;
 
       # Core palette
-      accent   = c.accent;
-      type     = c.type;
+      accent = c.accent;
+      type = c.type;
       constant = c.constant;
-      keyword  = c.keyword;
-      number   = c.number;
-      string   = c.string;
-      func     = c.func;
-      error    = c.error;
+      keyword = c.keyword;
+      number = c.number;
+      string = c.string;
+      func = c.func;
+      error = c.error;
       errorBright = c.errorBright;
 
       # Semantic
@@ -67,248 +67,243 @@
       warning = c.warning;
 
       # Git / diff
-      gitAdd    = c.success;
+      gitAdd = c.success;
       gitDelete = c.error;
 
-      diffAddedBg   = c.diffAddedBg;
+      diffAddedBg = c.diffAddedBg;
       diffRemovedBg = c.diffRemovedBg;
 
       # Light variant (inkglow-storm)
-      lightBg        = l.bg;
-      lightBgPanel   = l.bgPanel;
+      lightBg = l.bg;
+      lightBgPanel = l.bgPanel;
       lightBgElement = l.bgHighlight;
-      lightFg        = l.fg;
-      lightFgDark    = l.fgSubtle;
-      lightFgMuted   = l.comment;
-      lightAccent    = l.accent;
-      lightType      = l.type;
-      lightConstant  = l.constant;
-      lightKeyword   = l.keyword;
-      lightString    = l.string;
-      lightFunc      = l.func;
-      lightError     = l.error;
-      lightSuccess   = l.success;
-      lightWarning   = l.warning;
-      lightGitAdd    = l.success;
+      lightFg = l.fg;
+      lightFgDark = l.fgSubtle;
+      lightFgMuted = l.comment;
+      lightAccent = l.accent;
+      lightType = l.type;
+      lightConstant = l.constant;
+      lightKeyword = l.keyword;
+      lightString = l.string;
+      lightFunc = l.func;
+      lightError = l.error;
+      lightSuccess = l.success;
+      lightWarning = l.warning;
+      lightGitAdd = l.success;
       lightGitDelete = l.error;
-      lightDiffAddedBg   = l.diffAddedBg;
+      lightDiffAddedBg = l.diffAddedBg;
       lightDiffRemovedBg = l.diffRemovedBg;
     };
 
     theme = {
       primary = {
-        dark  = "accent";
+        dark = "accent";
         light = "lightAccent";
       };
       secondary = {
-        dark  = "constant";
+        dark = "constant";
         light = "lightConstant";
       };
       accent = {
-        dark  = "keyword";
+        dark = "keyword";
         light = "lightKeyword";
       };
       error = {
-        dark  = "error";
+        dark = "error";
         light = "lightError";
       };
       warning = {
-        dark  = "warning";
+        dark = "warning";
         light = "lightWarning";
       };
       success = {
-        dark  = "success";
+        dark = "success";
         light = "lightSuccess";
       };
       info = {
-        dark  = "type";
+        dark = "type";
         light = "lightType";
       };
       text = {
-        dark  = "fg";
+        dark = "fg";
         light = "lightFg";
       };
       textMuted = {
-        dark  = "comment";
+        dark = "comment";
         light = "lightFgMuted";
       };
       background = {
-        dark  = "bg";
+        dark = "bg";
         light = "lightBg";
       };
       backgroundPanel = {
-        dark  = "bgPanel";
+        dark = "bgPanel";
         light = "lightBgPanel";
       };
       backgroundElement = {
-        dark  = "bgElement";
+        dark = "bgElement";
         light = "lightBgElement";
       };
       border = {
-        dark  = "fgMuted";
+        dark = "fgMuted";
         light = "lightFgMuted";
       };
       borderActive = {
-        dark  = "fgDark";
+        dark = "fgDark";
         light = "lightFgDark";
       };
       borderSubtle = {
-        dark  = "comment";
+        dark = "comment";
         light = "lightFgMuted";
       };
 
-      # Diff
       diffAdded = {
-        dark  = "success";
+        dark = "success";
         light = "lightSuccess";
       };
       diffRemoved = {
-        dark  = "errorBright";
+        dark = "errorBright";
         light = "lightError";
       };
       diffContext = {
-        dark  = "comment";
+        dark = "comment";
         light = "lightFgMuted";
       };
       diffHunkHeader = {
-        dark  = "comment";
+        dark = "comment";
         light = "lightFgMuted";
       };
       diffHighlightAdded = {
-        dark  = "func";
+        dark = "func";
         light = "lightFunc";
       };
       diffHighlightRemoved = {
-        dark  = "error";
+        dark = "error";
         light = "lightError";
       };
       diffAddedBg = {
-        dark  = "diffAddedBg";
+        dark = "diffAddedBg";
         light = "lightDiffAddedBg";
       };
       diffRemovedBg = {
-        dark  = "diffRemovedBg";
+        dark = "diffRemovedBg";
         light = "lightDiffRemovedBg";
       };
       diffContextBg = {
-        dark  = "bgPanel";
+        dark = "bgPanel";
         light = "lightBgPanel";
       };
       diffLineNumber = {
-        dark  = "bgElement";
+        dark = "bgElement";
         light = "lightBgElement";
       };
       diffAddedLineNumberBg = {
-        dark  = "diffAddedBg";
+        dark = "diffAddedBg";
         light = "lightDiffAddedBg";
       };
       diffRemovedLineNumberBg = {
-        dark  = "diffRemovedBg";
+        dark = "diffRemovedBg";
         light = "lightDiffRemovedBg";
       };
 
-      # Markdown
       markdownText = {
-        dark  = "fg";
+        dark = "fg";
         light = "lightFg";
       };
       markdownHeading = {
-        dark  = "constant";
+        dark = "constant";
         light = "lightConstant";
       };
       markdownLink = {
-        dark  = "accent";
+        dark = "accent";
         light = "lightAccent";
       };
       markdownLinkText = {
-        dark  = "type";
+        dark = "type";
         light = "lightType";
       };
       markdownCode = {
-        dark  = "string";
+        dark = "string";
         light = "lightString";
       };
       markdownBlockQuote = {
-        dark  = "number";
+        dark = "number";
         light = "lightWarning";
       };
       markdownEmph = {
-        dark  = "number";
+        dark = "number";
         light = "lightWarning";
       };
       markdownStrong = {
-        dark  = "keyword";
+        dark = "keyword";
         light = "lightKeyword";
       };
       markdownHorizontalRule = {
-        dark  = "comment";
+        dark = "comment";
         light = "lightFgMuted";
       };
       markdownListItem = {
-        dark  = "accent";
+        dark = "accent";
         light = "lightAccent";
       };
       markdownListEnumeration = {
-        dark  = "type";
+        dark = "type";
         light = "lightType";
       };
       markdownImage = {
-        dark  = "accent";
+        dark = "accent";
         light = "lightAccent";
       };
       markdownImageText = {
-        dark  = "type";
+        dark = "type";
         light = "lightType";
       };
       markdownCodeBlock = {
-        dark  = "fg";
+        dark = "fg";
         light = "lightFg";
       };
 
-      # Syntax
       syntaxComment = {
-        dark  = "comment";
+        dark = "comment";
         light = "lightFgMuted";
       };
       syntaxKeyword = {
-        dark  = "constant";
+        dark = "constant";
         light = "lightConstant";
       };
       syntaxFunction = {
-        dark  = "func";
+        dark = "func";
         light = "lightFunc";
       };
       syntaxVariable = {
-        dark  = "error";
+        dark = "error";
         light = "lightError";
       };
       syntaxString = {
-        dark  = "string";
+        dark = "string";
         light = "lightString";
       };
       syntaxNumber = {
-        dark  = "keyword";
+        dark = "keyword";
         light = "lightKeyword";
       };
       syntaxType = {
-        dark  = "number";
+        dark = "number";
         light = "lightWarning";
       };
       syntaxOperator = {
-        dark  = "type";
+        dark = "type";
         light = "lightType";
       };
       syntaxPunctuation = {
-        dark  = "fg";
+        dark = "fg";
         light = "lightFg";
       };
     };
   };
 in {
-  # Theme file is fully generated from colors.nix — immutable symlink is fine
   home.file.".config/opencode/themes/inkglow-nix.json".text = themeJson;
 
-  # On activation: merge saved runtime state + Nix-managed keys -> writable config files
   home.activation.opencodeSettings = lib.hm.dag.entryAfter ["writeBoundary"] ''
     merge_config() {
       local saved="$1" nix_file="$2" runtime="$3"
@@ -332,7 +327,6 @@ in {
     merge_config "${savedConfigPath}" "${nixManagedConfigFile}" "${runtimeConfigPath}"
   '';
 
-  # On shutdown: save runtime configs back to the Nix repo
   systemd.user.services.opencode-settings-save = {
     Unit = {
       Description = "Save OpenCode configs back to Nix repo on shutdown";

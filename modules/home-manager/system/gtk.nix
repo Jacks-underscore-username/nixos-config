@@ -5,10 +5,8 @@
 }: let
   c = colors;
 
-  # Adwaita-dark as the base; our CSS overrides inject inkglow palette
   isDark = c.themeIsDark;
 
-  # Generate a minimal gtk.css that remaps Adwaita colour vars to inkglow
   gtk3Css = ''
     /* ── Inkglow GTK3 theme — generated from lib/colors.nix ── */
 
@@ -275,8 +273,10 @@ in {
     enable = true;
 
     theme = {
-      # Use Adwaita-dark as the structural base; our CSS overrides the colors
-      name = if isDark then "Adwaita-dark" else "Adwaita";
+      name =
+        if isDark
+        then "Adwaita-dark"
+        else "Adwaita";
       package = pkgs.gnome-themes-extra;
     };
 
@@ -299,11 +299,16 @@ in {
     };
   };
 
-  # Set colour scheme preference (used by portals and some Qt apps)
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      color-scheme = if isDark then "prefer-dark" else "prefer-light";
-      gtk-theme = if isDark then "Adwaita-dark" else "Adwaita";
+      color-scheme =
+        if isDark
+        then "prefer-dark"
+        else "prefer-light";
+      gtk-theme =
+        if isDark
+        then "Adwaita-dark"
+        else "Adwaita";
       icon-theme = "Adwaita";
       font-name = "FiraCode Nerd Font 11";
     };

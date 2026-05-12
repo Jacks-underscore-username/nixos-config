@@ -10,7 +10,10 @@
   themeFile = builtins.toJSON {
     name = "Inkglow (Nix)";
     author = "Generated from lib/colors.nix";
-    type = if c.themeIsDark then "dark" else "light";
+    type =
+      if c.themeIsDark
+      then "dark"
+      else "light";
     semanticClass = "inkglow-nix";
     semanticTokenColors = {
       "parameter.declaration" = {foreground = c.parameter;};
@@ -23,7 +26,6 @@
       variable = {foreground = c.fg;};
     };
     colors = {
-      # General
       "foreground" = c.fgSubtle;
       "descriptionForeground" = c.fgMuted;
       "disabledForeground" = c.fgMuted;
@@ -39,25 +41,21 @@
       "window.inactiveBorder" = c.bg;
       "sash.hoverBorder" = c.accentAlt;
 
-      # Toolbar
       "toolbar.activeBackground" = c.bgHighlight;
       "toolbar.hoverBackground" = c.bgHighlight;
 
-      # Extension buttons
       "extensionButton.prominentBackground" = "${c.accentAlt}DD";
       "extensionButton.prominentHoverBackground" = "${c.accentAlt}AA";
       "extensionButton.prominentForeground" = "#ffffff";
       "extensionBadge.remoteBackground" = c.accentAlt;
       "extensionBadge.remoteForeground" = "#ffffff";
 
-      # Buttons
       "button.background" = "${c.accentAlt}dd";
       "button.hoverBackground" = "${c.accentAlt}AA";
       "button.secondaryBackground" = c.bgHighlight;
       "button.foreground" = "#ffffff";
       "progressBar.background" = c.accentAlt;
 
-      # Inputs
       "input.background" = c.bgElevated;
       "input.foreground" = c.fg;
       "input.border" = c.indentGuide;
@@ -75,12 +73,10 @@
       "inputValidation.errorBackground" = c.bgDeeper;
       "inputValidation.errorBorder" = c.errorBright;
 
-      # Dropdowns
       "dropdown.foreground" = c.fgSubtle;
       "dropdown.background" = c.bgElevated;
       "dropdown.listBackground" = c.bgElevated;
 
-      # Activity bar
       "activityBar.background" = c.bgPanel;
       "activityBar.foreground" = c.fgSubtle;
       "activityBar.inactiveForeground" = c.fgMuted;
@@ -90,7 +86,6 @@
       "activityBarTop.foreground" = c.fgSubtle;
       "activityBarTop.inactiveForeground" = c.fgMuted;
 
-      # Sidebar
       "tree.indentGuidesStroke" = c.indentGuide;
       "sideBar.foreground" = c.fgSubtle;
       "sideBar.background" = c.bgPanel;
@@ -101,7 +96,6 @@
       "sideBarSectionHeader.border" = c.bgDeeper;
       "sideBar.dropBackground" = c.bgElevated;
 
-      # Lists
       "list.dropBackground" = c.bgElevated;
       "list.deemphasizedForeground" = c.fgSubtle;
       "list.activeSelectionBackground" = c.bgHighlight;
@@ -120,16 +114,13 @@
       "listFilterWidget.outline" = c.accentAlt;
       "listFilterWidget.noMatchesOutline" = c.errorBright;
 
-      # Picker
       "pickerGroup.foreground" = c.fg;
       "pickerGroup.border" = c.bgDeeper;
 
-      # Scrollbar
       "scrollbarSlider.background" = "${c.fgSubtle}15";
       "scrollbarSlider.hoverBackground" = "${c.fgSubtle}10";
       "scrollbarSlider.activeBackground" = "${c.fgSubtle}22";
 
-      # Bracket highlighting
       "editorBracketHighlight.foreground1" = c.bracket1;
       "editorBracketHighlight.foreground2" = c.bracket2;
       "editorBracketHighlight.foreground3" = c.bracket3;
@@ -145,7 +136,6 @@
       "editorBracketPairGuide.activeBackground5" = c.bracket5;
       "editorBracketPairGuide.activeBackground6" = c.bracket6;
 
-      # Editor
       "selection.background" = "${c.bgHighlight}40";
       "editor.background" = c.bg;
       "editor.foreground" = c.fg;
@@ -177,7 +167,6 @@
       "editorBracketMatch.background" = c.bgPanel;
       "editorBracketMatch.border" = c.bracketBad;
 
-      # Overview ruler
       "editorOverviewRuler.border" = c.bgDeeper;
       "editorOverviewRuler.errorForeground" = c.errorBright;
       "editorOverviewRuler.warningForeground" = c.number;
@@ -192,25 +181,21 @@
       "editorOverviewRuler.addedForeground" = c.success;
       "editorOverviewRuler.deletedForeground" = c.error;
 
-      # Editor rulers / diagnostics
       "editorRuler.foreground" = c.bgDeeper;
       "editorError.foreground" = c.errorBright;
       "editorWarning.foreground" = c.number;
       "editorInfo.foreground" = c.accent;
       "editorHint.foreground" = c.accent;
 
-      # Gutter
       "editorGutter.modifiedBackground" = c.warning;
       "editorGutter.addedBackground" = c.success;
       "editorGutter.deletedBackground" = c.error;
       "editorGhostText.foreground" = c.comment;
 
-      # Minimap gutter
       "minimapGutter.modifiedBackground" = c.warning;
       "minimapGutter.addedBackground" = c.success;
       "minimapGutter.deletedBackground" = c.error;
 
-      # Editor groups
       "editorGroup.border" = c.bgDeeper;
       "editorGroup.dropBackground" = c.bgElevated;
       "editorGroupHeader.tabsBorder" = c.bgDeeper;
@@ -219,7 +204,6 @@
       "editorGroupHeader.border" = c.bgDeeper;
       "editorPane.background" = c.bg;
 
-      # Editor widgets
       "editorWidget.foreground" = c.fgSubtle;
       "editorWidget.background" = c.bgPanel;
       "editorWidget.border" = c.bgDeeper;
@@ -235,7 +219,6 @@
       "editorLightBulbAutoFix.foreground" = c.number;
       "editorInlayHint.foreground" = c.comment;
 
-      # Peek view
       "peekView.border" = c.bgDeeper;
       "peekViewEditor.background" = c.bgPanel;
       "peekViewEditor.matchHighlightBackground" = "${c.accentAlt}66";
@@ -249,7 +232,6 @@
       "peekViewResult.fileForeground" = c.fgSubtle;
       "peekViewResult.matchHighlightBackground" = "${c.accentAlt}66";
 
-      # Diff editor
       "diffEditor.insertedTextBackground" = "${c.success}20";
       "diffEditor.removedTextBackground" = "${c.errorBright}22";
       "diffEditor.insertedLineBackground" = "${c.success}20";
@@ -264,14 +246,12 @@
       "multiDiffEditor.headerBackground" = c.bg;
       "multiDiffEditor.border" = c.bg;
 
-      # Breadcrumbs
       "breadcrumb.background" = c.bgPanel;
       "breadcrumbPicker.background" = c.bgPanel;
       "breadcrumb.foreground" = c.fgMuted;
       "breadcrumb.focusForeground" = c.fg;
       "breadcrumb.activeSelectionForeground" = c.fg;
 
-      # Tabs
       "tab.activeBackground" = c.bgPanel;
       "tab.inactiveBackground" = c.bgPanel;
       "tab.activeForeground" = c.fg;
@@ -287,7 +267,6 @@
       "tab.unfocusedActiveBorder" = c.bgHighlight;
       "tab.lastPinnedBorder" = c.bgHighlight;
 
-      # Panel
       "panel.background" = c.bgPanel;
       "panel.border" = c.bgDeeper;
       "panelTitle.activeForeground" = c.fgSubtle;
@@ -295,7 +274,6 @@
       "panelTitle.activeBorder" = c.bgPanel;
       "panelInput.border" = c.bgPanel;
 
-      # Status bar
       "statusBar.foreground" = c.fgSubtle;
       "statusBar.background" = c.bgPanel;
       "statusBar.border" = c.bgDeeper;
@@ -307,14 +285,12 @@
       "statusBarItem.prominentBackground" = c.bgDeeper;
       "statusBarItem.prominentHoverBackground" = c.bgHighlight;
 
-      # Title bar
       "titleBar.activeForeground" = c.fgSubtle;
       "titleBar.inactiveForeground" = c.fgSubtle;
       "titleBar.activeBackground" = c.bgPanel;
       "titleBar.inactiveBackground" = c.bgPanel;
       "titleBar.border" = c.bgDeeper;
 
-      # Misc UI
       "walkThrough.embeddedEditorBackground" = c.bgPanel;
       "textLink.foreground" = c.accent;
       "textLink.activeForeground" = c.type;
@@ -323,7 +299,6 @@
       "textCodeBlock.background" = c.bgPanel;
       "textSeparator.foreground" = c.indentGuideActive;
 
-      # Debug
       "debugExceptionWidget.border" = c.errorBright;
       "debugExceptionWidget.background" = c.bgDeeper;
       "debugToolBar.background" = c.bgDeeper;
@@ -347,7 +322,6 @@
       "debugIcon.breakpointDisabledForeground" = c.indentGuideActive;
       "debugIcon.breakpointUnverifiedForeground" = c.errorBright;
 
-      # Terminal
       "terminal.background" = c.bgPanel;
       "terminal.foreground" = c.fgSubtle;
       "terminal.selectionBackground" = "${c.bgHighlight}4d";
@@ -368,7 +342,6 @@
       "terminal.ansiBrightCyan" = c.ansiBrightCyan;
       "terminal.ansiBrightWhite" = c.ansiBrightWhite;
 
-      # Git decorations
       "gitDecoration.modifiedResourceForeground" = c.warning;
       "gitDecoration.ignoredResourceForeground" = c.fgMuted;
       "gitDecoration.deletedResourceForeground" = c.error;
@@ -379,14 +352,12 @@
       "gitDecoration.stageDeletedResourceForeground" = c.error;
       "gitDecoration.stageModifiedResourceForeground" = c.warning;
 
-      # Notebook
       "notebook.editorBackground" = c.bg;
       "notebook.cellEditorBackground" = c.bgPanel;
       "notebook.cellBorderColor" = c.bgDeeper;
       "notebook.focusedCellBorder" = c.accentAlt;
       "notebook.cellStatusBarItemHoverBackground" = c.bgElevated;
 
-      # Charts
       "charts.red" = c.error;
       "charts.blue" = c.accent;
       "charts.yellow" = c.number;
@@ -396,7 +367,6 @@
       "charts.foreground" = c.fg;
       "charts.lines" = c.bgPanel;
 
-      # SCM graph
       "scmGraph.foreground1" = c.keyword;
       "scmGraph.foreground2" = c.number;
       "scmGraph.foreground3" = c.success;
@@ -405,13 +375,11 @@
       "scmGraph.historyItemHoverAdditionsForeground" = c.success;
       "scmGraph.historyItemHoverDeletionsForeground" = c.error;
 
-      # Merge
       "merge.currentHeaderBackground" = "${c.success}25";
       "merge.currentContentBackground" = "${c.success}44";
       "merge.incomingHeaderBackground" = "${c.accentAlt}aa";
       "merge.incomingContentBackground" = "${c.accentAlt}44";
 
-      # Notifications
       "notificationCenterHeader.background" = c.bgDeeper;
       "notifications.background" = c.bgDeeper;
       "notificationLink.foreground" = c.accent;
@@ -419,7 +387,6 @@
       "notificationsWarningIcon.foreground" = c.warning;
       "notificationsInfoIcon.foreground" = c.accent;
 
-      # Menus
       "menubar.selectionForeground" = c.fg;
       "menubar.selectionBackground" = c.bgElevated;
       "menubar.selectionBorder" = c.indentGuide;
@@ -430,7 +397,6 @@
       "menu.separatorBackground" = c.bgDeeper;
       "menu.border" = c.bgDeeper;
 
-      # Chat / inline chat
       "chat.requestBorder" = c.indentGuide;
       "chat.avatarBackground" = c.accentAlt;
       "chat.avatarForeground" = c.fg;
@@ -1386,7 +1352,11 @@
           "themes": [
             {
               "label": "Inkglow (Nix)",
-              "uiTheme": "${if c.themeIsDark then "vs-dark" else "vs"}",
+              "uiTheme": "${
+        if c.themeIsDark
+        then "vs-dark"
+        else "vs"
+      }",
               "path": "./themes/inkglow-nix-color-theme.json"
             }
           ]

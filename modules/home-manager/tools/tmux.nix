@@ -10,8 +10,6 @@ in {
     mouse = true;
 
     extraConfig = ''
-      # ── Inkglow tmux theme — generated from lib/colors.nix ──
-
       # True color
       set -ag terminal-overrides ",xterm-256color:RGB"
       set -g default-terminal "tmux-256color"

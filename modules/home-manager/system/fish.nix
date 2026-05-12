@@ -1,12 +1,8 @@
 {colors, ...}: let
   c = colors;
 
-  # Fish expects hex colors WITHOUT the # prefix
   strip = hex: builtins.substring 1 (builtins.stringLength hex - 1) hex;
 in {
-  # Fish is enabled at the NixOS level (modules/nixos/fish.nix).
-  # We drop the colors into conf.d via home.file so we don't need
-  # programs.fish.enable here (which triggers a slow man-cache rebuild).
   xdg.configFile."fish/conf.d/inkglow-colors.fish".text = ''
     # Inkglow color scheme — generated from lib/colors.nix
     set -g fish_color_normal        ${strip c.fg}

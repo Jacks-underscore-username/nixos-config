@@ -6,7 +6,6 @@
   colors,
   ...
 }: let
-  # Strip "#" prefix for Hyprland's rgb()/rgba() format
   h = c: builtins.replaceStrings ["#"] [""] c;
 in {
   options = {

@@ -4,6 +4,6 @@
     ./opencode.nix
     ./packages.nix
     ./tmux.nix
-    # ./vscode.nix
+    ./vscode.nix
   ];
 }

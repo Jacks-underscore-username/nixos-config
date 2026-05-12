@@ -8,7 +8,6 @@
     ./java.nix
     ./packages.nix
     ./quickshell.nix
-    ./wofi.nix
   ];
 
   hyprland.monitors = let

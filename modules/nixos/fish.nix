@@ -29,35 +29,32 @@ in {
         palette = "inkglow";
 
         palettes.inkglow = {
-          # Core accent palette mapped to starship color names
-          blue    = c.accent;
-          cyan    = c.type;
-          green   = c.string;
+          blue = c.accent;
+          cyan = c.type;
+          green = c.string;
           magenta = c.constant;
-          purple  = c.constant;
-          orange  = c.keyword;
-          yellow  = c.number;
-          red     = c.error;
-          teal    = c.func;
-          white   = c.fgSubtle;
-          black   = c.bg;
+          purple = c.constant;
+          orange = c.keyword;
+          yellow = c.number;
+          red = c.error;
+          teal = c.func;
+          white = c.fgSubtle;
+          black = c.bg;
 
-          # Bright variants (used by jetpack preset)
-          bright-blue    = c.accentAlt;
-          bright-cyan    = c.type;
-          bright-green   = c.func;
+          bright-blue = c.accentAlt;
+          bright-cyan = c.type;
+          bright-green = c.func;
           bright-magenta = c.constant;
-          bright-purple  = c.constant;
-          bright-red     = c.errorBright;
-          bright-yellow  = c.number;
-          bright-white   = c.fg;
-          bright-black   = c.bgHighlight;
+          bright-purple = c.constant;
+          bright-red = c.errorBright;
+          bright-yellow = c.number;
+          bright-white = c.fg;
+          bright-black = c.bgHighlight;
 
-          # Muted / structural
-          fg      = c.fg;
+          fg = c.fg;
           fg_dark = c.fgSubtle;
           comment = c.comment;
-          dark5   = c.fgSubtle;
+          dark5 = c.fgSubtle;
         };
       }
     ];

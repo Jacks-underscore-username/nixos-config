@@ -7,15 +7,12 @@
   c = colors;
   qmlDir = ./quickshell;
 
-  # Theme.qml is the only file that needs Nix interpolation (colors).
-  # All other QML files are copied verbatim from ./quickshell/.
   themeQml = pkgs.writeText "Theme.qml" ''
     pragma Singleton
     import Quickshell
     import QtQuick
 
     Singleton {
-      // Backgrounds
       readonly property color bg: "${c.bg}"
       readonly property color bgPanel: "${c.bgPanel}"
       readonly property color bgDeeper: "${c.bgDeeper}"
@@ -23,13 +20,11 @@
       readonly property color bgHighlight: "${c.bgHighlight}"
       readonly property color bgVisual: "${c.bgVisual}"
 
-      // Foregrounds
       readonly property color fg: "${c.fg}"
       readonly property color fgDark: "${c.fgSubtle}"
       readonly property color fgMuted: "${c.fgMuted}"
       readonly property color comment: "${c.comment}"
 
-      // Accent palette
       readonly property color accent: "${c.accent}"
       readonly property color accentAlt: "${c.accentAlt}"
       readonly property color keyword: "${c.keyword}"
@@ -41,13 +36,11 @@
       readonly property color operator: "${c.operator}"
       readonly property color special: "${c.special}"
 
-      // Semantic UI
       readonly property color success: "${c.success}"
       readonly property color warning: "${c.warning}"
       readonly property color error: "${c.error}"
       readonly property color errorBright: "${c.errorBright}"
 
-      // Font
       readonly property string fontFamily: "FiraCode Nerd Font"
       readonly property int fontSize: 13
       readonly property int fontSizeSmall: 11
