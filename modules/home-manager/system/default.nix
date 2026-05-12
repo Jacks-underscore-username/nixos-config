@@ -1,12 +1,14 @@
 {lib, ...}: {
   imports = [
     ./fish.nix
+    ./gtk.nix
     ./hyprland.nix
     ./kitty.nix
     ./permanence.nix
     ./java.nix
     ./packages.nix
     ./quickshell.nix
+    ./wofi.nix
   ];
 
   hyprland.monitors = let

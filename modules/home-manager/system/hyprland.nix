@@ -80,22 +80,22 @@ in {
         monitor = config.hyprland.monitors;
         general = {
           no_focus_fallback = true;
-          "col.active_border" = "rgb(${h colors.blue}) rgb(${h colors.magenta}) 45deg";
-          "col.inactive_border" = "rgb(${h colors.bg_highlight})";
+          "col.active_border" = "rgb(${h colors.accent}) rgb(${h colors.constant}) 45deg";
+          "col.inactive_border" = "rgb(${h colors.bgHighlight})";
           border_size = 2;
           gaps_in = 4;
           gaps_out = 8;
         };
         group = {
-          "col.border_active" = "rgb(${h colors.blue})";
-          "col.border_inactive" = "rgb(${h colors.bg_highlight})";
-          "col.border_locked_active" = "rgb(${h colors.orange})";
-          "col.border_locked_inactive" = "rgb(${h colors.bg_highlight})";
+          "col.border_active" = "rgb(${h colors.accent})";
+          "col.border_inactive" = "rgb(${h colors.bgHighlight})";
+          "col.border_locked_active" = "rgb(${h colors.keyword})";
+          "col.border_locked_inactive" = "rgb(${h colors.bgHighlight})";
           groupbar = {
-            "col.active" = "rgb(${h colors.blue0})";
-            "col.inactive" = "rgb(${h colors.bg_dark})";
-            "col.locked_active" = "rgb(${h colors.orange})";
-            "col.locked_inactive" = "rgb(${h colors.bg_dark})";
+            "col.active" = "rgb(${h colors.accentAlt})";
+            "col.inactive" = "rgb(${h colors.bgPanel})";
+            "col.locked_active" = "rgb(${h colors.keyword})";
+            "col.locked_inactive" = "rgb(${h colors.bgPanel})";
             font_family = "FiraCode Nerd Font";
             font_size = 11;
             text_color = "rgb(${h colors.fg})";
@@ -107,8 +107,8 @@ in {
             enabled = true;
             range = 12;
             render_power = 3;
-            color = "rgba(${h colors.black}66)";
-            color_inactive = "rgba(${h colors.black}33)";
+            color = "rgba(${h colors.bg}66)";
+            color_inactive = "rgba(${h colors.bg}33)";
           };
         };
         misc = {
@@ -117,7 +117,7 @@ in {
           font_family = "FiraCode Nerd Font";
           animate_manual_resizes = true;
           animate_mouse_windowdragging = true;
-          background_color = "rgb(${h colors.bg_dark})";
+          background_color = "rgb(${h colors.bgPanel})";
         };
         input = {
           touchpad = {

@@ -26,38 +26,38 @@ in {
           builtins.readFile "${pkgs.starship}/share/starship/presets/jetpack.toml"
         ))
       {
-        palette = "tokyo_night";
+        palette = "inkglow";
 
-        palettes.tokyo_night = {
-          # Core palette for starship modules
-          blue = c.blue;
-          cyan = c.cyan;
-          green = c.green;
-          magenta = c.magenta;
-          purple = c.purple;
-          orange = c.orange;
-          yellow = c.yellow;
-          red = c.red;
-          teal = c.teal;
-          white = c.fg_dark;
-          black = c.bg;
+        palettes.inkglow = {
+          # Core accent palette mapped to starship color names
+          blue    = c.accent;
+          cyan    = c.type;
+          green   = c.string;
+          magenta = c.constant;
+          purple  = c.constant;
+          orange  = c.keyword;
+          yellow  = c.number;
+          red     = c.error;
+          teal    = c.func;
+          white   = c.fgSubtle;
+          black   = c.bg;
 
           # Bright variants (used by jetpack preset)
-          bright-blue = c.blue5;
-          bright-cyan = c.blue1;
-          bright-green = c.green1;
-          bright-magenta = c.magenta;
-          bright-purple = c.magenta;
-          bright-red = c.red;
-          bright-yellow = c.yellow;
-          bright-white = c.fg;
-          bright-black = c.terminal_black;
+          bright-blue    = c.accentAlt;
+          bright-cyan    = c.type;
+          bright-green   = c.func;
+          bright-magenta = c.constant;
+          bright-purple  = c.constant;
+          bright-red     = c.errorBright;
+          bright-yellow  = c.number;
+          bright-white   = c.fg;
+          bright-black   = c.bgHighlight;
 
           # Muted / structural
-          fg = c.fg;
-          fg_dark = c.fg_dark;
+          fg      = c.fg;
+          fg_dark = c.fgSubtle;
           comment = c.comment;
-          dark5 = c.dark5;
+          dark5   = c.fgSubtle;
         };
       }
     ];

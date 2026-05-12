@@ -1,6 +1,5 @@
 {colors, ...}: let
   c = colors;
-  # Kitty uses hex colors with # prefix, same as our colors.nix
 in {
   programs.kitty = {
     enable = true;
@@ -16,68 +15,53 @@ in {
       cursor_text_color = c.bg;
 
       # URL
-      url_color = c.blue;
+      url_color = c.accent;
 
       # Window / tab bar
-      active_tab_foreground = c.bg_dark;
-      active_tab_background = c.blue;
-      inactive_tab_foreground = c.dark5;
-      inactive_tab_background = c.bg_dark;
-      tab_bar_background = c.bg_deeper;
+      active_tab_foreground   = c.bgPanel;
+      active_tab_background   = c.accent;
+      inactive_tab_foreground = c.fgSubtle;
+      inactive_tab_background = c.bgPanel;
+      tab_bar_background      = c.bgDeeper;
 
       # Borders
-      active_border_color = c.blue;
+      active_border_color   = c.accent;
       inactive_border_color = c.comment;
 
       # Bell
-      bell_border_color = c.yellow;
+      bell_border_color = c.number;
 
       # Backgrounds / foregrounds
-      foreground = c.fg_dark;
-      background = c.bg;
+      foreground           = c.fg;
+      background           = c.bg;
       selection_foreground = "none";
-      selection_background = c.bg_visual;
+      selection_background = c.bgVisual;
 
       # Appearance
-      background_opacity = "0.75";
-      window_padding_width = 4;
+      background_opacity      = "0.75";
+      window_padding_width    = 4;
       confirm_os_window_close = 0;
-      tab_bar_style = "powerline";
-      tab_powerline_style = "slanted";
-      enable_audio_bell = "no";
+      tab_bar_style           = "powerline";
+      tab_powerline_style     = "slanted";
+      enable_audio_bell       = "no";
 
       # ANSI colors
-      # Black
-      color0 = c.ansi_black;
-      color8 = c.terminal_black;
-
-      # Red
-      color1 = c.red;
-      color9 = c.red;
-
-      # Green
-      color2 = c.green;
-      color10 = c.green;
-
-      # Yellow
-      color3 = c.yellow;
-      color11 = c.yellow;
-
-      # Blue
-      color4 = c.blue;
-      color12 = c.blue;
-
-      # Magenta
-      color5 = c.magenta;
-      color13 = c.magenta;
-
-      # Cyan
-      color6 = c.cyan;
-      color14 = c.cyan;
-
-      # White
-      color7 = c.fg_dark;
-      color15 = c.fg;
+      color0  = c.ansiBlack;
+      color8  = c.ansiBrightBlack;
+      color1  = c.ansiRed;
+      color9  = c.ansiBrightRed;
+      color2  = c.ansiGreen;
+      color10 = c.ansiBrightGreen;
+      color3  = c.ansiYellow;
+      color11 = c.ansiBrightYellow;
+      color4  = c.ansiBlue;
+      color12 = c.ansiBrightBlue;
+      color5  = c.ansiMagenta;
+      color13 = c.ansiBrightMagenta;
+      color6  = c.ansiCyan;
+      color14 = c.ansiBrightCyan;
+      color7  = c.ansiWhite;
+      color15 = c.ansiBrightWhite;
     };
   };
 }

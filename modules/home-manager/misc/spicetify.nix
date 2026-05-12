@@ -1,7 +1,7 @@
 {
   pkgs,
-  home,
   inputs,
+  colors,
   ...
 }:
 with inputs.spicetify-nix.legacyPackages.${pkgs.system}; {
@@ -15,7 +15,7 @@ with inputs.spicetify-nix.legacyPackages.${pkgs.system}; {
       betterGenres
       skipOrPlayLikedSongs
     ];
-    theme = themes.starryNight;
-    colorScheme = "Forest";
+    theme = themes.${colors.spicetifyTheme};
+    colorScheme = colors.spicetifyColorScheme;
   };
 }

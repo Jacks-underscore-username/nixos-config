@@ -41,7 +41,7 @@ Scope {
 
         Rectangle {
           anchors.fill: parent
-          color: Theme.bgDark
+          color: Theme.bgPanel
           opacity: 0.85
 
           RowLayout {
@@ -62,7 +62,7 @@ Scope {
                   width: 28; height: 22
                   radius: 6
                   color: modelData.id === Hyprland.focusedMonitor?.activeWorkspace?.id
-                  ? Theme.blue0 : "transparent"
+                  ? Theme.accentAlt : "transparent"
 
                   Text {
                     anchors.centerIn: parent
@@ -87,7 +87,7 @@ Scope {
               text: root.time
               font.family: Theme.fontFamily
               font.pixelSize: Theme.fontSize
-              color: Theme.blue
+              color: Theme.accent
             }
             Item { Layout.fillWidth: true }
           }

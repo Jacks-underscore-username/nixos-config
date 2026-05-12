@@ -87,7 +87,7 @@ Scope {
             Layout.fillWidth: true
             Layout.preferredHeight: notifContent.implicitHeight + 24
             radius: 10
-            color: Theme.bgDark
+            color: Theme.bgPanel
             border.width: 1
             border.color: modelData.urgency === NotificationUrgency.Critical
               ? Theme.red : Theme.bgHighlight

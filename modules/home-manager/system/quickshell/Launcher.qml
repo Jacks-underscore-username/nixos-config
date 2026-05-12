@@ -54,7 +54,7 @@ Scope {
     Rectangle {
       anchors.fill: parent
       radius: 12
-      color: Theme.bgDark
+      color: Theme.bgPanel
       border.width: 2
       border.color: Theme.bgHighlight
 
@@ -70,7 +70,7 @@ Scope {
           radius: 8
           color: Theme.bg
           border.width: 1
-          border.color: searchInput.activeFocus ? Theme.blue : Theme.bgHighlight
+          border.color: searchInput.activeFocus ? Theme.accent : Theme.bgHighlight
 
           TextInput {
             id: searchInput

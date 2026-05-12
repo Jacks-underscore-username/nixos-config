@@ -8,126 +8,126 @@
   c = colors;
 
   themeFile = builtins.toJSON {
-    name = "Tokyo Night (Nix)";
+    name = "Inkglow (Nix)";
     author = "Generated from lib/colors.nix";
-    type = "dark";
+    type = if c.themeIsDark then "dark" else "light";
+    semanticClass = "inkglow-nix";
     semanticTokenColors = {
-      "parameter.declaration" = {foreground = c.yellow;};
-      parameter = {foreground = c.fg_param;};
-      "property.declaration" = {foreground = c.green1;};
-      "property.defaultLibrary" = {foreground = c.blue1;};
-      "*.defaultLibrary" = {foreground = c.blue1;};
-      "variable.defaultLibrary" = {foreground = c.blue1;};
-      "variable.declaration" = {foreground = c.magenta;};
+      "parameter.declaration" = {foreground = c.parameter;};
+      parameter = {foreground = c.parameter;};
+      "property.declaration" = {foreground = c.property;};
+      "property.defaultLibrary" = {foreground = c.type;};
+      "*.defaultLibrary" = {foreground = c.type;};
+      "variable.defaultLibrary" = {foreground = c.type;};
+      "variable.declaration" = {foreground = c.variable;};
       variable = {foreground = c.fg;};
     };
-    semanticClass = "tokyo-night-nix";
     colors = {
       # General
-      "foreground" = c.dark5;
-      "descriptionForeground" = c.fg_muted;
-      "disabledForeground" = c.dark3;
-      "focusBorder" = "${c.dark3}33";
-      "errorForeground" = c.fg_muted;
-      "widget.shadow" = c.none;
-      "scrollbar.shadow" = "${c.black}33";
-      "badge.background" = "${c.badge_bg}30";
-      "badge.foreground" = c.fg_badge;
-      "icon.foreground" = c.dark5;
-      "settings.headerForeground" = c.git_change;
-      "window.activeBorder" = c.bg_window;
-      "window.inactiveBorder" = c.bg_window;
-      "sash.hoverBorder" = c.sash;
+      "foreground" = c.fgSubtle;
+      "descriptionForeground" = c.fgMuted;
+      "disabledForeground" = c.fgMuted;
+      "focusBorder" = "${c.fgMuted}33";
+      "errorForeground" = c.fgMuted;
+      "widget.shadow" = "#ffffff00";
+      "scrollbar.shadow" = "#00000033";
+      "badge.background" = "${c.accentAlt}30";
+      "badge.foreground" = c.fg;
+      "icon.foreground" = c.fgSubtle;
+      "settings.headerForeground" = c.warning;
+      "window.activeBorder" = c.bg;
+      "window.inactiveBorder" = c.bg;
+      "sash.hoverBorder" = c.accentAlt;
 
       # Toolbar
-      "toolbar.activeBackground" = c.bg_active;
-      "toolbar.hoverBackground" = c.bg_active;
+      "toolbar.activeBackground" = c.bgHighlight;
+      "toolbar.hoverBackground" = c.bgHighlight;
 
       # Extension buttons
-      "extensionButton.prominentBackground" = "${c.blue0}DD";
-      "extensionButton.prominentHoverBackground" = "${c.blue0}AA";
-      "extensionButton.prominentForeground" = c.white;
-      "extensionBadge.remoteBackground" = c.blue0;
-      "extensionBadge.remoteForeground" = c.white;
+      "extensionButton.prominentBackground" = "${c.accentAlt}DD";
+      "extensionButton.prominentHoverBackground" = "${c.accentAlt}AA";
+      "extensionButton.prominentForeground" = "#ffffff";
+      "extensionBadge.remoteBackground" = c.accentAlt;
+      "extensionBadge.remoteForeground" = "#ffffff";
 
       # Buttons
-      "button.background" = "${c.blue0}dd";
-      "button.hoverBackground" = "${c.blue0}AA";
-      "button.secondaryBackground" = c.bg_button_secondary;
-      "button.foreground" = c.white;
-      "progressBar.background" = c.blue0;
+      "button.background" = "${c.accentAlt}dd";
+      "button.hoverBackground" = "${c.accentAlt}AA";
+      "button.secondaryBackground" = c.bgHighlight;
+      "button.foreground" = "#ffffff";
+      "progressBar.background" = c.accentAlt;
 
       # Inputs
-      "input.background" = c.bg_input;
-      "input.foreground" = c.fg_dark;
-      "input.border" = c.bg_input_border;
-      "input.placeholderForeground" = "${c.dark5}8A";
+      "input.background" = c.bgElevated;
+      "input.foreground" = c.fg;
+      "input.border" = c.indentGuide;
+      "input.placeholderForeground" = "${c.fgSubtle}8A";
       "inputOption.activeForeground" = c.fg;
-      "inputOption.activeBackground" = "${c.blue0}44";
+      "inputOption.activeBackground" = "${c.accentAlt}44";
 
-      "inputValidation.infoForeground" = c.fg_info;
-      "inputValidation.infoBackground" = "${c.blue0}5c";
-      "inputValidation.infoBorder" = c.blue0;
-      "inputValidation.warningForeground" = c.black;
-      "inputValidation.warningBackground" = c.warning_bg;
-      "inputValidation.warningBorder" = c.yellow;
-      "inputValidation.errorForeground" = c.fg_info;
-      "inputValidation.errorBackground" = c.error_bg;
-      "inputValidation.errorBorder" = c.error_border;
+      "inputValidation.infoForeground" = c.fg;
+      "inputValidation.infoBackground" = "${c.accentAlt}5c";
+      "inputValidation.infoBorder" = c.accentAlt;
+      "inputValidation.warningForeground" = "#000000";
+      "inputValidation.warningBackground" = c.warning;
+      "inputValidation.warningBorder" = c.number;
+      "inputValidation.errorForeground" = c.fg;
+      "inputValidation.errorBackground" = c.bgDeeper;
+      "inputValidation.errorBorder" = c.errorBright;
 
       # Dropdowns
-      "dropdown.foreground" = c.dark5;
-      "dropdown.background" = c.bg_input;
-      "dropdown.listBackground" = c.bg_input;
+      "dropdown.foreground" = c.fgSubtle;
+      "dropdown.background" = c.bgElevated;
+      "dropdown.listBackground" = c.bgElevated;
 
       # Activity bar
-      "activityBar.background" = c.bg_dark;
-      "activityBar.foreground" = c.dark5;
-      "activityBar.inactiveForeground" = c.fg_gutter;
-      "activityBar.border" = c.bg_dark;
-      "activityBarBadge.background" = c.blue0;
-      "activityBarBadge.foreground" = c.white;
-      "activityBarTop.foreground" = c.dark5;
-      "activityBarTop.inactiveForeground" = c.fg_gutter;
+      "activityBar.background" = c.bgPanel;
+      "activityBar.foreground" = c.fgSubtle;
+      "activityBar.inactiveForeground" = c.fgMuted;
+      "activityBar.border" = c.bgPanel;
+      "activityBarBadge.background" = c.accentAlt;
+      "activityBarBadge.foreground" = "#ffffff";
+      "activityBarTop.foreground" = c.fgSubtle;
+      "activityBarTop.inactiveForeground" = c.fgMuted;
 
       # Sidebar
-      "tree.indentGuidesStroke" = c.tree_guide;
-      "sideBar.foreground" = c.dark5;
-      "sideBar.background" = c.bg_dark;
-      "sideBar.border" = c.bg_deeper;
-      "sideBarTitle.foreground" = c.dark5;
-      "sideBarSectionHeader.background" = c.bg_dark;
-      "sideBarSectionHeader.foreground" = c.fg_dark;
-      "sideBarSectionHeader.border" = c.bg_deeper;
-      "sideBar.dropBackground" = c.bg_elevated;
+      "tree.indentGuidesStroke" = c.indentGuide;
+      "sideBar.foreground" = c.fgSubtle;
+      "sideBar.background" = c.bgPanel;
+      "sideBar.border" = c.bgDeeper;
+      "sideBarTitle.foreground" = c.fgSubtle;
+      "sideBarSectionHeader.background" = c.bgPanel;
+      "sideBarSectionHeader.foreground" = c.fg;
+      "sideBarSectionHeader.border" = c.bgDeeper;
+      "sideBar.dropBackground" = c.bgElevated;
 
       # Lists
-      "list.dropBackground" = c.bg_elevated;
-      "list.deemphasizedForeground" = c.dark5;
-      "list.activeSelectionBackground" = c.bg_active;
-      "list.activeSelectionForeground" = c.fg_dark;
-      "list.inactiveSelectionBackground" = c.bg_surface;
-      "list.inactiveSelectionForeground" = c.fg_dark;
-      "list.focusBackground" = c.bg_surface;
-      "list.focusForeground" = c.fg_dark;
-      "list.hoverBackground" = "${c.bg_input}";
-      "list.hoverForeground" = c.fg_dark;
-      "list.highlightForeground" = c.search_highlight;
-      "list.invalidItemForeground" = c.invalid_fg;
-      "list.errorForeground" = c.error_muted;
+      "list.dropBackground" = c.bgElevated;
+      "list.deemphasizedForeground" = c.fgSubtle;
+      "list.activeSelectionBackground" = c.bgHighlight;
+      "list.activeSelectionForeground" = c.fg;
+      "list.inactiveSelectionBackground" = c.bgElevated;
+      "list.inactiveSelectionForeground" = c.fg;
+      "list.focusBackground" = c.bgElevated;
+      "list.focusForeground" = c.fg;
+      "list.hoverBackground" = c.bgElevated;
+      "list.hoverForeground" = c.fg;
+      "list.highlightForeground" = c.accentAlt;
+      "list.invalidItemForeground" = c.warning;
+      "list.errorForeground" = c.error;
       "list.warningForeground" = c.bracket6;
-      "listFilterWidget.background" = c.bg_deeper;
-      "listFilterWidget.outline" = c.blue0;
-      "listFilterWidget.noMatchesOutline" = c.filter_no_match;
+      "listFilterWidget.background" = c.bgDeeper;
+      "listFilterWidget.outline" = c.accentAlt;
+      "listFilterWidget.noMatchesOutline" = c.errorBright;
 
       # Picker
-      "pickerGroup.foreground" = c.fg_dark;
-      "pickerGroup.border" = c.bg_deeper;
+      "pickerGroup.foreground" = c.fg;
+      "pickerGroup.border" = c.bgDeeper;
 
       # Scrollbar
-      "scrollbarSlider.background" = "${c.scrollbar}15";
-      "scrollbarSlider.hoverBackground" = "${c.scrollbar}10";
-      "scrollbarSlider.activeBackground" = "${c.scrollbar}22";
+      "scrollbarSlider.background" = "${c.fgSubtle}15";
+      "scrollbarSlider.hoverBackground" = "${c.fgSubtle}10";
+      "scrollbarSlider.activeBackground" = "${c.fgSubtle}22";
 
       # Bracket highlighting
       "editorBracketHighlight.foreground1" = c.bracket1;
@@ -136,7 +136,7 @@
       "editorBracketHighlight.foreground4" = c.bracket4;
       "editorBracketHighlight.foreground5" = c.bracket5;
       "editorBracketHighlight.foreground6" = c.bracket6;
-      "editorBracketHighlight.unexpectedBracket.foreground" = c.red1;
+      "editorBracketHighlight.unexpectedBracket.foreground" = c.errorBright;
 
       "editorBracketPairGuide.activeBackground1" = c.bracket1;
       "editorBracketPairGuide.activeBackground2" = c.bracket2;
@@ -146,300 +146,300 @@
       "editorBracketPairGuide.activeBackground6" = c.bracket6;
 
       # Editor
-      "selection.background" = "${c.selection}40";
+      "selection.background" = "${c.bgHighlight}40";
       "editor.background" = c.bg;
-      "editor.foreground" = c.fg_dark;
-      "editor.foldBackground" = c.bg_fold;
-      "editorLink.activeForeground" = c.fg_badge;
-      "editor.selectionBackground" = "${c.selection}4d";
-      "editor.inactiveSelectionBackground" = "${c.selection}25";
-      "editor.findMatchBackground" = "${c.blue0}66";
-      "editor.findMatchBorder" = c.yellow;
-      "editor.findMatchHighlightBackground" = "${c.blue0}66";
-      "editor.findRangeHighlightBackground" = "${c.selection}33";
-      "editor.rangeHighlightBackground" = "${c.selection}20";
-      "editor.wordHighlightBackground" = "${c.selection}44";
-      "editor.wordHighlightStrongBackground" = "${c.selection}55";
-      "editor.selectionHighlightBackground" = "${c.selection}44";
+      "editor.foreground" = c.fg;
+      "editor.foldBackground" = "${c.bgElevated}66";
+      "editorLink.activeForeground" = c.fg;
+      "editor.selectionBackground" = "${c.bgHighlight}4d";
+      "editor.inactiveSelectionBackground" = "${c.bgHighlight}25";
+      "editor.findMatchBackground" = "${c.accentAlt}66";
+      "editor.findMatchBorder" = c.number;
+      "editor.findMatchHighlightBackground" = "${c.accentAlt}66";
+      "editor.findRangeHighlightBackground" = "${c.bgHighlight}33";
+      "editor.rangeHighlightBackground" = "${c.bgHighlight}20";
+      "editor.wordHighlightBackground" = "${c.bgHighlight}44";
+      "editor.wordHighlightStrongBackground" = "${c.bgHighlight}55";
+      "editor.selectionHighlightBackground" = "${c.bgHighlight}44";
 
       "editorCursor.foreground" = c.fg;
-      "editorIndentGuide.background1" = c.indent_guide;
-      "editorIndentGuide.activeBackground1" = c.indent_guide_active;
-      "editorLineNumber.foreground" = c.indent_guide_active;
-      "editorLineNumber.activeForeground" = c.dark5;
-      "editor.lineHighlightBackground" = c.bg_elevated;
-      "editorWhitespace.foreground" = c.indent_guide_active;
+      "editorIndentGuide.background1" = c.indentGuide;
+      "editorIndentGuide.activeBackground1" = c.indentGuideActive;
+      "editorLineNumber.foreground" = c.indentGuideActive;
+      "editorLineNumber.activeForeground" = c.fgSubtle;
+      "editor.lineHighlightBackground" = c.bgElevated;
+      "editorWhitespace.foreground" = c.indentGuideActive;
 
-      "editorMarkerNavigation.background" = c.bg_dark;
-      "editorHoverWidget.background" = c.bg_dark;
-      "editorHoverWidget.border" = c.bg_deeper;
+      "editorMarkerNavigation.background" = c.bgPanel;
+      "editorHoverWidget.background" = c.bgPanel;
+      "editorHoverWidget.border" = c.bgDeeper;
 
-      "editorBracketMatch.background" = c.bg_dark;
-      "editorBracketMatch.border" = c.bracket_border;
+      "editorBracketMatch.background" = c.bgPanel;
+      "editorBracketMatch.border" = c.bracketBad;
 
       # Overview ruler
-      "editorOverviewRuler.border" = c.bg_deeper;
-      "editorOverviewRuler.errorForeground" = c.red1;
-      "editorOverviewRuler.warningForeground" = c.yellow;
-      "editorOverviewRuler.infoForeground" = c.teal;
-      "editorOverviewRuler.bracketMatchForeground" = c.bg_deeper;
-      "editorOverviewRuler.findMatchForeground" = "${c.fg_dark}44";
-      "editorOverviewRuler.rangeHighlightForeground" = "${c.fg_dark}44";
-      "editorOverviewRuler.selectionHighlightForeground" = "${c.fg_dark}22";
-      "editorOverviewRuler.wordHighlightForeground" = "${c.magenta}55";
-      "editorOverviewRuler.wordHighlightStrongForeground" = "${c.magenta}66";
-      "editorOverviewRuler.modifiedForeground" = c.gutter_modified;
-      "editorOverviewRuler.addedForeground" = c.gutter_added;
-      "editorOverviewRuler.deletedForeground" = c.gutter_deleted;
+      "editorOverviewRuler.border" = c.bgDeeper;
+      "editorOverviewRuler.errorForeground" = c.errorBright;
+      "editorOverviewRuler.warningForeground" = c.number;
+      "editorOverviewRuler.infoForeground" = c.accent;
+      "editorOverviewRuler.bracketMatchForeground" = c.bgDeeper;
+      "editorOverviewRuler.findMatchForeground" = "${c.fg}44";
+      "editorOverviewRuler.rangeHighlightForeground" = "${c.fg}44";
+      "editorOverviewRuler.selectionHighlightForeground" = "${c.fg}22";
+      "editorOverviewRuler.wordHighlightForeground" = "${c.constant}55";
+      "editorOverviewRuler.wordHighlightStrongForeground" = "${c.constant}66";
+      "editorOverviewRuler.modifiedForeground" = c.warning;
+      "editorOverviewRuler.addedForeground" = c.success;
+      "editorOverviewRuler.deletedForeground" = c.error;
 
       # Editor rulers / diagnostics
-      "editorRuler.foreground" = c.bg_deeper;
-      "editorError.foreground" = c.red1;
-      "editorWarning.foreground" = c.yellow;
-      "editorInfo.foreground" = c.info;
-      "editorHint.foreground" = c.info;
+      "editorRuler.foreground" = c.bgDeeper;
+      "editorError.foreground" = c.errorBright;
+      "editorWarning.foreground" = c.number;
+      "editorInfo.foreground" = c.accent;
+      "editorHint.foreground" = c.accent;
 
       # Gutter
-      "editorGutter.modifiedBackground" = c.gutter_modified;
-      "editorGutter.addedBackground" = c.gutter_added;
-      "editorGutter.deletedBackground" = c.gutter_deleted_bg;
-      "editorGhostText.foreground" = c.fg_comment_emphasis;
+      "editorGutter.modifiedBackground" = c.warning;
+      "editorGutter.addedBackground" = c.success;
+      "editorGutter.deletedBackground" = c.error;
+      "editorGhostText.foreground" = c.comment;
 
       # Minimap gutter
-      "minimapGutter.modifiedBackground" = c.minimap_modified;
-      "minimapGutter.addedBackground" = c.minimap_added;
-      "minimapGutter.deletedBackground" = c.minimap_deleted;
+      "minimapGutter.modifiedBackground" = c.warning;
+      "minimapGutter.addedBackground" = c.success;
+      "minimapGutter.deletedBackground" = c.error;
 
       # Editor groups
-      "editorGroup.border" = c.bg_deeper;
-      "editorGroup.dropBackground" = c.bg_elevated;
-      "editorGroupHeader.tabsBorder" = c.bg_deeper;
-      "editorGroupHeader.tabsBackground" = c.bg_dark;
-      "editorGroupHeader.noTabsBackground" = c.bg_dark;
-      "editorGroupHeader.border" = c.bg_deeper;
+      "editorGroup.border" = c.bgDeeper;
+      "editorGroup.dropBackground" = c.bgElevated;
+      "editorGroupHeader.tabsBorder" = c.bgDeeper;
+      "editorGroupHeader.tabsBackground" = c.bgPanel;
+      "editorGroupHeader.noTabsBackground" = c.bgPanel;
+      "editorGroupHeader.border" = c.bgDeeper;
       "editorPane.background" = c.bg;
 
       # Editor widgets
-      "editorWidget.foreground" = c.dark5;
-      "editorWidget.background" = c.bg_dark;
-      "editorWidget.border" = c.bg_deeper;
-      "editorWidget.resizeBorder" = "${c.dark3}33";
+      "editorWidget.foreground" = c.fgSubtle;
+      "editorWidget.background" = c.bgPanel;
+      "editorWidget.border" = c.bgDeeper;
+      "editorWidget.resizeBorder" = "${c.fgMuted}33";
 
-      "editorSuggestWidget.background" = c.bg_dark;
-      "editorSuggestWidget.border" = c.bg_deeper;
-      "editorSuggestWidget.selectedBackground" = c.bg_overlay;
-      "editorSuggestWidget.highlightForeground" = c.git_change;
+      "editorSuggestWidget.background" = c.bgPanel;
+      "editorSuggestWidget.border" = c.bgDeeper;
+      "editorSuggestWidget.selectedBackground" = c.bgHighlight;
+      "editorSuggestWidget.highlightForeground" = c.warning;
 
-      "editorCodeLens.foreground" = c.fg_comment;
-      "editorLightBulb.foreground" = c.yellow;
-      "editorLightBulbAutoFix.foreground" = c.yellow;
-      "editorInlayHint.foreground" = c.fg_comment_emphasis;
+      "editorCodeLens.foreground" = c.comment;
+      "editorLightBulb.foreground" = c.number;
+      "editorLightBulbAutoFix.foreground" = c.number;
+      "editorInlayHint.foreground" = c.comment;
 
       # Peek view
-      "peekView.border" = c.bg_deeper;
-      "peekViewEditor.background" = c.bg_dark;
-      "peekViewEditor.matchHighlightBackground" = "${c.blue0}66";
-      "peekViewTitle.background" = c.bg_deeper;
-      "peekViewTitleLabel.foreground" = c.fg_dark;
-      "peekViewTitleDescription.foreground" = c.dark5;
-      "peekViewResult.background" = c.bg_deeper;
-      "peekViewResult.selectionForeground" = c.fg_dark;
-      "peekViewResult.selectionBackground" = "${c.blue0}33";
-      "peekViewResult.lineForeground" = c.fg_dark;
-      "peekViewResult.fileForeground" = c.dark5;
-      "peekViewResult.matchHighlightBackground" = "${c.blue0}66";
+      "peekView.border" = c.bgDeeper;
+      "peekViewEditor.background" = c.bgPanel;
+      "peekViewEditor.matchHighlightBackground" = "${c.accentAlt}66";
+      "peekViewTitle.background" = c.bgDeeper;
+      "peekViewTitleLabel.foreground" = c.fg;
+      "peekViewTitleDescription.foreground" = c.fgSubtle;
+      "peekViewResult.background" = c.bgDeeper;
+      "peekViewResult.selectionForeground" = c.fg;
+      "peekViewResult.selectionBackground" = "${c.accentAlt}33";
+      "peekViewResult.lineForeground" = c.fg;
+      "peekViewResult.fileForeground" = c.fgSubtle;
+      "peekViewResult.matchHighlightBackground" = "${c.accentAlt}66";
 
       # Diff editor
-      "diffEditor.insertedTextBackground" = "${c.green2}20";
-      "diffEditor.removedTextBackground" = "${c.red1}22";
-      "diffEditor.insertedLineBackground" = "${c.green2}20";
-      "diffEditor.removedLineBackground" = "${c.red1}22";
-      "diffEditorGutter.insertedLineBackground" = "${c.green2}25";
-      "diffEditorGutter.removedLineBackground" = "${c.red1}22";
-      "diffEditorOverview.insertedForeground" = "${c.green2}25";
-      "diffEditorOverview.removedForeground" = "${c.red1}22";
-      "diffEditor.diagonalFill" = c.bg_highlight;
-      "diffEditor.unchangedCodeBackground" = "${c.bg_diff_unchanged}66";
+      "diffEditor.insertedTextBackground" = "${c.success}20";
+      "diffEditor.removedTextBackground" = "${c.errorBright}22";
+      "diffEditor.insertedLineBackground" = "${c.success}20";
+      "diffEditor.removedLineBackground" = "${c.errorBright}22";
+      "diffEditorGutter.insertedLineBackground" = "${c.success}25";
+      "diffEditorGutter.removedLineBackground" = "${c.errorBright}22";
+      "diffEditorOverview.insertedForeground" = "${c.success}25";
+      "diffEditorOverview.removedForeground" = "${c.errorBright}22";
+      "diffEditor.diagonalFill" = c.bgHighlight;
+      "diffEditor.unchangedCodeBackground" = "${c.bgElevated}66";
 
       "multiDiffEditor.headerBackground" = c.bg;
       "multiDiffEditor.border" = c.bg;
 
       # Breadcrumbs
-      "breadcrumb.background" = c.bg_dark;
-      "breadcrumbPicker.background" = c.bg_dark;
-      "breadcrumb.foreground" = c.fg_muted;
-      "breadcrumb.focusForeground" = c.fg_dark;
-      "breadcrumb.activeSelectionForeground" = c.fg_dark;
+      "breadcrumb.background" = c.bgPanel;
+      "breadcrumbPicker.background" = c.bgPanel;
+      "breadcrumb.foreground" = c.fgMuted;
+      "breadcrumb.focusForeground" = c.fg;
+      "breadcrumb.activeSelectionForeground" = c.fg;
 
       # Tabs
-      "tab.activeBackground" = c.bg_dark;
-      "tab.inactiveBackground" = c.bg_dark;
-      "tab.activeForeground" = c.fg_dark;
-      "tab.hoverForeground" = c.fg_dark;
-      "tab.activeBorder" = c.blue0;
-      "tab.inactiveForeground" = c.dark5;
-      "tab.border" = c.bg_deeper;
-      "tab.unfocusedActiveForeground" = c.fg_dark;
-      "tab.unfocusedInactiveForeground" = c.dark5;
-      "tab.unfocusedHoverForeground" = c.fg_dark;
+      "tab.activeBackground" = c.bgPanel;
+      "tab.inactiveBackground" = c.bgPanel;
+      "tab.activeForeground" = c.fg;
+      "tab.hoverForeground" = c.fg;
+      "tab.activeBorder" = c.accentAlt;
+      "tab.inactiveForeground" = c.fgSubtle;
+      "tab.border" = c.bgDeeper;
+      "tab.unfocusedActiveForeground" = c.fg;
+      "tab.unfocusedInactiveForeground" = c.fgSubtle;
+      "tab.unfocusedHoverForeground" = c.fg;
       "tab.activeModifiedBorder" = c.bg;
-      "tab.inactiveModifiedBorder" = c.bg_tab_modified;
-      "tab.unfocusedActiveBorder" = c.bg_tab_modified;
-      "tab.lastPinnedBorder" = c.bg_tab_pinned;
+      "tab.inactiveModifiedBorder" = c.bgHighlight;
+      "tab.unfocusedActiveBorder" = c.bgHighlight;
+      "tab.lastPinnedBorder" = c.bgHighlight;
 
       # Panel
-      "panel.background" = c.bg_dark;
-      "panel.border" = c.bg_deeper;
-      "panelTitle.activeForeground" = c.dark5;
-      "panelTitle.inactiveForeground" = c.bracket_border;
-      "panelTitle.activeBorder" = c.bg_dark;
-      "panelInput.border" = c.bg_dark;
+      "panel.background" = c.bgPanel;
+      "panel.border" = c.bgDeeper;
+      "panelTitle.activeForeground" = c.fgSubtle;
+      "panelTitle.inactiveForeground" = c.bracketBad;
+      "panelTitle.activeBorder" = c.bgPanel;
+      "panelInput.border" = c.bgPanel;
 
       # Status bar
-      "statusBar.foreground" = c.dark5;
-      "statusBar.background" = c.bg_dark;
-      "statusBar.border" = c.bg_deeper;
-      "statusBar.noFolderBackground" = c.bg_dark;
-      "statusBar.debuggingBackground" = c.bg_dark;
-      "statusBar.debuggingForeground" = c.dark5;
-      "statusBarItem.activeBackground" = c.bg_deeper;
-      "statusBarItem.hoverBackground" = c.bg_overlay;
-      "statusBarItem.prominentBackground" = c.bg_deeper;
-      "statusBarItem.prominentHoverBackground" = c.bg_overlay;
+      "statusBar.foreground" = c.fgSubtle;
+      "statusBar.background" = c.bgPanel;
+      "statusBar.border" = c.bgDeeper;
+      "statusBar.noFolderBackground" = c.bgPanel;
+      "statusBar.debuggingBackground" = c.bgPanel;
+      "statusBar.debuggingForeground" = c.fgSubtle;
+      "statusBarItem.activeBackground" = c.bgDeeper;
+      "statusBarItem.hoverBackground" = c.bgHighlight;
+      "statusBarItem.prominentBackground" = c.bgDeeper;
+      "statusBarItem.prominentHoverBackground" = c.bgHighlight;
 
       # Title bar
-      "titleBar.activeForeground" = c.dark5;
-      "titleBar.inactiveForeground" = c.dark5;
-      "titleBar.activeBackground" = c.bg_dark;
-      "titleBar.inactiveBackground" = c.bg_dark;
-      "titleBar.border" = c.bg_deeper;
+      "titleBar.activeForeground" = c.fgSubtle;
+      "titleBar.inactiveForeground" = c.fgSubtle;
+      "titleBar.activeBackground" = c.bgPanel;
+      "titleBar.inactiveBackground" = c.bgPanel;
+      "titleBar.border" = c.bgDeeper;
 
       # Misc UI
-      "walkThrough.embeddedEditorBackground" = c.bg_dark;
-      "textLink.foreground" = c.git_change;
-      "textLink.activeForeground" = c.cyan;
-      "textPreformat.foreground" = c.fg_preformat;
-      "textBlockQuote.background" = c.bg_dark;
-      "textCodeBlock.background" = c.bg_dark;
-      "textSeparator.foreground" = c.indent_guide_active;
+      "walkThrough.embeddedEditorBackground" = c.bgPanel;
+      "textLink.foreground" = c.accent;
+      "textLink.activeForeground" = c.type;
+      "textPreformat.foreground" = c.fgSubtle;
+      "textBlockQuote.background" = c.bgPanel;
+      "textCodeBlock.background" = c.bgPanel;
+      "textSeparator.foreground" = c.indentGuideActive;
 
       # Debug
-      "debugExceptionWidget.border" = c.error_border;
-      "debugExceptionWidget.background" = c.bg_deeper;
-      "debugToolBar.background" = c.bg_deeper;
-      "debugConsole.infoForeground" = c.dark5;
-      "debugConsole.errorForeground" = c.error_muted;
-      "debugConsole.sourceForeground" = c.dark5;
+      "debugExceptionWidget.border" = c.errorBright;
+      "debugExceptionWidget.background" = c.bgDeeper;
+      "debugToolBar.background" = c.bgDeeper;
+      "debugConsole.infoForeground" = c.fgSubtle;
+      "debugConsole.errorForeground" = c.error;
+      "debugConsole.sourceForeground" = c.fgSubtle;
       "debugConsole.warningForeground" = c.bracket6;
-      "debugConsoleInputIcon.foreground" = c.green1;
-      "editor.stackFrameHighlightBackground" = "${c.stack_frame_highlight}20";
-      "editor.focusedStackFrameHighlightBackground" = "${c.green1}20";
-      "debugView.stateLabelForeground" = c.dark5;
-      "debugView.stateLabelBackground" = c.bg_input;
-      "debugView.valueChangedHighlight" = "${c.blue0}aa";
-      "debugTokenExpression.name" = c.cyan;
-      "debugTokenExpression.value" = c.fg_token;
-      "debugTokenExpression.string" = c.green;
-      "debugTokenExpression.boolean" = c.orange;
-      "debugTokenExpression.number" = c.orange;
-      "debugTokenExpression.error" = c.error_muted;
-      "debugIcon.breakpointForeground" = c.red1;
-      "debugIcon.breakpointDisabledForeground" = c.breakpoint_disabled;
-      "debugIcon.breakpointUnverifiedForeground" = c.breakpoint_unverified;
+      "debugConsoleInputIcon.foreground" = c.func;
+      "editor.stackFrameHighlightBackground" = "${c.number}20";
+      "editor.focusedStackFrameHighlightBackground" = "${c.func}20";
+      "debugView.stateLabelForeground" = c.fgSubtle;
+      "debugView.stateLabelBackground" = c.bgElevated;
+      "debugView.valueChangedHighlight" = "${c.accentAlt}aa";
+      "debugTokenExpression.name" = c.type;
+      "debugTokenExpression.value" = c.fg;
+      "debugTokenExpression.string" = c.string;
+      "debugTokenExpression.boolean" = c.keyword;
+      "debugTokenExpression.number" = c.keyword;
+      "debugTokenExpression.error" = c.error;
+      "debugIcon.breakpointForeground" = c.errorBright;
+      "debugIcon.breakpointDisabledForeground" = c.indentGuideActive;
+      "debugIcon.breakpointUnverifiedForeground" = c.errorBright;
 
       # Terminal
-      "terminal.background" = c.bg_dark;
-      "terminal.foreground" = c.dark5;
-      "terminal.selectionBackground" = "${c.selection}4d";
-      "terminal.ansiBlack" = c.ansi_black;
-      "terminal.ansiRed" = c.red;
-      "terminal.ansiGreen" = c.green1;
-      "terminal.ansiYellow" = c.yellow;
-      "terminal.ansiBlue" = c.blue;
-      "terminal.ansiMagenta" = c.magenta;
-      "terminal.ansiCyan" = c.cyan;
-      "terminal.ansiWhite" = c.dark5;
-      "terminal.ansiBrightBlack" = c.ansi_black;
-      "terminal.ansiBrightRed" = c.red;
-      "terminal.ansiBrightGreen" = c.green1;
-      "terminal.ansiBrightYellow" = c.yellow;
-      "terminal.ansiBrightBlue" = c.blue;
-      "terminal.ansiBrightMagenta" = c.magenta;
-      "terminal.ansiBrightCyan" = c.cyan;
-      "terminal.ansiBrightWhite" = c.fg_badge;
+      "terminal.background" = c.bgPanel;
+      "terminal.foreground" = c.fgSubtle;
+      "terminal.selectionBackground" = "${c.bgHighlight}4d";
+      "terminal.ansiBlack" = c.ansiBlack;
+      "terminal.ansiRed" = c.ansiRed;
+      "terminal.ansiGreen" = c.ansiGreen;
+      "terminal.ansiYellow" = c.ansiYellow;
+      "terminal.ansiBlue" = c.ansiBlue;
+      "terminal.ansiMagenta" = c.ansiMagenta;
+      "terminal.ansiCyan" = c.ansiCyan;
+      "terminal.ansiWhite" = c.ansiWhite;
+      "terminal.ansiBrightBlack" = c.ansiBrightBlack;
+      "terminal.ansiBrightRed" = c.ansiBrightRed;
+      "terminal.ansiBrightGreen" = c.ansiBrightGreen;
+      "terminal.ansiBrightYellow" = c.ansiBrightYellow;
+      "terminal.ansiBrightBlue" = c.ansiBrightBlue;
+      "terminal.ansiBrightMagenta" = c.ansiBrightMagenta;
+      "terminal.ansiBrightCyan" = c.ansiBrightCyan;
+      "terminal.ansiBrightWhite" = c.ansiBrightWhite;
 
       # Git decorations
-      "gitDecoration.modifiedResourceForeground" = c.git_change;
-      "gitDecoration.ignoredResourceForeground" = c.fg_muted;
-      "gitDecoration.deletedResourceForeground" = c.git_delete;
-      "gitDecoration.renamedResourceForeground" = c.git_add;
-      "gitDecoration.addedResourceForeground" = c.git_add;
-      "gitDecoration.untrackedResourceForeground" = c.git_add;
-      "gitDecoration.conflictingResourceForeground" = "${c.yellow}cc";
-      "gitDecoration.stageDeletedResourceForeground" = c.git_delete;
-      "gitDecoration.stageModifiedResourceForeground" = c.git_change;
+      "gitDecoration.modifiedResourceForeground" = c.warning;
+      "gitDecoration.ignoredResourceForeground" = c.fgMuted;
+      "gitDecoration.deletedResourceForeground" = c.error;
+      "gitDecoration.renamedResourceForeground" = c.success;
+      "gitDecoration.addedResourceForeground" = c.success;
+      "gitDecoration.untrackedResourceForeground" = c.success;
+      "gitDecoration.conflictingResourceForeground" = "${c.number}cc";
+      "gitDecoration.stageDeletedResourceForeground" = c.error;
+      "gitDecoration.stageModifiedResourceForeground" = c.warning;
 
       # Notebook
       "notebook.editorBackground" = c.bg;
-      "notebook.cellEditorBackground" = c.bg_dark;
-      "notebook.cellBorderColor" = c.bg_deeper;
-      "notebook.focusedCellBorder" = c.sash;
-      "notebook.cellStatusBarItemHoverBackground" = c.bg_surface;
+      "notebook.cellEditorBackground" = c.bgPanel;
+      "notebook.cellBorderColor" = c.bgDeeper;
+      "notebook.focusedCellBorder" = c.accentAlt;
+      "notebook.cellStatusBarItemHoverBackground" = c.bgElevated;
 
       # Charts
-      "charts.red" = c.red;
-      "charts.blue" = c.blue;
-      "charts.yellow" = c.yellow;
-      "charts.orange" = c.orange;
-      "charts.green" = c.green2;
-      "charts.purple" = c.purple;
-      "charts.foreground" = c.fg_token;
-      "charts.lines" = c.bg_dark;
+      "charts.red" = c.error;
+      "charts.blue" = c.accent;
+      "charts.yellow" = c.number;
+      "charts.orange" = c.keyword;
+      "charts.green" = c.success;
+      "charts.purple" = c.constant;
+      "charts.foreground" = c.fg;
+      "charts.lines" = c.bgPanel;
 
       # SCM graph
-      "scmGraph.foreground1" = c.orange;
-      "scmGraph.foreground2" = c.yellow;
-      "scmGraph.foreground3" = c.green2;
-      "scmGraph.foreground4" = c.blue;
-      "scmGraph.foreground5" = c.magenta;
-      "scmGraph.historyItemHoverAdditionsForeground" = c.green2;
-      "scmGraph.historyItemHoverDeletionsForeground" = c.red;
+      "scmGraph.foreground1" = c.keyword;
+      "scmGraph.foreground2" = c.number;
+      "scmGraph.foreground3" = c.success;
+      "scmGraph.foreground4" = c.accent;
+      "scmGraph.foreground5" = c.constant;
+      "scmGraph.historyItemHoverAdditionsForeground" = c.success;
+      "scmGraph.historyItemHoverDeletionsForeground" = c.error;
 
       # Merge
-      "merge.currentHeaderBackground" = "${c.green2}25";
-      "merge.currentContentBackground" = "${c.merge_current}44";
-      "merge.incomingHeaderBackground" = "${c.blue0}aa";
-      "merge.incomingContentBackground" = "${c.blue0}44";
+      "merge.currentHeaderBackground" = "${c.success}25";
+      "merge.currentContentBackground" = "${c.success}44";
+      "merge.incomingHeaderBackground" = "${c.accentAlt}aa";
+      "merge.incomingContentBackground" = "${c.accentAlt}44";
 
       # Notifications
-      "notificationCenterHeader.background" = c.bg_deeper;
-      "notifications.background" = c.bg_deeper;
-      "notificationLink.foreground" = c.git_change;
-      "notificationsErrorIcon.foreground" = c.error_muted;
-      "notificationsWarningIcon.foreground" = c.warning_muted;
-      "notificationsInfoIcon.foreground" = c.info;
+      "notificationCenterHeader.background" = c.bgDeeper;
+      "notifications.background" = c.bgDeeper;
+      "notificationLink.foreground" = c.accent;
+      "notificationsErrorIcon.foreground" = c.error;
+      "notificationsWarningIcon.foreground" = c.warning;
+      "notificationsInfoIcon.foreground" = c.accent;
 
       # Menus
-      "menubar.selectionForeground" = c.fg_dark;
-      "menubar.selectionBackground" = c.bg_elevated;
-      "menubar.selectionBorder" = c.bg_menu_selection_border;
-      "menu.foreground" = c.dark5;
-      "menu.background" = c.bg_dark;
-      "menu.selectionForeground" = c.fg_dark;
-      "menu.selectionBackground" = c.bg_elevated;
-      "menu.separatorBackground" = c.bg_deeper;
-      "menu.border" = c.bg_deeper;
+      "menubar.selectionForeground" = c.fg;
+      "menubar.selectionBackground" = c.bgElevated;
+      "menubar.selectionBorder" = c.indentGuide;
+      "menu.foreground" = c.fgSubtle;
+      "menu.background" = c.bgPanel;
+      "menu.selectionForeground" = c.fg;
+      "menu.selectionBackground" = c.bgElevated;
+      "menu.separatorBackground" = c.bgDeeper;
+      "menu.border" = c.bgDeeper;
 
       # Chat / inline chat
-      "chat.requestBorder" = c.bg_input_border;
-      "chat.avatarBackground" = c.blue0;
-      "chat.avatarForeground" = c.fg_dark;
-      "chat.slashCommandBackground" = c.bg_input;
-      "chat.slashCommandForeground" = c.blue;
-      "inlineChat.foreground" = c.fg_dark;
-      "inlineChatInput.background" = c.bg_input;
-      "inlineChatDiff.inserted" = "${c.green2}40";
-      "inlineChatDiff.removed" = "${c.red1}42";
+      "chat.requestBorder" = c.indentGuide;
+      "chat.avatarBackground" = c.accentAlt;
+      "chat.avatarForeground" = c.fg;
+      "chat.slashCommandBackground" = c.bgElevated;
+      "chat.slashCommandForeground" = c.accent;
+      "inlineChat.foreground" = c.fg;
+      "inlineChatInput.background" = c.bgElevated;
+      "inlineChatDiff.inserted" = "${c.success}40";
+      "inlineChatDiff.removed" = "${c.errorBright}42";
     };
     tokenColors = [
       {
@@ -481,7 +481,7 @@
           "string.quoted.docstring.multi.python punctuation.definition.string.end"
           "string.quoted.docstring.multi.python constant.character.escape"
         ];
-        settings.foreground = c.fg_comment;
+        settings.foreground = c.comment;
       }
       {
         name = "Comment Doc";
@@ -500,7 +500,7 @@
           "keyword.other.phpdoc.php"
           "log.date"
         ];
-        settings.foreground = c.fg_comment_doc;
+        settings.foreground = c.comment;
       }
       {
         name = "Comment Doc Emphasized";
@@ -510,7 +510,7 @@
           "comment.block.documentation punctuation.definition.block.tag"
           "comment.block.documentation entity.name.type.instance"
         ];
-        settings.foreground = c.fg_comment_emphasis;
+        settings.foreground = c.fgSubtle;
       }
       {
         name = "Number, Boolean, Undefined, Null";
@@ -522,7 +522,7 @@
           "support.constant"
           "constant.other.caps"
         ];
-        settings.foreground = c.orange;
+        settings.foreground = c.keyword;
       }
       {
         name = "String, Symbols";
@@ -535,7 +535,7 @@
         ];
         settings = {
           fontStyle = "";
-          foreground = c.green;
+          foreground = c.string;
         };
       }
       {
@@ -544,22 +544,22 @@
           "constant.other.color"
           "constant.other.color.rgb-value.hex punctuation.definition.constant"
         ];
-        settings.foreground = c.fg_token;
+        settings.foreground = c.fg;
       }
       {
         name = "Invalid";
         scope = ["invalid" "invalid.illegal"];
-        settings.foreground = c.invalid;
+        settings.foreground = c.errorBright;
       }
       {
         name = "Invalid deprecated";
         scope = "invalid.deprecated";
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Storage Type";
         scope = "storage.type";
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Storage - modifier, var, const, let";
@@ -567,7 +567,7 @@
           "meta.var.expr storage.type"
           "storage.modifier"
         ];
-        settings.foreground = c.purple;
+        settings.foreground = c.constant;
       }
       {
         name = "Interpolation, PHP tags, Smarty tags";
@@ -578,7 +578,7 @@
           "support.constant.handlebars"
           "punctuation.section.tag.twig"
         ];
-        settings.foreground = c.cyan;
+        settings.foreground = c.type;
       }
       {
         name = "Blade, Twig, Smarty Handlebars keywords";
@@ -590,7 +590,7 @@
           "keyword.blade"
           "entity.name.function.blade"
         ];
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "Spread";
@@ -599,7 +599,7 @@
           "keyword.operator.rest"
         ];
         settings = {
-          foreground = c.red;
+          foreground = c.error;
           fontStyle = "bold";
         };
       }
@@ -631,7 +631,7 @@
           "meta.at-rule.mixin punctuation.separator.key-value"
           "meta.at-rule.function variable.parameter.url"
         ];
-        settings.foreground = c.blue5;
+        settings.foreground = c.special;
       }
       {
         name = "Import, Export, From, Default";
@@ -643,7 +643,7 @@
           "keyword.control.default"
           "meta.import keyword.other"
         ];
-        settings.foreground = c.cyan;
+        settings.foreground = c.type;
       }
       {
         name = "Keyword";
@@ -652,12 +652,12 @@
           "keyword.control"
           "keyword.other.important"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Keyword SQL";
         scope = "keyword.other.DML";
-        settings.foreground = c.cyan;
+        settings.foreground = c.type;
       }
       {
         name = "Keyword Operator Logical, Arrow, Ternary, Comparison";
@@ -670,12 +670,12 @@
           "keyword.operator.relational"
           "keyword.operator.or.regexp"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Tag";
         scope = "entity.name.tag";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "Tag - Custom / Unrecognized";
@@ -685,12 +685,12 @@
           "meta.tag.other.unrecognized.html.derivative entity.name.tag"
           "meta.tag"
         ];
-        settings.foreground = c.tag_custom;
+        settings.foreground = c.tag;
       }
       {
         name = "Tag Punctuation";
         scope = ["punctuation.definition.tag"];
-        settings.foreground = c.tag_punctuation;
+        settings.foreground = c.comment;
       }
       {
         name = "Globals, PHP Constants, etc";
@@ -702,7 +702,7 @@
           "variable.other.global punctuation.definition.variable"
           "constant.other"
         ];
-        settings.foreground = c.yellow;
+        settings.foreground = c.number;
       }
       {
         name = "Variables";
@@ -720,7 +720,7 @@
       {
         name = "Variable Array Key";
         scope = "meta.array.literal variable";
-        settings.foreground = c.cyan;
+        settings.foreground = c.type;
       }
       {
         name = "Object Key";
@@ -734,7 +734,7 @@
           "meta.field.declaration.ts variable.object.property"
           "meta.block entity.name.label"
         ];
-        settings.foreground = c.green1;
+        settings.foreground = c.property;
       }
       {
         name = "Object Property";
@@ -744,7 +744,7 @@
           "support.variable.property.dom"
           "meta.function-call variable.other.object.property"
         ];
-        settings.foreground = c.cyan;
+        settings.foreground = c.type;
       }
       {
         name = "Object Property (own)";
@@ -754,17 +754,17 @@
       {
         name = "Object Literal Member lvl 3 (Vue Prop Validation)";
         scope = "meta.objectliteral meta.object.member meta.objectliteral meta.object.member meta.objectliteral meta.object.member meta.object-literal.key";
-        settings.foreground = c.green2;
+        settings.foreground = c.success;
       }
       {
         name = "C-related Block Level Variables";
         scope = "source.cpp meta.block variable.other";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "Other Variable";
         scope = "support.other.variable";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "Methods";
@@ -775,7 +775,7 @@
           "keyword.other.special-method"
           "storage.type.cs"
         ];
-        settings.foreground = c.blue;
+        settings.foreground = c.func;
       }
       {
         name = "Function Definition";
@@ -788,7 +788,7 @@
           "meta.definition.method entity.name.function"
           "meta.object-literal entity.name.function"
         ];
-        settings.foreground = c.blue;
+        settings.foreground = c.func;
       }
       {
         name = "Function Argument";
@@ -798,7 +798,7 @@
           "meta.function.parameters punctuation.definition.variable"
           "meta.function.parameter variable"
         ];
-        settings.foreground = c.yellow;
+        settings.foreground = c.parameter;
       }
       {
         name = "Constant, Tag Attribute";
@@ -809,7 +809,7 @@
           "constant.escape"
           "keyword.other.unit"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Variable Definition";
@@ -820,14 +820,14 @@
           "meta.mapping.key.hcl variable.other.readwrite.hcl"
           "variable.other.declaration"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Inherited Class";
         scope = "entity.other.inherited-class";
         settings = {
           fontStyle = "";
-          foreground = c.magenta;
+          foreground = c.constant;
         };
       }
       {
@@ -848,7 +848,7 @@
           "meta.import.qualifier"
           "variable.other.constant.object"
         ];
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "Class Name";
@@ -858,7 +858,7 @@
       {
         name = "Support Function";
         scope = "support.function";
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "CSS Class and Support";
@@ -873,7 +873,7 @@
           "support.type.vendored.property-name"
           "support.type.map.key"
         ];
-        settings.foreground = c.blue;
+        settings.foreground = c.accent;
       }
       {
         name = "CSS Font";
@@ -881,7 +881,7 @@
           "support.constant.font-name"
           "meta.definition.variable"
         ];
-        settings.foreground = c.green;
+        settings.foreground = c.string;
       }
       {
         name = "CSS Class";
@@ -889,17 +889,17 @@
           "entity.other.attribute-name.class"
           "meta.at-rule.mixin.scss entity.name.function.scss"
         ];
-        settings.foreground = c.green;
+        settings.foreground = c.string;
       }
       {
         name = "CSS ID";
         scope = "entity.other.attribute-name.id";
-        settings.foreground = c.css_id;
+        settings.foreground = c.error;
       }
       {
         name = "CSS Tag";
         scope = "entity.name.tag.css";
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "CSS Tag Reference, Pseudo & Class Punctuation";
@@ -909,12 +909,12 @@
           "entity.other.attribute-name.class punctuation.definition.entity"
           "entity.name.tag.reference"
         ];
-        settings.foreground = c.yellow;
+        settings.foreground = c.number;
       }
       {
         name = "CSS Punctuation";
         scope = "meta.property-list";
-        settings.foreground = c.css_punctuation;
+        settings.foreground = c.fgSubtle;
       }
       {
         name = "CSS at-rule fix";
@@ -923,17 +923,17 @@
           "meta.at-rule.return variable.parameter.url"
           "meta.property-list meta.at-rule.else"
         ];
-        settings.foreground = c.orange;
+        settings.foreground = c.keyword;
       }
       {
         name = "CSS Parent Selector Entity";
         scope = ["entity.other.attribute-name.parent-selector-suffix punctuation.definition.entity.css"];
-        settings.foreground = c.green1;
+        settings.foreground = c.property;
       }
       {
         name = "CSS Punctuation comma fix";
         scope = "meta.property-list meta.property-list";
-        settings.foreground = c.css_punctuation;
+        settings.foreground = c.fgSubtle;
       }
       {
         name = "SCSS @";
@@ -942,7 +942,7 @@
           "meta.at-rule.include entity.name.function.scss"
           "meta.at-rule.include keyword.control.at-rule.include"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "SCSS Mixins, Extends, Include Keyword";
@@ -958,7 +958,7 @@
           "meta.at-rule.function keyword.control.at-rule.function"
           "keyword.control punctuation.definition.keyword"
         ];
-        settings.foreground = c.purple;
+        settings.foreground = c.constant;
       }
       {
         name = "SCSS Include Mixin Argument";
@@ -968,7 +968,7 @@
       {
         name = "CSS value";
         scope = "support.constant.property-value";
-        settings.foreground = c.orange;
+        settings.foreground = c.keyword;
       }
       {
         name = "Sub-methods";
@@ -982,7 +982,7 @@
       {
         name = "Language methods";
         scope = "variable.language";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "Variable punctuation";
@@ -996,7 +996,7 @@
           "variable.language.this punctuation.definition.variable"
           "keyword.other.this"
         ];
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "HTML Attributes";
@@ -1005,12 +1005,12 @@
           "text.html.basic entity.other.attribute-name.html"
           "text.html.basic entity.other.attribute-name"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "HTML Character Entity";
         scope = "text.html constant.character.entity";
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "CSS psuedo selectors";
@@ -1020,37 +1020,37 @@
           "entity.other.attribute-name.placeholder"
           "meta.property-list meta.property-value"
         ];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Inserted";
         scope = "markup.inserted";
-        settings.foreground = c.git_add;
+        settings.foreground = c.success;
       }
       {
         name = "Deleted";
         scope = "markup.deleted";
-        settings.foreground = c.git_delete;
+        settings.foreground = c.error;
       }
       {
         name = "Changed";
         scope = "markup.changed";
-        settings.foreground = c.git_change;
+        settings.foreground = c.warning;
       }
       {
         name = "Regular Expressions";
         scope = "string.regexp";
-        settings.foreground = c.blue6;
+        settings.foreground = c.string;
       }
       {
         name = "Regular Expressions - Punctuation";
         scope = "punctuation.definition.group";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "Regular Expressions - Character Class";
         scope = ["constant.other.character-class.regexp"];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Regular Expressions - Character Class Set";
@@ -1058,12 +1058,12 @@
           "constant.other.character-class.set.regexp"
           "punctuation.definition.character-class.regexp"
         ];
-        settings.foreground = c.yellow;
+        settings.foreground = c.number;
       }
       {
         name = "Regular Expressions - Quantifier";
         scope = "keyword.operator.quantifier.regexp";
-        settings.foreground = c.blue5;
+        settings.foreground = c.special;
       }
       {
         name = "Regular Expressions - Backslash";
@@ -1073,7 +1073,7 @@
       {
         name = "Escape Characters";
         scope = "constant.character.escape";
-        settings.foreground = c.blue5;
+        settings.foreground = c.special;
       }
       {
         name = "Decorators";
@@ -1081,62 +1081,62 @@
           "tag.decorator.js entity.name.tag.js"
           "tag.decorator.js punctuation.definition.tag.js"
         ];
-        settings.foreground = c.blue;
+        settings.foreground = c.func;
       }
       {
         name = "CSS Units";
         scope = "keyword.other.unit";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "JSON Key - Level 0";
         scope = ["source.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.blue;
+        settings.foreground = c.accent;
       }
       {
         name = "JSON Key - Level 1";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "JSON Key - Level 2";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.cyan;
+        settings.foreground = c.type;
       }
       {
         name = "JSON Key - Level 3";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "JSON Key - Level 4";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.yellow;
+        settings.foreground = c.number;
       }
       {
         name = "JSON Key - Level 5";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "JSON Key - Level 6";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.green1;
+        settings.foreground = c.property;
       }
       {
         name = "JSON Key - Level 7";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "JSON Key - Level 8";
         scope = ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"];
-        settings.foreground = c.green;
+        settings.foreground = c.string;
       }
       {
         name = "Plain Punctuation";
         scope = "punctuation.definition.list_item.markdown";
-        settings.foreground = c.css_punctuation;
+        settings.foreground = c.fgSubtle;
       }
       {
         name = "Block Punctuation";
@@ -1159,7 +1159,7 @@
           "punctuation.definition.array"
           "punctuation.section"
         ];
-        settings.foreground = c.css_punctuation;
+        settings.foreground = c.fgSubtle;
       }
       {
         name = "Markdown - Plain";
@@ -1174,17 +1174,17 @@
           "text.html"
           "text.log"
         ];
-        settings.foreground = c.fg_token;
+        settings.foreground = c.fg;
       }
       {
         name = "Markdown - Markup Raw Inline";
         scope = "text.html.markdown markup.inline.raw.markdown";
-        settings.foreground = c.magenta;
+        settings.foreground = c.constant;
       }
       {
         name = "Markdown - Markup Raw Inline Punctuation";
         scope = "text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown";
-        settings.foreground = c.md_raw_punctuation;
+        settings.foreground = c.indentGuideActive;
       }
       {
         name = "Markdown - Heading 1";
@@ -1194,7 +1194,7 @@
         ];
         settings = {
           fontStyle = "bold";
-          foreground = c.blue5;
+          foreground = c.special;
         };
       }
       {
@@ -1205,7 +1205,7 @@
         ];
         settings = {
           fontStyle = "bold";
-          foreground = c.md_h2;
+          foreground = c.accentAlt;
         };
       }
       {
@@ -1216,7 +1216,7 @@
         ];
         settings = {
           fontStyle = "bold";
-          foreground = c.blue;
+          foreground = c.accent;
         };
       }
       {
@@ -1227,7 +1227,7 @@
         ];
         settings = {
           fontStyle = "bold";
-          foreground = c.md_h4;
+          foreground = c.type;
         };
       }
       {
@@ -1238,7 +1238,7 @@
         ];
         settings = {
           fontStyle = "bold";
-          foreground = c.fg_token;
+          foreground = c.fg;
         };
       }
       {
@@ -1249,7 +1249,7 @@
         ];
         settings = {
           fontStyle = "bold";
-          foreground = c.md_h6;
+          foreground = c.fgSubtle;
         };
       }
       {
@@ -1284,7 +1284,7 @@
       {
         name = "Markdown - Blockquote";
         scope = "markup.quote punctuation.definition.blockquote.markdown";
-        settings.foreground = c.md_raw_punctuation;
+        settings.foreground = c.indentGuideActive;
       }
       {
         name = "Markup - Quote";
@@ -1299,7 +1299,7 @@
           "constant.other.reference.link.markdown"
           "string.other.link.description.title.markdown"
         ];
-        settings.foreground = c.green1;
+        settings.foreground = c.property;
       }
       {
         name = "Markdown - Fenced Code Block";
@@ -1308,77 +1308,76 @@
           "markup.inline.raw.string.markdown"
           "variable.language.fenced.markdown"
         ];
-        settings.foreground = c.blue5;
+        settings.foreground = c.special;
       }
       {
         name = "Markdown - Separator";
         scope = "meta.separator";
         settings = {
           fontStyle = "bold";
-          foreground = c.fg_comment;
+          foreground = c.comment;
         };
       }
       {
         name = "Markup - Table";
         scope = "markup.table";
-        settings.foreground = c.markup_table;
+        settings.foreground = c.variable;
       }
       {
         name = "Token - Info";
         scope = "token.info-token";
-        settings.foreground = c.blue2;
+        settings.foreground = c.type;
       }
       {
         name = "Token - Warn";
         scope = "token.warn-token";
-        settings.foreground = c.token_warn;
+        settings.foreground = c.number;
       }
       {
         name = "Token - Error";
         scope = "token.error-token";
-        settings.foreground = c.red1;
+        settings.foreground = c.errorBright;
       }
       {
         name = "Token - Debug";
         scope = "token.debug-token";
-        settings.foreground = c.token_debug;
+        settings.foreground = c.constant;
       }
       {
         name = "Apache Tag";
         scope = "entity.tag.apacheconf";
-        settings.foreground = c.red;
+        settings.foreground = c.error;
       }
       {
         name = "Preprocessor";
         scope = ["meta.preprocessor"];
-        settings.foreground = c.green1;
+        settings.foreground = c.property;
       }
       {
         name = "ENV value";
         scope = "source.env";
-        settings.foreground = c.blue;
+        settings.foreground = c.accent;
       }
     ];
   };
 
-  # Build a VS Code extension package containing the theme
-  tokyoNightThemeExtension = pkgs.stdenvNoCC.mkDerivation {
-    pname = "tokyo-night-nix-theme";
+  inkglowThemeExtension = pkgs.stdenvNoCC.mkDerivation {
+    pname = "inkglow-nix-theme";
     version = "1.0.0";
     dontUnpack = true;
 
     passthru = {
       vscodeExtPublisher = "nix";
-      vscodeExtName = "tokyo-night-nix";
-      vscodeExtUniqueId = "nix.tokyo-night-nix";
+      vscodeExtName = "inkglow-nix";
+      vscodeExtUniqueId = "nix.inkglow-nix";
     };
 
     buildPhase = ''
-      mkdir -p $out/share/vscode/extensions/nix.tokyo-night-nix/themes
-      cat > $out/share/vscode/extensions/nix.tokyo-night-nix/package.json << 'MANIFEST'
+      mkdir -p $out/share/vscode/extensions/nix.inkglow-nix/themes
+      cat > $out/share/vscode/extensions/nix.inkglow-nix/package.json << 'MANIFEST'
       {
-        "name": "tokyo-night-nix",
-        "displayName": "Tokyo Night (Nix)",
+        "name": "inkglow-nix",
+        "displayName": "Inkglow (Nix)",
         "version": "1.0.0",
         "publisher": "nix",
         "engines": { "vscode": "^1.50.0" },
@@ -1386,25 +1385,23 @@
         "contributes": {
           "themes": [
             {
-              "label": "Tokyo Night (Nix)",
-              "uiTheme": "vs-dark",
-              "path": "./themes/tokyo-night-nix-color-theme.json"
+              "label": "Inkglow (Nix)",
+              "uiTheme": "${if c.themeIsDark then "vs-dark" else "vs"}",
+              "path": "./themes/inkglow-nix-color-theme.json"
             }
           ]
         }
       }
       MANIFEST
-      cat > $out/share/vscode/extensions/nix.tokyo-night-nix/themes/tokyo-night-nix-color-theme.json << 'THEME'
+      cat > $out/share/vscode/extensions/nix.inkglow-nix/themes/inkglow-nix-color-theme.json << 'THEME'
       ${themeFile}
       THEME
     '';
     installPhase = "true";
   };
-  # Nix-managed keys that always take priority over runtime changes
-  # Written to a file in the Nix store to avoid shell quoting issues
-  # (single quotes in font names break --argjson inline)
+
   nixManagedSettingsFile = pkgs.writeText "vscode-nix-managed.json" (builtins.toJSON {
-    "workbench.colorTheme" = "Tokyo Night (Nix)";
+    "workbench.colorTheme" = "Inkglow (Nix)";
     "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
     "editor.fontLigatures" = true;
     "editor.fontSize" = 14;
@@ -1419,23 +1416,19 @@ in {
   programs.vscode = {
     enable = true;
     profiles.default = {
-      extensions = [tokyoNightThemeExtension];
+      extensions = [inkglowThemeExtension];
     };
   };
 
-  # On activation: merge saved runtime state + Nix-managed keys -> writable settings.json
   home.activation.vscodeSettings = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    # Start from saved runtime state, fall back to empty object
     if [ -f "${savedSettingsPath}" ]; then
       base=$(cat "${savedSettingsPath}")
     else
       base='{}'
     fi
 
-    # Deep-merge Nix-managed keys on top (they always win)
     merged=$(echo "$base" | ${jq} --argjson nix "$(cat ${nixManagedSettingsFile})" '. * $nix')
 
-    # Remove existing symlink if home-manager left one
     if [ -L "${runtimeSettingsPath}" ]; then
       rm -f "${runtimeSettingsPath}"
     fi
@@ -1444,8 +1437,6 @@ in {
     echo "$merged" | ${jq} '.' > "${runtimeSettingsPath}"
   '';
 
-  # On shutdown: save runtime settings.json back to the Nix repo
-  # Uses RemainAfterExit + ExecStop so ExecStop runs when the service is stopped at shutdown
   systemd.user.services.vscode-settings-save = {
     Unit = {
       Description = "Save VSCode settings back to Nix repo on shutdown";

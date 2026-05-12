@@ -9,6 +9,7 @@
  * @template {string} id
  * @typedef {string & { options: options, id: id }} UniqueString<options,id>
  */
+
 /**
  * @template {UniqueString<*, *>} U
  * @template {string} T

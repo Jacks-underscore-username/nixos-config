@@ -15,46 +15,37 @@
     import QtQuick
 
     Singleton {
-      // Background shades
-      readonly property color bgWindow: "${c.bg_window}"
-      readonly property color bgDark: "${c.bg_dark}"
+      // Backgrounds
       readonly property color bg: "${c.bg}"
-      readonly property color bgFloat: "${c.bg_float}"
-      readonly property color bgHighlight: "${c.bg_highlight}"
-      readonly property color bgVisual: "${c.bg_visual}"
-      readonly property color bgSearch: "${c.bg_search}"
-      readonly property color bgSurface: "${c.bg_surface}"
-      readonly property color bgElevated: "${c.bg_elevated}"
-      readonly property color bgOverlay: "${c.bg_overlay}"
-      readonly property color bgActive: "${c.bg_active}"
+      readonly property color bgPanel: "${c.bgPanel}"
+      readonly property color bgDeeper: "${c.bgDeeper}"
+      readonly property color bgElevated: "${c.bgElevated}"
+      readonly property color bgHighlight: "${c.bgHighlight}"
+      readonly property color bgVisual: "${c.bgVisual}"
 
-      // Foreground
+      // Foregrounds
       readonly property color fg: "${c.fg}"
-      readonly property color fgDark: "${c.fg_dark}"
-      readonly property color fgMuted: "${c.fg_muted}"
-      readonly property color fgComment: "${c.fg_comment}"
-
-      // Core palette
-      readonly property color blue: "${c.blue}"
-      readonly property color blue0: "${c.blue0}"
-      readonly property color blue1: "${c.blue1}"
-      readonly property color cyan: "${c.cyan}"
-      readonly property color magenta: "${c.magenta}"
-      readonly property color purple: "${c.purple}"
-      readonly property color orange: "${c.orange}"
-      readonly property color yellow: "${c.yellow}"
-      readonly property color green: "${c.green}"
-      readonly property color green1: "${c.green1}"
-      readonly property color teal: "${c.teal}"
-      readonly property color red: "${c.red}"
-      readonly property color red1: "${c.red1}"
-
-      // Misc
+      readonly property color fgDark: "${c.fgSubtle}"
+      readonly property color fgMuted: "${c.fgMuted}"
       readonly property color comment: "${c.comment}"
-      readonly property color borderHighlight: "${c.border_highlight}"
-      readonly property color border: "${c.border}"
-      readonly property color selection: "${c.selection}"
-      readonly property color terminalBlack: "${c.terminal_black}"
+
+      // Accent palette
+      readonly property color accent: "${c.accent}"
+      readonly property color accentAlt: "${c.accentAlt}"
+      readonly property color keyword: "${c.keyword}"
+      readonly property color func: "${c.func}"
+      readonly property color string: "${c.string}"
+      readonly property color type: "${c.type}"
+      readonly property color number: "${c.number}"
+      readonly property color constant: "${c.constant}"
+      readonly property color operator: "${c.operator}"
+      readonly property color special: "${c.special}"
+
+      // Semantic UI
+      readonly property color success: "${c.success}"
+      readonly property color warning: "${c.warning}"
+      readonly property color error: "${c.error}"
+      readonly property color errorBright: "${c.errorBright}"
 
       // Font
       readonly property string fontFamily: "FiraCode Nerd Font"
