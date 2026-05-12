@@ -649,6 +649,6 @@ let
     };
   };
 
-  active = themes.inkglow;
+  active = themes.blaze;
 in
   active // {inherit themes;}

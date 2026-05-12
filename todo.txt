@@ -4,20 +4,19 @@
 [ ] - Setup secrets so I can store login info on the git repo
 [X] - Add backgrounds from here https://imgur.com/a/2560x1440-wallpaper-dump-mostly-nature-200-images-B6aB1hS
 [X] - Extract colors from the backgrounds for style
-[ ] - Create a status bar with ags
-[ ] - Style kitty
-[ ] - Style vscode
+[ ] - Create a status bar with shellscript
+[X] - Style kitty
+[X] - Style vscode
 [ ] - Style chrome
 [ ] - Style discord
-[ ] - Style wofi
 [ ] - Style spotify
 [ ] - Configure Thunar
 [ ] - Setup root remote
 [ ] - Setup auto sleep
 [ ] - Setup overview
-[ ] - Create an ags power widget
-[ ] - Create an ags wifi widget
-[ ] - Create an ags bluetooth widget
-[ ] - Create an ags volume widget
-[ ] - Create an ags theme widget
-[ ] - Create an ags brightness widget
+[ ] - Create an shellscript power widget
+[ ] - Create an shellscript wifi widget
+[ ] - Create an shellscript bluetooth widget
+[ ] - Create an shellscript volume widget
+[ ] - Create an shellscript theme widget
+[ ] - Create an shellscript brightness widget
