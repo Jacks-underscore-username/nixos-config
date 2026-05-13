@@ -11,7 +11,9 @@
   remoteBtrfs = "btrfs";
 
   localSnapshotDir = "/persist/.snapshots/code";
-  remoteSnapshotDir = "/mnt/ssd/codeBackups";
+  remoteMountPoint = "/mnt/ssd";
+  remoteSnapshotDir = "${remoteMountPoint}/codeBackups";
+  remoteSsdUuid = "e8c4d542-f51e-4b34-b04c-92064ee47820";
 
   backupScript = pkgs.writeShellScript "code-backup" ''
     set -euo pipefail
@@ -24,9 +26,26 @@
     # Ensure local snapshot directory exists
     mkdir -p "${localSnapshotDir}"
 
+    # Clean up any orphaned local snapshots not tracked by .latest
+    if [ -f "''${PREV_SNAP_FILE}" ]; then
+      KEEP=$(cat "''${PREV_SNAP_FILE}")
+    else
+      KEEP=""
+    fi
+    for snap in "${localSnapshotDir}"/code-*; do
+      [ -d "''${snap}" ] || continue
+      if [ "''${snap}" != "''${KEEP}" ]; then
+        echo "Cleaning up orphaned snapshot: ''${snap}"
+        ${btrfs} subvolume delete "''${snap}" 2>/dev/null || true
+      fi
+    done
+
     # Create a read-only snapshot of /persist/code
     ${btrfs} subvolume snapshot -r /persist/code "''${LOCAL_SNAP}"
     echo "Created local snapshot: ''${LOCAL_SNAP}"
+
+    # Mount the btrfs SSD on the remote if not already mounted
+    ${ssh-command} "mkdir -p ${remoteMountPoint} && mountpoint -q ${remoteMountPoint} || mount -o noatime,compress=zstd UUID=${remoteSsdUuid} ${remoteMountPoint}"
 
     # Ensure remote snapshot directory exists
     ${ssh-command} "mkdir -p ${remoteSnapshotDir}"
