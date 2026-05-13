@@ -10,6 +10,6 @@
     ./audio.nix
     ./desktop.nix
     ./nix-ld.nix
-    # ./codeBackup.nix
+    ./codeBackup.nix
   ];
 }

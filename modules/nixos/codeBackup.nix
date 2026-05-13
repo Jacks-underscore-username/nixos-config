@@ -34,17 +34,29 @@
       PREV_SNAP=$(cat "''${PREV_SNAP_FILE}")
       if [ -d "''${PREV_SNAP}" ]; then
         echo "Sending incremental snapshot (parent: ''${PREV_SNAP})..."
-        ${btrfs} send -p "''${PREV_SNAP}" "''${LOCAL_SNAP}" \
-          | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"
+        if ${btrfs} send -p "''${PREV_SNAP}" "''${LOCAL_SNAP}" \
+          | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"; then
+          echo "Incremental send succeeded."
 
-        # Clean up the old local snapshot now that incremental send succeeded
-        ${btrfs} subvolume delete "''${PREV_SNAP}"
-        echo "Deleted old local snapshot: ''${PREV_SNAP}"
+          # Clean up the old local snapshot
+          ${btrfs} subvolume delete "''${PREV_SNAP}"
+          echo "Deleted old local snapshot: ''${PREV_SNAP}"
 
-        # Clean up the old remote snapshot
-        PREV_SNAP_BASENAME=$(basename "''${PREV_SNAP}")
-        ${ssh-command} "${btrfs} subvolume delete ${remoteSnapshotDir}/''${PREV_SNAP_BASENAME}" || true
-        echo "Deleted old remote snapshot: ''${PREV_SNAP_BASENAME}"
+          # Clean up the old remote snapshot
+          PREV_SNAP_BASENAME=$(basename "''${PREV_SNAP}")
+          ${ssh-command} "${btrfs} subvolume delete ${remoteSnapshotDir}/''${PREV_SNAP_BASENAME}" || true
+          echo "Deleted old remote snapshot: ''${PREV_SNAP_BASENAME}"
+        else
+          echo "Incremental send failed, falling back to full send..."
+          # Delete the failed partial snapshot on remote if it exists
+          ${ssh-command} "${btrfs} subvolume delete ${remoteSnapshotDir}/''${SNAP_NAME}" 2>/dev/null || true
+
+          ${btrfs} send "''${LOCAL_SNAP}" \
+            | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"
+
+          # Clean up old snapshots since we did a full send
+          ${btrfs} subvolume delete "''${PREV_SNAP}" 2>/dev/null || true
+        fi
       else
         echo "Previous snapshot ''${PREV_SNAP} not found, sending full snapshot..."
         ${btrfs} send "''${LOCAL_SNAP}" \
@@ -61,23 +73,28 @@
     echo "Backup complete: ''${SNAP_NAME}"
   '';
 in {
-  systemd.services.codeBackup = {
+  systemd.services.code-backup = {
     enable = true;
-    description = "Backup the code folder";
+    description = "Backup the code folder via btrfs send/receive";
 
-    after = ["network-online.target" "persist.mount"];
-    requires = ["network-online.target" "persist.mount"];
+    after = ["network-online.target"];
     wants = ["network-online.target"];
-    wantedBy = ["multi-user.target" "shutdown.target"];
 
-    stopIfChanged = false;
     serviceConfig = {
       Type = "oneshot";
       User = "root";
-      RemainAfterExit = true;
-      ExecStop = backupScript;
+      ExecStart = backupScript;
     };
+  };
 
-    script = "${backupScript}";
+  systemd.timers.code-backup = {
+    enable = true;
+    description = "Run code backup periodically";
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnCalendar = "hourly";
+      Persistent = true;
+      RandomizedDelaySec = "5m";
+    };
   };
 }
