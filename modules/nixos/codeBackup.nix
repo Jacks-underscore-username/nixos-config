@@ -7,6 +7,8 @@
   ssh-command = "${ssh-settings} root@192.168.4.62";
 
   btrfs = "${pkgs.btrfs-progs}/bin/btrfs";
+  # Remote server uses its own btrfs from PATH
+  remoteBtrfs = "btrfs";
 
   localSnapshotDir = "/persist/.snapshots/code";
   remoteSnapshotDir = "/mnt/ssd/codeBackups";
@@ -35,7 +37,7 @@
       if [ -d "''${PREV_SNAP}" ]; then
         echo "Sending incremental snapshot (parent: ''${PREV_SNAP})..."
         if ${btrfs} send -p "''${PREV_SNAP}" "''${LOCAL_SNAP}" \
-          | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"; then
+          | ${ssh-command} "${remoteBtrfs} receive ${remoteSnapshotDir}"; then
           echo "Incremental send succeeded."
 
           # Clean up the old local snapshot
@@ -44,15 +46,15 @@
 
           # Clean up the old remote snapshot
           PREV_SNAP_BASENAME=$(basename "''${PREV_SNAP}")
-          ${ssh-command} "${btrfs} subvolume delete ${remoteSnapshotDir}/''${PREV_SNAP_BASENAME}" || true
+          ${ssh-command} "${remoteBtrfs} subvolume delete ${remoteSnapshotDir}/''${PREV_SNAP_BASENAME}" || true
           echo "Deleted old remote snapshot: ''${PREV_SNAP_BASENAME}"
         else
           echo "Incremental send failed, falling back to full send..."
           # Delete the failed partial snapshot on remote if it exists
-          ${ssh-command} "${btrfs} subvolume delete ${remoteSnapshotDir}/''${SNAP_NAME}" 2>/dev/null || true
+          ${ssh-command} "${remoteBtrfs} subvolume delete ${remoteSnapshotDir}/''${SNAP_NAME}" 2>/dev/null || true
 
           ${btrfs} send "''${LOCAL_SNAP}" \
-            | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"
+            | ${ssh-command} "${remoteBtrfs} receive ${remoteSnapshotDir}"
 
           # Clean up old snapshots since we did a full send
           ${btrfs} subvolume delete "''${PREV_SNAP}" 2>/dev/null || true
@@ -60,12 +62,12 @@
       else
         echo "Previous snapshot ''${PREV_SNAP} not found, sending full snapshot..."
         ${btrfs} send "''${LOCAL_SNAP}" \
-          | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"
+          | ${ssh-command} "${remoteBtrfs} receive ${remoteSnapshotDir}"
       fi
     else
       echo "No previous snapshot found, sending full snapshot..."
       ${btrfs} send "''${LOCAL_SNAP}" \
-        | ${ssh-command} "${btrfs} receive ${remoteSnapshotDir}"
+        | ${ssh-command} "${remoteBtrfs} receive ${remoteSnapshotDir}"
     fi
 
     # Record current snapshot as the latest
