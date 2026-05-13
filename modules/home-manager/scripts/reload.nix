@@ -25,7 +25,7 @@ pkgs.writeShellScriptBin "reload" ''
     || ( ${pkgs.alejandra}/bin/alejandra . ; echo "Formatting failed!" && exit 1)
 
   # Early return if no changes were detected (thanks @singiamtel!)
-  if ! [[ "$*" =~ "--force" ]] && sudo git diff HEAD --quiet; then
+  if ! [[ "$*" =~ "--force" ]] && git diff HEAD --quiet; then
       echo "No changes detected, exiting."
       {
           popd
@@ -60,7 +60,7 @@ pkgs.writeShellScriptBin "reload" ''
 
   else
 
-  	sudo git restore --staged ./**/*.nix
+  	git restore --staged ./**/*.nix
 
     echo "Failed to reload..."
   fi
