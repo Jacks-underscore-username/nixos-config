@@ -37,5 +37,6 @@
     (import ./watchBuffer.nix {inherit pkgs;})
     (import ./shell.nix {inherit pkgs;})
     (import ./copyJsConfig.nix {inherit pkgs;})
+    (import ./backup.nix {inherit pkgs;})
   ];
 }
