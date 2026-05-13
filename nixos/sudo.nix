@@ -8,8 +8,8 @@
           options = ["NOPASSWD"];
         })
         [
-          "/run/current-system/sw/bin/nixos-rebuild"
-          "/run/current-system/sw/bin/git"
+          "/run/current-system/sw/bin/nixos-rebuild *"
+          "/run/current-system/sw/bin/git *"
         ];
     }
   ];
