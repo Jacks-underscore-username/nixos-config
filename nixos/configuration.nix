@@ -9,6 +9,7 @@
     ./boot.nix
     ./networking.nix
     ./users.nix
+    ./sudo.nix
 
     ../modules/nixos/default.nix
   ];
