@@ -1,4 +1,4 @@
 {pkgs}:
 pkgs.writeShellScriptBin "backup" ''
-  sudo systemctl start codeBackup.service
+  sudo systemctl start code-backup.service
 ''
