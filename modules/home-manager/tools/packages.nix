@@ -34,6 +34,6 @@ in {
       (lib.getExe pkgs.unstable.bun)
     )
 
-    unstable.jetbrains.idea-community
+    unstable.jetbrains.idea
   ];
 }

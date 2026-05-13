@@ -3,7 +3,6 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
-  "workbench.colorTheme": "Inkglow (Nix)",
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -14,5 +13,8 @@
   },
   "vsicons.dontShowNewVersionMessage": true,
   "redhat.telemetry.enabled": false,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Zone Green",
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false
 }
