@@ -50,7 +50,7 @@
 
     # Mount the btrfs SSD on the remote if not already mounted
     echo "Connecting to remote and ensuring SSD is mounted..."
-    ${ssh-command} "mkdir -p ${remoteMountPoint} && mountpoint -q ${remoteMountPoint} || mount -o noatime,compress=zstd UUID=${remoteSsdUuid} ${remoteMountPoint}"
+    ${ssh-command} "mkdir -p ${remoteMountPoint} && (mountpoint -q ${remoteMountPoint} && mount -o remount,rw ${remoteMountPoint} || mount -o rw,noatime,compress=zstd UUID=${remoteSsdUuid} ${remoteMountPoint})"
     echo "Remote SSD mounted."
 
     # Ensure remote snapshot directory exists
