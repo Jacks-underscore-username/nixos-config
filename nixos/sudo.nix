@@ -7,7 +7,10 @@
           command = cmd;
           options = ["NOPASSWD"];
         })
-        ["/home/jackc/.nix-profile/bin/reload"];
+        [
+          "/run/current-system/sw/bin/nixos-rebuild"
+          "/run/current-system/sw/bin/git"
+        ];
     }
   ];
 }
