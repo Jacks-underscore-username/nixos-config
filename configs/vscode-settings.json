@@ -14,7 +14,7 @@
   "vsicons.dontShowNewVersionMessage": true,
   "redhat.telemetry.enabled": false,
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "Zone Green",
+  "workbench.colorTheme": "Inkglow (Nix)",
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false
 }
