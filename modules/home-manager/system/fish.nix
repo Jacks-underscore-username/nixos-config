@@ -4,7 +4,6 @@
   strip = hex: builtins.substring 1 (builtins.stringLength hex - 1) hex;
 in {
   xdg.configFile."fish/conf.d/inkglow-colors.fish".text = ''
-    # Inkglow color scheme — generated from lib/colors.nix
     set -g fish_color_normal        ${strip c.fg}
     set -g fish_color_command       ${strip c.func}
     set -g fish_color_keyword       ${strip c.constant}
@@ -21,7 +20,6 @@ in {
     set -g fish_color_autosuggestion ${strip c.fgMuted}
     set -g fish_color_cancel        ${strip c.error}
 
-    # Pager (tab completion menu)
     set -g fish_pager_color_progress             ${strip c.comment}
     set -g fish_pager_color_prefix               ${strip c.accent}
     set -g fish_pager_color_completion           ${strip c.fgSubtle}

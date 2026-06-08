@@ -8,8 +8,6 @@
   isDark = c.themeIsDark;
 
   gtk3Css = ''
-    /* ── Inkglow GTK3 theme — generated from lib/colors.nix ── */
-
     @define-color theme_bg_color ${c.bgPanel};
     @define-color theme_fg_color ${c.fg};
     @define-color theme_base_color ${c.bg};
@@ -33,7 +31,6 @@
     @define-color error_color ${c.error};
     @define-color success_color ${c.success};
 
-    /* Window chrome */
     window, .window-frame {
       background-color: ${c.bgPanel};
       color: ${c.fg};
@@ -53,7 +50,6 @@
       color: ${c.fg};
     }
 
-    /* Sidebar / file manager panels */
     .sidebar, .sidebar-pane, placessidebar {
       background-color: ${c.bgPanel};
       color: ${c.fgSubtle};
@@ -66,7 +62,6 @@
       background-color: ${c.bgHighlight};
     }
 
-    /* File manager / list views */
     treeview, listview, iconview {
       background-color: ${c.bg};
       color: ${c.fg};
@@ -84,7 +79,6 @@
       border-right: 1px solid ${c.indentGuide};
     }
 
-    /* Text / entries */
     entry {
       background-color: ${c.bgElevated};
       color: ${c.fg};
@@ -96,7 +90,6 @@
       border-color: ${c.accent};
     }
 
-    /* Buttons */
     button {
       background-color: ${c.bgHighlight};
       color: ${c.fg};
@@ -119,7 +112,6 @@
       color: ${c.bg};
     }
 
-    /* Menus / popovers */
     menu, .menu, popover {
       background-color: ${c.bgPanel};
       color: ${c.fg};
@@ -138,7 +130,6 @@
       color: ${c.fg};
     }
 
-    /* Scrollbars */
     scrollbar {
       background-color: ${c.bgPanel};
     }
@@ -152,7 +143,6 @@
       background-color: ${c.fgMuted};
     }
 
-    /* Notebook / tabs */
     notebook > header {
       background-color: ${c.bgDeeper};
       border-bottom: 1px solid ${c.indentGuide};
@@ -167,20 +157,18 @@
       border-top: 2px solid ${c.accent};
     }
 
-    /* Tooltips */
     tooltip {
       background-color: ${c.bgElevated};
       color: ${c.fg};
       border: 1px solid ${c.indentGuide};
     }
 
-    /* Progress / scale */
     progressbar trough { background-color: ${c.bgHighlight}; }
     progressbar progress { background-color: ${c.accent}; }
     scale trough { background-color: ${c.bgHighlight}; }
     scale highlight { background-color: ${c.accent}; }
 
-    /* Check / radio */
+
     checkbutton check, radiobutton radio {
       background-color: ${c.bgElevated};
       border: 1px solid ${c.indentGuide};
@@ -190,21 +178,18 @@
       color: ${c.bg};
     }
 
-    /* Statusbar */
     statusbar {
       background-color: ${c.bgDeeper};
       color: ${c.fgSubtle};
       border-top: 1px solid ${c.indentGuide};
     }
 
-    /* Separators */
     separator {
       background-color: ${c.indentGuide};
     }
   '';
 
   gtk4Css = ''
-    /* ── Inkglow GTK4 theme — generated from lib/colors.nix ── */
 
     window {
       background-color: ${c.bgPanel};

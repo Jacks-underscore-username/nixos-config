@@ -6,6 +6,7 @@
     # jdk11
     jetbrains.jdk-no-jcef
     jetbrains.jdk-no-jcef-17
+    unstable.jdk25
     zulu8
   ];
 in {
