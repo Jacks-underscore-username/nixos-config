@@ -35,5 +35,6 @@ in {
     )
 
     delta
+    nil
   ];
 }
