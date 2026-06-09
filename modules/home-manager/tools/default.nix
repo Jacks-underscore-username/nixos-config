@@ -5,5 +5,6 @@
     ./packages.nix
     ./tmux.nix
     # ./vscode.nix
+    ./neovim.nix
   ];
 }
