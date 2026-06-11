@@ -7,7 +7,10 @@
       ".vscode"
       ".cache/google-chrome"
       ".config/google-chrome"
-      ".config/Code"
+      {
+        directory = ".config/Code";
+        method = "symlink";
+      }
       ".cache/spotify"
       ".config/spotify"
       ".config/legcord"
@@ -25,7 +28,10 @@
       ".cache/mesa_shader_cache_db"
       ".compose-cache"
 
-      ".factorio"
+      {
+        directory = ".factorio";
+        method = "symlink";
+      }
       ".local/share/Celeste"
       # Something for celeste I think
       # ".compose-cache/l4_030_04b84530_0e7768ba"
