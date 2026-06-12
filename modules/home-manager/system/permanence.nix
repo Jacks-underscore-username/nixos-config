@@ -1,6 +1,7 @@
 {home, ...}: {
   home.persistence."/persist/home/jackc" = {
     allowOther = true;
+
     directories = [
       ".ssh"
       ".config/gh"
@@ -25,7 +26,7 @@
       ".cache/mesa_shader_cache_db"
       ".compose-cache"
 
-      # ".factorio"
+      ".factorio"
 
       ".local/share/Celeste"
       # Something for celeste I think
