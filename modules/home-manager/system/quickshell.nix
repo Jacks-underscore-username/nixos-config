@@ -6,12 +6,10 @@
 }: let
   c = colors;
   qmlDir = ./quickshell;
-
   themeQml = pkgs.writeText "Theme.qml" ''
     pragma Singleton
     import Quickshell
     import QtQuick
-
     Singleton {
       readonly property color bg: "${c.bg}"
       readonly property color bgPanel: "${c.bgPanel}"
@@ -19,12 +17,10 @@
       readonly property color bgElevated: "${c.bgElevated}"
       readonly property color bgHighlight: "${c.bgHighlight}"
       readonly property color bgVisual: "${c.bgVisual}"
-
       readonly property color fg: "${c.fg}"
       readonly property color fgDark: "${c.fgSubtle}"
       readonly property color fgMuted: "${c.fgMuted}"
       readonly property color comment: "${c.comment}"
-
       readonly property color accent: "${c.accent}"
       readonly property color accentAlt: "${c.accentAlt}"
       readonly property color keyword: "${c.keyword}"
@@ -35,18 +31,15 @@
       readonly property color constant: "${c.constant}"
       readonly property color operator: "${c.operator}"
       readonly property color special: "${c.special}"
-
       readonly property color success: "${c.success}"
       readonly property color warning: "${c.warning}"
       readonly property color error: "${c.error}"
       readonly property color errorBright: "${c.errorBright}"
-
       readonly property string fontFamily: "FiraCode Nerd Font"
       readonly property int fontSize: 13
       readonly property int fontSizeSmall: 11
     }
   '';
-
   quickshellConfig = pkgs.runCommandLocal "quickshell-config" {} ''
     mkdir -p $out
     cp ${themeQml} $out/Theme.qml
@@ -59,6 +52,19 @@ in {
   home.packages = [
     inputs.quickshell.packages.x86_64-linux.default
   ];
-
   xdg.configFile."quickshell".source = quickshellConfig;
 }
+# {...}: let
+#   configs = builtins.path {
+#     path = ./quickshell;
+#     name = "quickshell-configs";
+#   };
+# in {
+#   programs.
+#   programs.quickshell = {
+#     enable = true;
+#     activeConfig = configs;
+#     systemd.enable = true;
+#   };
+# }
+
