@@ -1,7 +1,6 @@
 {...}: {
   networking.hostName = "Nixos";
   networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
 
   hardware.bluetooth = {
     enable = true;

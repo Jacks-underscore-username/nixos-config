@@ -7,6 +7,7 @@ Scope {
   id: root
 
   readonly property string time: Qt.formatDateTime(clock.date, "dd/MM/yyyy HH:mm:ss AP (t)")
+  // readonly property string bat: Qt
 
   SystemClock {
     id: clock
